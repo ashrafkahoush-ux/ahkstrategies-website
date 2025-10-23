@@ -1,45 +1,64 @@
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import Link from 'next/link';
 
 export default function HumanIntelligencePage() {
   return (
-    <div className="relative h-screen w-full overflow-hidden text-center text-white flex flex-col justify-center items-center">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="background-video"
-        src="/assets/backgrounds/human-intelligence.mp4"
-      />
-      <div className="parallax-layer relative z-10 px-6 text-white">
-        <h1 className="text-4xl md:text-5xl font-bold">Human Intelligence</h1>
-        <p className="mt-3 max-w-2xl text-lg opacity-90">
-          People-first strategy, decision clarity, and leadership systems that
-          compound over time.
-        </p>
-      </div>
-      <section className="relative py-20 mx-auto max-w-5xl px-6 prose prose-lg">
-        <h2>Why it matters</h2>
-        <p>
-          Technology amplifies judgment; it doesn't replace it. We design org
-          structures, incentives, and decision protocols that let talent do its
-          best work—measurably.
-        </p>
-
-        <h3>What we implement</h3>
-        <ul>
-          <li>Decision frameworks (one-way vs. two-way doors)</li>
-          <li>Leadership operating cadence &amp; scorecards</li>
-          <li>Org design aligned to strategy (not politics)</li>
-          <li>Partner ecosystems &amp; knowledge transfer</li>
-        </ul>
-
-        <p className="mt-10">
-          <Link href="/" className="no-underline">
-            ← Back to Home
-          </Link>
-        </p>
+    <div className="min-h-screen bg-[#020617] text-white">
+      {/* Hero Section */}
+      <section 
+        className="relative py-20 px-6 text-center"
+        style={{
+          padding: '5rem 1.5rem',
+          textAlign: 'center',
+          position: 'relative',
+        }}
+      >
+        <div 
+          className="max-w-4xl mx-auto"
+          style={{
+            maxWidth: '56rem',
+            margin: '0 auto',
+          }}
+        >
+          <h1 
+            className="text-4xl md:text-6xl font-bold mb-6 text-white"
+            style={{
+              fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
+              fontWeight: 'bold',
+              marginBottom: '1.5rem',
+            }}
+          >
+            Human <span style={{ color: '#facc15' }}>Intelligence</span>
+          </h1>
+          <p 
+            className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-4 italic"
+            style={{
+              fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
+              color: '#cbd5e1',
+              lineHeight: '1.6',
+              marginBottom: '1rem',
+              fontStyle: 'italic',
+              fontWeight: '300',
+            }}
+          >
+            &quot;Technology amplifies judgment; it doesn&apos;t replace it.&quot;
+          </p>
+          <p 
+            className="text-lg md:text-xl text-slate-400 leading-relaxed"
+            style={{
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              color: '#94a3b8',
+              lineHeight: '1.75',
+              fontWeight: '300',
+            }}
+          >
+            People-first strategy, decision clarity, and leadership systems that compound over time. 
+            We design org structures, incentives, and decision protocols that let talent do its best work — measurably. 
+            At <strong>AHKStrategies</strong>, we build decision frameworks, leadership operating cadences, 
+            and org designs aligned to strategy, not politics.
+          </p>
+        </div>
       </section>
     </div>
   );

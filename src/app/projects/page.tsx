@@ -80,18 +80,31 @@ export default function ProjectsPage() {
               marginBottom: '1.5rem',
             }}
           >
-            Our <span style={{ color: '#facc15' }}>Project Divisions</span>
+            Projects & <span style={{ color: '#facc15' }}>Partnerships</span>
           </h1>
           <p 
-            className="text-lg md:text-xl text-slate-300 leading-relaxed"
+            className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-4 italic"
             style={{
-              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
               color: '#cbd5e1',
-              lineHeight: '1.75',
+              lineHeight: '1.6',
+              marginBottom: '1rem',
+              fontStyle: 'italic',
+              fontWeight: '300',
             }}
           >
-            AHKStrategies transforms vision into reality through specialized divisions that drive innovation, 
-            sustainability, and excellence across multiple industries.
+            &quot;Projects are the bridges between vision and reality — where thought takes physical form.&quot;
+          </p>
+          <p 
+            className="text-lg md:text-xl text-slate-400 leading-relaxed"
+            style={{
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              color: '#94a3b8',
+              lineHeight: '1.75',
+              fontWeight: '300',
+            }}
+          >
+            AHKStrategies transforms foresight into frameworks and partnerships into progress. Each project is a manifestation of collaboration, designed to bring sustainable innovation and measurable growth to life.
           </p>
         </div>
       </section>
@@ -109,7 +122,7 @@ export default function ProjectsPage() {
         }}
       >
         <div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
@@ -136,7 +149,8 @@ export default function ProjectsPage() {
               <Image
                 src={division.image}
                 alt={division.alt}
-                fill
+                width={400}
+                height={500}
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 style={{
                   objectFit: 'cover',
@@ -144,7 +158,7 @@ export default function ProjectsPage() {
                   height: '100%',
                   transition: 'transform 0.5s ease',
                 }}
-                loading="lazy"
+                priority
               />
               <div 
                 className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6"

@@ -7,7 +7,7 @@ const pillars = [
   { name: 'People', href: '/pillars/people', img: '/assets/ai_images/pillars/people.png' },
   { name: 'Innovation', href: '/pillars/innovation', img: '/assets/ai_images/pillars/innovation.png' },
   { name: 'Vision', href: '/pillars/vision', img: '/assets/ai_images/pillars/vision.png' },
-  { name: 'Projects', href: '/pillars/projects', img: '/assets/ai_images/pillars/projects.png' },
+  { name: 'Projects', href: '/projects', img: '/assets/ai_images/pillars/projects.png' },
   { name: 'Human Intelligence', href: '/pillars/human-intelligence', img: '/assets/ai_images/pillars/human-intelligence.png' },
 ];
 

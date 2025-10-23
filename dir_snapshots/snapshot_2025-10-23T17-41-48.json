@@ -1,0 +1,1018 @@
+{
+  "name": "ahkstrategies-website",
+  "children": [
+    {
+      "name": ".gitignore",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": ".husky",
+      "isDir": false,
+      "children": [
+        {
+          "name": "",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "_",
+          "isDir": false,
+          "children": [
+            {
+              "name": "",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": ".gitignore",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "applypatch-msg",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "commit-msg",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "h",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "husky.sh",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "post-applypatch",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "post-checkout",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "post-commit",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "post-merge",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "post-rewrite",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "pre-applypatch",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "pre-auto-gc",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "pre-commit",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "pre-merge-commit",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "pre-push",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "pre-rebase",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "prepare-commit-msg",
+              "isDir": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "post-commit",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "pre-commit",
+          "isDir": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "eslint.config.mjs",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "next-env.d.ts",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "next.config.ts",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "package-lock.json",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "package.json",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "postcss.config.mjs",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "public",
+      "isDir": false,
+      "children": [
+        {
+          "name": "",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "apple-touch-icon.png",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "assets",
+          "isDir": false,
+          "children": [
+            {
+              "name": "",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "ai_images",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "pillars",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "human-intelligence.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "human-intelligence.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "innovation.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "innovation.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "legacy.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "legacy.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "people.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "people.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "projects.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "projects.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "vision.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "vision.png",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ai_videos",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "hero-video.mp4",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "hero-video1.mp4",
+                  "isDir": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "assets_manifest.json",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "backgrounds",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "home2.mp4",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "human-intelligence.mp4",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "innovation.mp4",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "legacy.mp4",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "people.mp4",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "projects.mp4",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "vision.mp4",
+                  "isDir": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "icons",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "images",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "divisions",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "automotive.backup.jpg",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "automotive.jpg",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "digital.jpg",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "MENA region export business.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "MENA region export business.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "opening image.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "opening image.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "renewable.backup.jpg",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "renewable.jpg",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "research.jpg",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "trade.backup.jpg",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "trade.jpg",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "founder",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "ashraf kahoush photo.backup.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "ashraf kahoush photo.png",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "logo",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "ahk_hex_logo.png",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "download.jpeg",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "share-default.png",
+                  "isDir": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "videos",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "ahk-welcome.mp4",
+                  "isDir": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "favicon-16x16.png",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "favicon-32x32.png",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "favicon.ico",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "file.svg",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "globe.svg",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "next.svg",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "robots.txt",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "sitemap.xml",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "vercel.svg",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "window.svg",
+          "isDir": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "scripts",
+      "isDir": false,
+      "children": [
+        {
+          "name": "",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "create-favicons.js",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "create-share-image.js",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "cron.js",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "diff.js",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "optimize-images.js",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "snapshot.js",
+          "isDir": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "isDir": false,
+      "children": [
+        {
+          "name": "",
+          "isDir": false,
+          "children": []
+        },
+        {
+          "name": "app",
+          "isDir": false,
+          "children": [
+            {
+              "name": "",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "favicon.ico",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "globals.css",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "layout.tsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "page.tsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "pillars",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "human-intelligence",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "layout.tsx",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "page.tsx",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "innovation",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "layout.tsx",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "page.tsx",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "layout.tsx",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "legacy",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "layout.tsx",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "page.tsx",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "people",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "layout.tsx",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "page.tsx",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "projects",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "page.tsx",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "vision",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "layout.tsx",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "page.tsx",
+                      "isDir": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "projects",
+              "isDir": false,
+              "children": [
+                {
+                  "name": "",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "divisions",
+                  "isDir": false,
+                  "children": [
+                    {
+                      "name": "",
+                      "isDir": false,
+                      "children": []
+                    },
+                    {
+                      "name": "automotive",
+                      "isDir": false,
+                      "children": [
+                        {
+                          "name": "",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "layout.tsx",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "meta.ts",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "page.tsx",
+                          "isDir": false,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "digital",
+                      "isDir": false,
+                      "children": [
+                        {
+                          "name": "",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "layout.tsx",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "meta.ts",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "page.tsx",
+                          "isDir": false,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "mena-export",
+                      "isDir": false,
+                      "children": [
+                        {
+                          "name": "",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "layout.tsx",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "meta.ts",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "page.tsx",
+                          "isDir": false,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "renewable",
+                      "isDir": false,
+                      "children": [
+                        {
+                          "name": "",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "layout.tsx",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "meta.ts",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "page.tsx",
+                          "isDir": false,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "research",
+                      "isDir": false,
+                      "children": [
+                        {
+                          "name": "",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "layout.tsx",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "meta.ts",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "page.tsx",
+                          "isDir": false,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "trade",
+                      "isDir": false,
+                      "children": [
+                        {
+                          "name": "",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "layout.tsx",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "meta.ts",
+                          "isDir": false,
+                          "children": []
+                        },
+                        {
+                          "name": "page.tsx",
+                          "isDir": false,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "layout.tsx",
+                  "isDir": false,
+                  "children": []
+                },
+                {
+                  "name": "page.tsx",
+                  "isDir": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "components",
+          "isDir": false,
+          "children": [
+            {
+              "name": "",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "Footer.jsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "Header.tsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "HeroSection.jsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "NavBar.jsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "PageTransition.tsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "ParticleBG.jsx",
+              "isDir": false,
+              "children": []
+            },
+            {
+              "name": "PillarsGrid.jsx",
+              "isDir": false,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tailwind.config.js",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "tsconfig.json",
+      "isDir": false,
+      "children": []
+    },
+    {
+      "name": "verify-deployment.ps1",
+      "isDir": false,
+      "children": []
+    }
+  ]
+}

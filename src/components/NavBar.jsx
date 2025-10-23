@@ -10,6 +10,7 @@ const LINKS = [
   { href: '/pillars/vision', label: 'Vision' },
   { href: '/pillars/human-intelligence', label: 'Human Intelligence' },
   { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export default function NavBar() {

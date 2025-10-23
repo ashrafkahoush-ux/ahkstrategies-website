@@ -1,10 +1,30 @@
 'use client';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import IconDigital from '@/../public/assets/images/divisions/digital.jpg';
 
 export default function DigitalDivision() {
+  const router = useRouter();
+
   return (
-    <div className="min-h-screen bg-[#020617] text-white">
+    <div className="min-h-screen bg-[#020617] text-white relative">
+      {/* Back Button - Fixed at bottom left of page */}
+      <button
+        onClick={() => router.back()}
+        className="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
+        style={{
+          position: 'fixed',
+          bottom: '1.5rem',
+          left: '1.5rem',
+          zIndex: 50,
+          background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
+          boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
+        }}
+      >
+        <span style={{ fontSize: '1.25rem', color: 'white' }}>←</span>
+        <span className="text-sm font-bold text-white">Back</span>
+      </button>
+
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
@@ -21,6 +41,7 @@ export default function DigitalDivision() {
             background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4), #020617)',
           }}
         />
+
         <div 
           className="relative z-10 text-center px-6 max-w-4xl"
           style={{

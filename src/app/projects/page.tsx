@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import IconAutomotive from '@/../public/assets/images/divisions/automotive.jpg';
 import IconDigital from '@/../public/assets/images/divisions/digital.jpg';
 import IconMenaExport from '@/../public/assets/images/divisions/MENA region export business.png';
@@ -54,8 +55,27 @@ const divisions = [
 ];
 
 export default function ProjectsPage() {
+  const router = useRouter();
+
   return (
-    <div className="min-h-screen bg-[#020617] text-white">
+    <div className="min-h-screen bg-[#020617] text-white relative">
+      {/* Back Button - Fixed at bottom left of page */}
+      <button
+        onClick={() => router.back()}
+        className="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
+        style={{
+          position: 'fixed',
+          bottom: '1.5rem',
+          left: '1.5rem',
+          zIndex: 50,
+          background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
+          boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
+        }}
+      >
+        <span style={{ fontSize: '1.25rem', color: 'white' }}>←</span>
+        <span className="text-sm font-bold text-white">Back</span>
+      </button>
+
       {/* Hero Section */}
       <section 
         className="relative py-20 px-6 text-center"

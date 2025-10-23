@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import IconDigital from '@/../public/assets/images/divisions/digital.jpg';
 
 export default function DigitalDivision() {
   return (
@@ -7,8 +8,8 @@ export default function DigitalDivision() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/images/divisions/digital.jpg"
-          alt="Digital Division"
+          src={IconDigital}
+          alt="Digital Division - Pioneering digital transformation through innovative technology solutions"
           fill
           className="object-cover"
           style={{ objectFit: 'cover' }}

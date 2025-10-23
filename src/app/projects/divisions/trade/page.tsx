@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import IconTrade from '@/../public/assets/images/divisions/trade.jpg';
 
 export default function TradeDivision() {
   return (
@@ -7,8 +8,8 @@ export default function TradeDivision() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/images/divisions/trade.jpg"
-          alt="International Trade Division"
+          src={IconTrade}
+          alt="International Trade Division - Connecting global markets through strategic trade solutions"
           fill
           className="object-cover"
           style={{ objectFit: 'cover' }}

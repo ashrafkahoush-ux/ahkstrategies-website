@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import IconAutomotive from '@/../public/assets/images/divisions/automotive.jpg';
 
 export default function AutomotiveDivision() {
   return (
@@ -7,8 +8,8 @@ export default function AutomotiveDivision() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/images/divisions/automotive.jpg"
-          alt="Automotive Division"
+          src={IconAutomotive}
+          alt="Automotive Division - Leading innovation in automotive technology and sustainable transportation solutions"
           fill
           className="object-cover"
           style={{ objectFit: 'cover' }}

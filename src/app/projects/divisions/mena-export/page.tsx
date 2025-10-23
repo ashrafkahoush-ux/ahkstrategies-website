@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import IconMenaExport from '@/../public/assets/images/divisions/MENA region export business.png';
 
 export default function MENAExportDivision() {
   return (
@@ -7,8 +8,8 @@ export default function MENAExportDivision() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/images/divisions/MENA region export business.png"
-          alt="MENA Export Business Division"
+          src={IconMenaExport}
+          alt="MENA Export Business Division - Facilitating strategic trade partnerships across the MENA region"
           fill
           className="object-cover"
           style={{ objectFit: 'cover' }}

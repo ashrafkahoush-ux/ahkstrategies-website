@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import IconRenewable from '@/../public/assets/images/divisions/renewable.jpg';
 
 export default function RenewableDivision() {
   return (
@@ -7,8 +8,8 @@ export default function RenewableDivision() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/images/divisions/renewable.jpg"
-          alt="Renewable Energy Division"
+          src={IconRenewable}
+          alt="Renewable Energy Division - Driving sustainable energy through green technology"
           fill
           className="object-cover"
           style={{ objectFit: 'cover' }}

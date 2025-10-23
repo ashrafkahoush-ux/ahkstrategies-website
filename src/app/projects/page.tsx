@@ -1,43 +1,55 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import IconAutomotive from '@/../public/assets/images/divisions/automotive.jpg';
+import IconDigital from '@/../public/assets/images/divisions/digital.jpg';
+import IconMenaExport from '@/../public/assets/images/divisions/MENA region export business.png';
+import IconRenewable from '@/../public/assets/images/divisions/renewable.jpg';
+import IconResearch from '@/../public/assets/images/divisions/research.jpg';
+import IconTrade from '@/../public/assets/images/divisions/trade.jpg';
 
 const divisions = [
   {
     name: 'Automotive',
     slug: 'automotive',
     description: 'Leading innovation in automotive technology and sustainable transportation solutions.',
-    image: '/assets/images/divisions/automotive.jpg',
+    image: IconAutomotive,
+    alt: 'Automotive Division - Innovative automotive technology and sustainable transportation',
   },
   {
     name: 'Digital',
     slug: 'digital',
     description: 'Pioneering digital transformation through innovative technology solutions.',
-    image: '/assets/images/divisions/digital.jpg',
+    image: IconDigital,
+    alt: 'Digital Division - Digital transformation and innovative technology solutions',
   },
   {
     name: 'MENA Export Business',
     slug: 'mena-export',
     description: 'Facilitating strategic trade partnerships across the MENA region.',
-    image: '/assets/images/divisions/MENA region export business.png',
+    image: IconMenaExport,
+    alt: 'MENA Export Business Division - Strategic trade partnerships in MENA region',
   },
   {
     name: 'Renewable Energy',
     slug: 'renewable',
     description: 'Driving the future of sustainable energy through green technology.',
-    image: '/assets/images/divisions/renewable.jpg',
+    image: IconRenewable,
+    alt: 'Renewable Energy Division - Sustainable energy and green technology',
   },
   {
     name: 'Research & Development',
     slug: 'research',
     description: 'Pioneering breakthrough innovations through cutting-edge research.',
-    image: '/assets/images/divisions/research.jpg',
+    image: IconResearch,
+    alt: 'Research & Development Division - Breakthrough innovations and cutting-edge research',
   },
   {
     name: 'International Trade',
     slug: 'trade',
     description: 'Connecting global markets through strategic trade solutions.',
-    image: '/assets/images/divisions/trade.jpg',
+    image: IconTrade,
+    alt: 'International Trade Division - Global market connections and strategic trade',
   },
 ];
 
@@ -123,7 +135,7 @@ export default function ProjectsPage() {
             >
               <Image
                 src={division.image}
-                alt={division.name}
+                alt={division.alt}
                 fill
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 style={{

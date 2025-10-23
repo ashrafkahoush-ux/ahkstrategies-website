@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import IconResearch from '@/../public/assets/images/divisions/research.jpg';
 
 export default function ResearchDivision() {
   return (
@@ -7,8 +8,8 @@ export default function ResearchDivision() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/images/divisions/research.jpg"
-          alt="Research & Development Division"
+          src={IconResearch}
+          alt="Research & Development Division - Pioneering breakthrough innovations through cutting-edge research"
           fill
           className="object-cover"
           style={{ objectFit: 'cover' }}

@@ -11,11 +11,11 @@ export default function HumanIntelligencePage() {
       {/* Back Button - Fixed at bottom left of page */}
       <button
         onClick={() => router.back()}
-        className="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
         style={{
           position: 'fixed',
           bottom: '1.5rem',
-          left: '1.5rem',
+          right: '1.5rem',
           zIndex: 50,
           background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
           boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',

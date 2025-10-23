@@ -4,8 +4,20 @@ import NavBar from "../components/NavBar";
 import PageTransition from "../components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "AHKStrategies",
-  description: "Where Vision Meets Human Intelligence",
+  title: "AHKStrategies - Where Vision Meets Human Intelligence",
+  description: "AHKStrategies is a forward-thinking organization built on six foundational pillars: Legacy & Continuity, People & Culture, Innovation & Design Thinking, Vision & Foresight, Human Intelligence, and Strategic Projects.",
+  openGraph: {
+    title: "AHKStrategies - Where Vision Meets Human Intelligence",
+    description: "Building enduring systems through six strategic pillars of excellence",
+    images: ["/assets/images/share-default.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AHKStrategies - Where Vision Meets Human Intelligence",
+    description: "Building enduring systems through six strategic pillars of excellence",
+    images: ["/assets/images/share-default.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

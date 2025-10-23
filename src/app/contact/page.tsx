@@ -119,7 +119,7 @@ const Contact = () => {
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
+                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
                 placeholder="Your full name"
               />
             </div>
@@ -136,7 +136,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
+                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -152,7 +152,7 @@ const Contact = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
+                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
                 placeholder="+20 XXX XXX XXXX"
               />
             </div>
@@ -167,11 +167,11 @@ const Contact = () => {
                 name="inquiryType"
                 value={formData.inquiryType}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
+                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all"
               >
-                <option value="General Question" className="bg-[#020617] text-slate-200">General Question</option>
-                <option value="Business Opportunity" className="bg-[#020617] text-slate-200">Business Opportunity</option>
-                <option value="Partnership" className="bg-[#020617] text-slate-200">Partnership</option>
+                <option value="General Question" className="bg-[#020617] text-white">General Question</option>
+                <option value="Business Opportunity" className="bg-[#020617] text-white">Business Opportunity</option>
+                <option value="Partnership" className="bg-[#020617] text-white">Partnership</option>
               </select>
             </div>
 
@@ -187,7 +187,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all resize-none"
+                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all resize-none"
                 placeholder="Tell us about your inquiry..."
               />
             </div>
@@ -203,64 +203,80 @@ const Contact = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 mt-12 mb-8"></div>
+        <div className="border-t border-white/10 mt-16 mb-12"></div>
 
         {/* Founder Section */}
         <div className="text-center space-y-6 py-8">
-          <Image
-            src={founderPhoto}
-            alt="Ashraf Kahoush, Founder of AHKStrategies"
-            className="rounded-2xl shadow-2xl max-w-[240px] mx-auto opacity-90 border border-yellow-500/30 hover:scale-105 transition-transform duration-300 aspect-[3/4] object-cover"
-          />
+          {/* Founder Photo - Passport Size */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src={founderPhoto}
+              alt="Ashraf Kahoush, Founder of AHKStrategies"
+              width={200}
+              height={250}
+              className="rounded-2xl shadow-2xl border border-yellow-500/30 hover:scale-105 transition-transform duration-300 object-cover"
+              style={{ width: '200px', height: '250px', objectFit: 'cover' }}
+            />
+          </div>
           
-          <div className="space-y-4 px-6">
-            <h3 className="text-2xl font-semibold text-yellow-400 tracking-wide">Ashraf Kahoush</h3>
-            <p className="text-slate-300 font-medium">Founder & Strategic Visionary, AHKStrategies</p>
-            <p className="text-slate-300 leading-relaxed max-w-xl mx-auto">
+          {/* Founder Info - Unified Typography */}
+          <div className="space-y-4 px-6 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-yellow-400 tracking-wide">Ashraf Kahoush</h2>
+            
+            <p className="text-lg text-slate-300 font-medium">
+              Founder & Strategic Visionary, AHKStrategies
+            </p>
+            
+            <p className="text-base text-slate-300 leading-relaxed">
               A forward-thinking leader with over two decades of experience across the automotive, mobility, and energy sectors in the MENA region. 
               Renowned for transforming visions into scalable realities, Ashraf blends strategic foresight with human insight to drive growth and innovation.
             </p>
             
-            <div className="flex flex-col items-center gap-3 pt-4">
+            <div className="pt-4">
               <a 
                 href="mailto:ashraf@ahkstrategies.net"
-                className="flex items-center gap-3 text-slate-200 text-sm hover:text-yellow-400 transition-all"
+                className="inline-flex items-center gap-2 text-base text-slate-300 hover:text-yellow-400 transition-all"
               >
                 <Mail className="w-5 h-5 text-yellow-400" />
                 <span>ashraf@ahkstrategies.net</span>
               </a>
-              <div className="flex items-center gap-3 text-slate-200 text-sm">
-                <MapPin className="w-5 h-5 text-yellow-400" />
-                <span>Cairo, Egypt</span>
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Company Contact Section */}
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg p-8 mt-8">
-          <h3 className="text-2xl font-semibold text-yellow-400 mb-6 text-center">Company Contact</h3>
+        {/* Divider before footer */}
+        <div className="border-t border-white/10 mt-16 mb-8"></div>
+
+        {/* Company Contact Footer - Horizontal Layout */}
+        <div className="py-8">
+          <h3 className="text-2xl font-semibold text-yellow-400 mb-8 text-center">Company Contact</h3>
           
-          <div className="space-y-4">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             <a 
               href="mailto:info@ahkstrategies.net"
-              className="flex items-center gap-3 text-slate-200 text-sm hover:text-yellow-400 transition-all"
+              className="flex items-center gap-3 text-slate-300 hover:text-yellow-400 transition-all group"
             >
-              <Mail className="w-5 h-5 text-yellow-400" />
-              <span>info@ahkstrategies.net</span>
+              <div className="p-2 bg-yellow-400/10 rounded-lg group-hover:bg-yellow-400/20 transition-all">
+                <Mail className="w-5 h-5 text-yellow-400" />
+              </div>
+              <span className="text-sm font-medium">info@ahkstrategies.net</span>
             </a>
             
             <a 
               href="tel:+201040787571"
-              className="flex items-center gap-3 text-slate-200 text-sm hover:text-yellow-400 transition-all"
+              className="flex items-center gap-3 text-slate-300 hover:text-yellow-400 transition-all group"
             >
-              <Phone className="w-5 h-5 text-yellow-400" />
-              <span>+20 104 078 7571</span>
+              <div className="p-2 bg-yellow-400/10 rounded-lg group-hover:bg-yellow-400/20 transition-all">
+                <Phone className="w-5 h-5 text-yellow-400" />
+              </div>
+              <span className="text-sm font-medium">+20 104 078 7571</span>
             </a>
             
-            <div className="flex items-center gap-3 text-slate-200 text-sm">
-              <MapPin className="w-5 h-5 text-yellow-400" />
-              <span>Cairo – Egypt</span>
+            <div className="flex items-center gap-3 text-slate-300">
+              <div className="p-2 bg-yellow-400/10 rounded-lg">
+                <MapPin className="w-5 h-5 text-yellow-400" />
+              </div>
+              <span className="text-sm font-medium">Cairo, Egypt</span>
             </div>
           </div>
         </div>

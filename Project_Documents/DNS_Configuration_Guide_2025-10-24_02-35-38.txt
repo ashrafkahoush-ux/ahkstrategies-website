@@ -1,0 +1,129 @@
+=================================================================
+DNS CONFIGURATION GUIDE FOR AHKSTRATEGIES.COM
+=================================================================
+Generated: 2025-10-24 02:35:38
+
+DOMAIN STATUS:
+✅ Domain added to Vercel: ahkstrategies.com
+✅ Subdomain added: www.ahkstrategies.com
+⚠️  DNS Configuration: REQUIRED
+
+CURRENT NAMESERVERS (Google Domains):
+- ns-cloud-d1.googledomains.com
+- ns-cloud-d2.googledomains.com
+- ns-cloud-d3.googledomains.com
+- ns-cloud-d4.googledomains.com
+
+=================================================================
+DNS CONFIGURATION OPTIONS
+=================================================================
+
+OPTION A: ADD DNS RECORDS (RECOMMENDED - EASIER)
+------------------------------------------------
+Login to your Google Domains account and add these DNS records:
+
+1. A Record for Root Domain:
+   Type:  A
+   Name:  @  (or leave blank for root domain)
+   Value: 76.76.21.21
+   TTL:   3600 (or Auto)
+
+2. A Record for WWW Subdomain:
+   Type:  A
+   Name:  www
+   Value: 76.76.21.21
+   TTL:   3600 (or Auto)
+
+ALTERNATIVE (CNAME for www):
+   Type:  CNAME
+   Name:  www
+   Value: cname.vercel-dns.com
+   TTL:   3600
+
+=================================================================
+
+OPTION B: CHANGE NAMESERVERS (ADVANCED)
+------------------------------------------------
+Change your domain nameservers to Vercel's:
+
+Remove Google Domains nameservers and replace with:
+- ns1.vercel-dns.com
+- ns2.vercel-dns.com
+
+Note: This gives Vercel full DNS control. Use Option A unless you
+      want Vercel to manage all DNS records.
+
+=================================================================
+STEP-BY-STEP INSTRUCTIONS (GOOGLE DOMAINS)
+=================================================================
+
+1. Go to: https://domains.google.com
+2. Click on "ahkstrategies.com"
+3. Click "DNS" in the left sidebar
+4. Scroll to "Custom resource records"
+5. Add the A records as specified above
+6. Click "Add" for each record
+7. Save changes
+
+=================================================================
+VERIFICATION STEPS
+=================================================================
+
+After configuring DNS (wait 5-60 minutes for propagation):
+
+1. Check DNS propagation:
+   nslookup ahkstrategies.com
+   nslookup www.ahkstrategies.com
+
+2. Test HTTP response:
+   curl -I https://ahkstrategies.com
+   curl -I https://www.ahkstrategies.com
+
+3. Check in browser:
+   https://ahkstrategies.com
+   https://www.ahkstrategies.com
+
+4. Verify SSL certificate:
+   - Browser should show padlock icon
+   - Certificate should be issued by Vercel
+   - No security warnings
+
+=================================================================
+EXPECTED TIMELINE
+=================================================================
+
+- DNS Propagation: 5 minutes - 48 hours (usually < 1 hour)
+- SSL Certificate: Automatic after DNS verification (2-5 minutes)
+- Email Notification: You'll receive email from Vercel when verified
+
+=================================================================
+TROUBLESHOOTING
+=================================================================
+
+If domain doesn't work after 24 hours:
+
+1. Verify DNS records at: https://dnschecker.org
+2. Check Vercel dashboard for verification status
+3. Run: vercel domains inspect ahkstrategies.com
+4. Contact Vercel support if issues persist
+
+=================================================================
+IMPORTANT NOTES
+=================================================================
+
+✓ SSL certificate will be automatically provisioned by Vercel
+✓ Both http and https will redirect to https automatically
+✓ www and non-www versions will both work
+✓ You'll receive an email when verification is complete
+✓ Changes may take up to 48 hours to fully propagate globally
+
+=================================================================
+CURRENT STATUS
+=================================================================
+
+✅ Vercel Configuration: COMPLETE
+⏳ DNS Configuration: PENDING (requires your action)
+⏳ SSL Certificate: PENDING (automatic after DNS verification)
+
+Next Action: Configure DNS records at Google Domains
+=================================================================

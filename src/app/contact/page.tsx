@@ -1,38 +1,35 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 import founderPhoto from '../../../public/assets/images/founder/ashraf kahoush photo.png';
 
 const Contact = () => {
   const router = useRouter();
+  const { isArabic } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Form state
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
-    phone: '',
-    message: '',
+    message: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    
-    // Show toast notification (simple alert for now)
-    alert('Thank you for reaching out to AHKStrategies. We\'ll get back to you soon.');
-    
-    // Reset form
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
+    // Add form submission logic here
   };
 
   return (
@@ -44,76 +41,31 @@ const Contact = () => {
         style={{
           position: 'fixed',
           bottom: '1.5rem',
-          right: '1.5rem',
+          right: mounted && isArabic ? 'auto' : '1.5rem',
+          left: mounted && isArabic ? '1.5rem' : 'auto',
           zIndex: 50,
           background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
           boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
         }}
       >
-        <span style={{ fontSize: '1.25rem', color: 'white' }}>←</span>
-        <span className="text-sm font-bold text-white">Back</span>
+        <span style={{ fontSize: '1.25rem', color: 'white' }}>{mounted && isArabic ? '→' : '←'}</span>
+        <span className="text-sm font-bold text-white">{mounted && isArabic ? 'رجوع' : 'Back'}</span>
       </button>
 
       {/* Header Section */}
-      <section className="text-center py-12 px-6">
-        <h1 className="text-5xl md:text-6xl font-semibold text-white tracking-tight" style={{ textShadow: '0 0 10px rgba(255, 215, 0, 0.4)' }}>
-          Let&apos;s Create the <span className="text-amber-400">Future Together</span>
+      <section className="text-center py-20 px-6">
+        <h1 
+          className="text-5xl md:text-6xl font-bold tracking-tight" 
+          style={{ 
+            color: '#facc15',
+            fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
+            fontWeight: 'bold',
+            textShadow: '0 4px 12px rgba(250, 204, 21, 0.4)' 
+          }}
+        >
+          {mounted && isArabic ? 'لنصنع المستقبل معاً' : "Let's Create the Future Together"}
         </h1>
       </section>
-
-      {/* Contact Form Section - Glassmorphism */}
-      <section className="relative max-w-2xl mx-auto p-10 rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl mt-10 mb-20">
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            placeholder="Full Name"
-            required
-            className="w-full bg-transparent border border-amber-400/40 text-white placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition-all"
-          />
-          
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email Address"
-            required
-            className="w-full bg-transparent border border-amber-400/40 text-white placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition-all"
-          />
-          
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Phone Number"
-            className="w-full bg-transparent border border-amber-400/40 text-white placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition-all"
-          />
-          
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={4}
-            placeholder="Message"
-            required
-            className="w-full bg-transparent border border-amber-400/40 text-white placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none resize-none transition-all"
-          />
-          
-          <button
-            type="submit"
-            className="w-full py-3 bg-gradient-to-r from-amber-400 to-yellow-600 text-black font-semibold rounded-xl hover:from-yellow-300 hover:to-amber-400 transition-all duration-300 shadow-lg hover:shadow-amber-400/50"
-          >
-            Send Message
-          </button>
-        </form>
-      </section>
-
-      {/* Divider */}
-      <div className="border-t border-white/10 mt-20 mb-12 max-w-4xl mx-auto"></div>
 
       {/* Founder Section */}
       <section className="max-w-4xl mx-auto px-6 pb-20">
@@ -132,25 +84,161 @@ const Contact = () => {
 
           {/* Founder Bio */}
           <h3 className="text-2xl font-semibold text-amber-400 text-center mt-6">
-            Ashraf Kahoush
+            {mounted && isArabic ? 'أشرف قاحوش' : 'Ashraf Kahoush'}
           </h3>
           
           <p className="text-center text-slate-300 mt-2">
-            Founder & Strategic Visionary — AHKStrategies
+            {mounted && isArabic 
+              ? 'المؤسس وصاحب الرؤية الاستراتيجية — AHKStrategies'
+              : 'Founder & Strategic Visionary — AHKStrategies'
+            }
           </p>
           
-          <p className="text-center text-slate-400 mt-4 max-w-3xl mx-auto leading-relaxed">
-            A forward-thinking leader with over two decades of experience across the automotive, mobility, and energy sectors in the MENA region. 
-            Renowned for transforming visions into scalable realities, Ashraf blends strategic foresight with human insight to drive growth and innovation.
-          </p>
-          
-          <p className="text-center text-slate-300 mt-3">
-            ✉️ <a href="mailto:ashraf@ahkstrategies.net" className="text-amber-400 hover:text-yellow-300 transition-colors">ashraf@ahkstrategies.net</a>
+          <p 
+            className="text-center mt-4 max-w-3xl mx-auto leading-relaxed"
+            style={{ 
+              fontSize: '1.125rem',
+              lineHeight: '1.75',
+              color: '#cbd5e1'
+            }}
+          >
+            {mounted && isArabic
+              ? 'قائد ذو تفكير استشرافي مع أكثر من عقدين من الخبرة في قطاعات السيارات والطاقة والاستثمار ,في منطقة الشرق الأوسط وشمال إفريقيا. معروف بتحويل الرؤى إلى حقائق قابلة للتطوير، يمزج أشرف بين البصيرة الاستراتيجية والرؤية البشرية لدفع النمو والابتكار.'
+              : 'A forward-thinking leader with over two decades of experience across the automotive, mobility, and energy sectors in the MENA region. Renowned for transforming visions into scalable realities, Ashraf blends strategic foresight with human insight to drive growth and innovation.'
+            }
           </p>
         </div>
+      </section>
 
-        {/* Company Contact Section */}
-        <div className="flex justify-center flex-wrap gap-6 mt-8 text-slate-300 text-sm">
+      {/* Contact Us Form Section - Centered Compact Card with 3D Frame */}
+      <section className="flex justify-center px-6 pb-16">
+        <div 
+          className="overflow-hidden relative"
+          style={{
+            maxWidth: '700px',
+            width: '100%',
+            padding: '8px',
+            background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%)',
+            borderRadius: '24px',
+            boxShadow: `
+              inset 4px 4px 12px rgba(0, 0, 0, 0.5),
+              inset -4px -4px 12px rgba(51, 65, 85, 0.3),
+              0 8px 32px rgba(0, 0, 0, 0.4)
+            `
+          }}
+        >
+          <div 
+            className="rounded-2xl shadow-2xl overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%)',
+              width: '100%',
+              border: '1px solid rgba(71, 85, 105, 0.2)'
+            }}
+          >
+          {/* Contact Us Title */}
+          <div className="text-center pt-10 pb-8 px-6">
+            <h2 
+              className="font-bold"
+              style={{
+                color: '#facc15',
+                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                fontWeight: 'bold',
+                letterSpacing: '0.05em',
+                textShadow: '0 2px 8px rgba(250, 204, 21, 0.3)'
+              }}
+            >
+              {mounted && isArabic ? 'اتصل بنا' : 'Contact Us'}
+            </h2>
+          </div>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="px-8 md:px-12 pb-10 space-y-5">
+            {/* Name */}
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder={mounted && isArabic ? 'الاسم' : 'Name'}
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-6 py-4 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300"
+                style={{
+                  background: 'rgba(30, 41, 59, 0.8)',
+                  border: '1px solid rgba(71, 85, 105, 0.4)',
+                  fontFamily: 'inherit',
+                  fontSize: '1rem',
+                  lineHeight: '1.5',
+                  textAlign: mounted && isArabic ? 'right' : 'left'
+                }}
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder={mounted && isArabic ? 'البريد الإلكتروني' : 'Email'}
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-6 py-4 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300"
+                style={{
+                  background: 'rgba(30, 41, 59, 0.8)',
+                  border: '1px solid rgba(71, 85, 105, 0.4)',
+                  fontFamily: 'inherit',
+                  fontSize: '1rem',
+                  lineHeight: '1.5',
+                  textAlign: mounted && isArabic ? 'right' : 'left'
+                }}
+              />
+            </div>
+
+            {/* Message */}
+            <div>
+              <textarea
+                name="message"
+                placeholder={mounted && isArabic ? 'الرسالة' : 'Message'}
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="w-full px-6 py-4 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300 resize-none"
+                style={{
+                  background: 'rgba(30, 41, 59, 0.8)',
+                  border: '1px solid rgba(71, 85, 105, 0.4)',
+                  fontFamily: 'inherit',
+                  fontSize: '1rem',
+                  lineHeight: '1.5',
+                  textAlign: mounted && isArabic ? 'right' : 'left'
+                }}
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="flex justify-center pt-3">
+              <button
+                type="submit"
+                className="w-full py-4 font-bold text-white text-lg rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                style={{
+                  background: 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)',
+                  boxShadow: '0 8px 24px rgba(168, 85, 247, 0.4)',
+                  fontFamily: 'inherit',
+                  letterSpacing: '0.025em'
+                }}
+              >
+                {mounted && isArabic ? 'إرسال الرسالة' : 'Send Message'}
+              </button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </section>
+
+      {/* Company Contact Section - Bottom of Page */}
+      <section className="flex justify-center px-6 pb-16 pt-12">
+        <div className="flex justify-center flex-wrap gap-6 text-slate-300 text-sm">
           <a href="mailto:info@ahkstrategies.net" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
             <Mail className="text-amber-400" size={18}/>
             info@ahkstrategies.net

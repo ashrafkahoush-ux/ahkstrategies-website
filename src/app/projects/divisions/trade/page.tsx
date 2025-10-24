@@ -53,23 +53,26 @@ export default function TradeDivision() {
           }}
         >
           <h1 
-            className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg"
+            className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg"
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
               fontWeight: 'bold',
               marginBottom: '1rem',
+              color: '#facc15',
               textShadow: '0 4px 12px rgba(0,0,0,0.8)',
             }}
           >
             International Trade Division
           </h1>
           <p 
-            className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto"
+            className="text-lg md:text-xl max-w-2xl mx-auto font-bold"
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: '#e2e8f0',
+              color: '#FFFFFF',
+              fontWeight: '700',
               maxWidth: '42rem',
               margin: '0 auto',
+              textShadow: '0 2px 8px rgba(0,0,0,0.9)',
             }}
           >
             Connecting global markets through strategic trade solutions and comprehensive international commerce services.
@@ -98,12 +101,62 @@ export default function TradeDivision() {
           <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1rem', color: '#fde047' }}>
             Key Focus Areas
           </h3>
-          <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', color: '#cbd5e1', lineHeight: '1.75' }}>
-            <li>Import & Export Management</li>
-            <li>Trade Finance Solutions</li>
-            <li>Customs & Regulatory Compliance</li>
-            <li>Global Supply Chain Optimization</li>
-            <li>Market Access & Entry Strategies</li>
+          <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', lineHeight: '1.75', marginBottom: '2rem' }}>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a 
+                href="/opportunities" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities'); }}
+                style={{ color: '#cbd5e1', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#facc15'; e.currentTarget.style.textDecoration = 'underline'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#cbd5e1'; e.currentTarget.style.textDecoration = 'none'; }}
+              >
+                Import & Export Management
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a 
+                href="/opportunities" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities'); }}
+                style={{ color: '#cbd5e1', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#facc15'; e.currentTarget.style.textDecoration = 'underline'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#cbd5e1'; e.currentTarget.style.textDecoration = 'none'; }}
+              >
+                Trade Finance Solutions
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a 
+                href="/opportunities" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities'); }}
+                style={{ color: '#cbd5e1', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#facc15'; e.currentTarget.style.textDecoration = 'underline'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#cbd5e1'; e.currentTarget.style.textDecoration = 'none'; }}
+              >
+                Customs & Regulatory Compliance
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a 
+                href="/opportunities" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities'); }}
+                style={{ color: '#cbd5e1', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#facc15'; e.currentTarget.style.textDecoration = 'underline'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#cbd5e1'; e.currentTarget.style.textDecoration = 'none'; }}
+              >
+                Global Supply Chain Optimization
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a 
+                href="/opportunities" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities'); }}
+                style={{ color: '#cbd5e1', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#facc15'; e.currentTarget.style.textDecoration = 'underline'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#cbd5e1'; e.currentTarget.style.textDecoration = 'none'; }}
+              >
+                Market Access & Entry Strategies
+              </a>
+            </li>
           </ul>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1rem', color: '#fde047' }}>

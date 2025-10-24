@@ -1,0 +1,172 @@
+=================================================================
+CPANEL DNS CONFIGURATION GUIDE FOR AHKSTRATEGIES.NET
+=================================================================
+Generated: 2025-10-24 03:03:31
+
+OBJECTIVE: Point ahkstrategies.net to Vercel hosting
+
+=================================================================
+STEP-BY-STEP INSTRUCTIONS
+=================================================================
+
+1. LOGIN TO CPANEL
+   - Go to your hosting provider's cPanel login
+   - URL format: https://yourdomain.com:2083
+   - Enter your cPanel username and password
+
+2. ACCESS ZONE EDITOR
+   - In cPanel, search for "Zone Editor"
+   - Click on "Zone Editor" icon
+   - Find "ahkstrategies.net" in the domain list
+   - Click "Manage" next to ahkstrategies.net
+
+3. CLEAN UP EXISTING A RECORDS FOR ROOT DOMAIN
+   - Look for A records with Name: "ahkstrategies.net" or "@"
+   - **DELETE** all A records pointing to: 198.54.116.32
+   - Delete any duplicate A records for the root domain
+   - Keep only MX, TXT, and SRV records (for email)
+
+4. ADD NEW A RECORD FOR ROOT DOMAIN
+   Click "Add Record" or "+ A Record"
+   
+   Name/Host: @
+   (or leave blank, or enter "ahkstrategies.net")
+   
+   Address/Value: 76.76.21.21
+   
+   TTL: 3600
+   (or select "Automatic" if available)
+   
+   Click "Add Record" or "Save"
+
+5. CLEAN UP WWW SUBDOMAIN
+   - Look for records with Name: "www" or "www.ahkstrategies.net"
+   - **DELETE** any existing A record for www
+   - We'll replace it with a CNAME record
+
+6. ADD CNAME RECORD FOR WWW SUBDOMAIN
+   Click "Add Record" or "+ CNAME Record"
+   
+   Name/Host: www
+   
+   Value/Points to: cname.vercel-dns.com
+   
+   TTL: 3600
+   
+   Click "Add Record" or "Save"
+
+=================================================================
+IMPORTANT - DO NOT MODIFY THESE RECORDS:
+=================================================================
+✓ MX Records (mail exchange - for email)
+✓ TXT Records (SPF, DKIM, domain verification)
+✓ SRV Records (service records)
+✓ NS Records (nameserver records)
+
+Only modify A and CNAME records as instructed above.
+
+=================================================================
+FINAL DNS RECORDS SHOULD LOOK LIKE THIS:
+=================================================================
+
+Record Type | Name/Host          | Value/Points To         | TTL
+------------|-------------------|-------------------------|------
+A           | @                 | 76.76.21.21             | 3600
+CNAME       | www               | cname.vercel-dns.com    | 3600
+MX          | @                 | (existing mail server)  | (existing)
+TXT         | @                 | (existing SPF/DKIM)     | (existing)
+
+=================================================================
+VERIFICATION STEPS (After Making Changes)
+=================================================================
+
+Wait 5-10 minutes for initial propagation, then test:
+
+1. Open PowerShell or Command Prompt
+
+2. Check root domain:
+   nslookup ahkstrategies.net
+   
+   Expected result:
+   Address: 76.76.21.21
+
+3. Check www subdomain:
+   nslookup www.ahkstrategies.net
+   
+   Expected result:
+   www.ahkstrategies.net canonical name = cname.vercel-dns.com
+   Address: 76.76.21.21
+
+4. Test in browser:
+   https://ahkstrategies.net
+   https://www.ahkstrategies.net
+   
+   Both should show your Vercel-hosted website
+
+5. Check DNS propagation globally:
+   https://dnschecker.org
+   Enter: ahkstrategies.net
+
+=================================================================
+TROUBLESHOOTING
+=================================================================
+
+If DNS doesn't resolve after 1 hour:
+
+1. Verify A record is exactly: 76.76.21.21 (no extra spaces)
+2. Verify CNAME is exactly: cname.vercel-dns.com (include the dot)
+3. Check TTL is not too high (3600 seconds = 1 hour)
+4. Clear your DNS cache:
+   - Windows: ipconfig /flushdns
+   - Mac/Linux: sudo dscacheutil -flushcache
+5. Try a different DNS server: 8.8.8.8 (Google DNS)
+
+=================================================================
+COMMON CPANEL VARIATIONS
+=================================================================
+
+Different cPanel versions may show:
+- "Zone Editor" or "DNS Zone Editor" or "Advanced DNS Zone Editor"
+- "Add Record" or "Add A Record" or "+ A"
+- "Name" or "Host" or "Domain"
+- "Value" or "Points to" or "Address"
+
+The principle remains the same - you're adding:
+- A record: @ → 76.76.21.21
+- CNAME record: www → cname.vercel-dns.com
+
+=================================================================
+EXPECTED TIMELINE
+=================================================================
+
+⏱️  DNS Update Time: 5-10 minutes (local ISP)
+⏱️  Global Propagation: 1-48 hours (usually < 4 hours)
+⏱️  SSL Certificate: Automatic (2-5 mins after DNS verified)
+
+=================================================================
+VERIFICATION CHECKLIST
+=================================================================
+
+After DNS configuration:
+[ ] A record for @ points to 76.76.21.21
+[ ] CNAME for www points to cname.vercel-dns.com
+[ ] nslookup ahkstrategies.net returns 76.76.21.21
+[ ] nslookup www.ahkstrategies.net returns 76.76.21.21
+[ ] https://ahkstrategies.net loads in browser
+[ ] https://www.ahkstrategies.net loads in browser
+[ ] SSL certificate shows as valid (green padlock)
+[ ] Received email from Vercel confirming domain verification
+
+=================================================================
+SUPPORT
+=================================================================
+
+If you need help:
+1. Contact your hosting provider's support
+2. Send them this guide
+3. Ask them to point ahkstrategies.net to Vercel (76.76.21.21)
+
+Alternative: Vercel Support
+https://vercel.com/support
+
+=================================================================

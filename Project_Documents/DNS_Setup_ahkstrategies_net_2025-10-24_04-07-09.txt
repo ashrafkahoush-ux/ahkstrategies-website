@@ -1,0 +1,214 @@
+═══════════════════════════════════════════════════════════════
+DNS CONFIGURATION GUIDE FOR AHKSTRATEGIES.NET
+═══════════════════════════════════════════════════════════════
+Generated: 2025-10-24 04:07:09
+
+CURRENT STATUS:
+✅ Domain added to Vercel: ahkstrategies.net
+✅ Subdomain added: www.ahkstrategies.net
+⚠️  DNS Configuration: REQUIRED at Namecheap/cPanel
+
+CURRENT NAMESERVERS:
+- dns1.namecheaphosting.com
+- dns2.namecheaphosting.com
+
+═══════════════════════════════════════════════════════════════
+OPTION 1: UPDATE DNS RECORDS (RECOMMENDED - KEEPS CURRENT HOST)
+═══════════════════════════════════════════════════════════════
+
+This keeps your hosting and email intact while pointing the website to Vercel.
+
+LOGIN TO CPANEL:
+1. Go to your cPanel URL (usually: yourdomain.com:2083 or host.com/cpanel)
+2. Login with your cPanel credentials
+3. Find "Zone Editor" (under Domains section)
+4. Select "ahkstrategies.net"
+
+═══════════════════════════════════════════════════════════════
+STEP 1: UPDATE ROOT DOMAIN (ahkstrategies.net)
+═══════════════════════════════════════════════════════════════
+
+A. Find existing A record for '@' or 'ahkstrategies.net'
+   - Current value is likely: 198.54.116.32
+   - Click "Edit" or "Manage"
+
+B. Update the A record:
+   Type:  A
+   Name:  @ (or leave blank for root)
+   Value: 76.76.21.21
+   TTL:   3600 (or 14400)
+
+C. If multiple A records exist for root domain:
+   - DELETE all duplicates
+   - Keep only ONE A record pointing to 76.76.21.21
+
+═══════════════════════════════════════════════════════════════
+STEP 2: UPDATE WWW SUBDOMAIN
+═══════════════════════════════════════════════════════════════
+
+A. Find any existing records for 'www'
+   - Delete any A record for www
+
+B. Create CNAME record for www:
+   Type:  CNAME
+   Name:  www
+   Value: cname.vercel-dns.com
+   TTL:   3600 (or 14400)
+
+═══════════════════════════════════════════════════════════════
+STEP 3: VERIFY OTHER RECORDS (DO NOT MODIFY)
+═══════════════════════════════════════════════════════════════
+
+✓ Keep all MX records (for email)
+✓ Keep all TXT records (SPF, DKIM, DMARC, verification)
+✓ Keep all SRV records
+✓ Keep any subdomain records (mail, ftp, etc.)
+
+ONLY modify:
+- @ (root domain) A record
+- www CNAME record
+
+═══════════════════════════════════════════════════════════════
+FINAL DNS CONFIGURATION SHOULD LOOK LIKE:
+═══════════════════════════════════════════════════════════════
+
+Record Type    Name/Host    Points To / Value           TTL
+-----------    ----------   -----------------------     ------
+A              @            76.76.21.21                 3600
+CNAME          www          cname.vercel-dns.com        3600
+MX             @            (your mail server)          (keep existing)
+TXT            @            (SPF, DKIM records)         (keep existing)
+
+═══════════════════════════════════════════════════════════════
+ALTERNATIVE OPTION 2: CHANGE NAMESERVERS (ADVANCED)
+═══════════════════════════════════════════════════════════════
+
+If you want Vercel to manage ALL DNS:
+
+1. Login to Namecheap account
+2. Go to Domain List → ahkstrategies.net → Manage
+3. Find "Nameservers" section
+4. Select "Custom DNS"
+5. Replace current nameservers with:
+   - ns1.vercel-dns.com
+   - ns2.vercel-dns.com
+
+⚠️  WARNING: This moves ALL DNS to Vercel. You'll need to:
+   - Recreate MX records in Vercel for email
+   - Recreate any other DNS records
+   - Manage everything through Vercel dashboard
+
+RECOMMENDED: Use Option 1 (DNS records) instead
+
+═══════════════════════════════════════════════════════════════
+VERIFICATION STEPS (After DNS Changes)
+═══════════════════════════════════════════════════════════════
+
+Wait 5-30 minutes, then run these commands:
+
+1. Check root domain:
+   nslookup ahkstrategies.net
+
+   Expected: Should show 76.76.21.21
+
+2. Check www subdomain:
+   nslookup www.ahkstrategies.net
+
+   Expected: Should show CNAME to cname.vercel-dns.com
+             and ultimately resolve to 76.76.21.21
+
+3. Test HTTP response:
+   curl -I https://ahkstrategies.net
+   curl -I https://www.ahkstrategies.net
+
+   Expected: HTTP 200 OK
+
+4. Check in browser:
+   https://ahkstrategies.net
+   https://www.ahkstrategies.net
+
+   Expected: Should load your AHKStrategies website
+
+═══════════════════════════════════════════════════════════════
+PROPAGATION TIMELINE
+═══════════════════════════════════════════════════════════════
+
+⏱️  DNS Propagation: 5 minutes - 48 hours
+   - Most changes: 15-60 minutes
+   - Full global propagation: Up to 48 hours
+   - Check status: https://dnschecker.org
+
+⏱️  SSL Certificate: Automatic (2-5 minutes after DNS verification)
+   - Vercel auto-provisions SSL
+   - No action needed
+
+📧 Vercel will email you when verification is complete
+
+═══════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+If domain doesn't work after 24 hours:
+
+1. Verify DNS records at: https://dnschecker.org
+   - Enter: ahkstrategies.net
+   - Check A record shows: 76.76.21.21
+
+2. Check Vercel domain status:
+   vercel domains inspect ahkstrategies.net
+
+3. Look for common issues:
+   ☐ Multiple A records for root domain (keep only one)
+   ☐ Wrong IP address (must be 76.76.21.21)
+   ☐ TTL too high (use 3600 or 14400)
+   ☐ DNS cache (try different network/device)
+
+4. Clear DNS cache on your computer:
+   Windows: ipconfig /flushdns
+   Mac: sudo dscacheutil -flushcache
+
+5. Contact Vercel support if issues persist
+
+═══════════════════════════════════════════════════════════════
+SUMMARY - ACTION REQUIRED
+═══════════════════════════════════════════════════════════════
+
+✅ COMPLETED:
+   - Domain added to Vercel
+   - Subdomain added to Vercel
+   - Vercel project configured
+
+⏳ YOUR ACTION:
+   1. Login to cPanel
+   2. Open Zone Editor
+   3. Update A record: @ → 76.76.21.21
+   4. Update CNAME: www → cname.vercel-dns.com
+   5. Save changes
+   6. Wait 15-60 minutes for propagation
+
+AFTER DNS CONFIGURATION:
+   - Your site will be live at https://ahkstrategies.net
+   - SSL will auto-provision
+   - Both www and non-www will work
+   - You'll receive verification email
+
+═══════════════════════════════════════════════════════════════
+CURRENT LIVE URLS
+═══════════════════════════════════════════════════════════════
+
+🌐 Working Now (Vercel subdomain):
+   https://ahkstrategies-website.vercel.app
+
+🌐 Pending DNS (Custom domains):
+   https://ahkstrategies.com (ready, needs DNS)
+   https://www.ahkstrategies.com (ready, needs DNS)
+   https://ahkstrategies.net (ready, needs DNS)
+   https://www.ahkstrategies.net (ready, needs DNS)
+
+═══════════════════════════════════════════════════════════════
+
+For questions or issues, contact:
+- Vercel Support: https://vercel.com/support
+- Your hosting provider: Namecheap support
+
+═══════════════════════════════════════════════════════════════

@@ -1,7 +1,5 @@
 'use client';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import IconAutomotive from '@/../public/assets/images/divisions/automotive.jpg';
 
 export default function AutomotiveDivision() {
   const router = useRouter();
@@ -25,16 +23,18 @@ export default function AutomotiveDivision() {
         <span className="text-sm font-bold text-white">Back</span>
       </button>
 
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src={IconAutomotive}
-          alt="Automotive Division - Leading innovation in automotive technology and sustainable transportation solutions"
-          fill
-          className="object-cover"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
-          priority
-        />
+        >
+          <source src="/assets/backgrounds/automotive-division.mp4" type="video/mp4" />
+        </video>
         <div 
           className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#020617]"
           style={{
@@ -53,23 +53,26 @@ export default function AutomotiveDivision() {
           }}
         >
           <h1 
-            className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg"
+            className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg"
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
               fontWeight: 'bold',
               marginBottom: '1rem',
+              color: '#facc15',
               textShadow: '0 4px 12px rgba(0,0,0,0.8)',
             }}
           >
             Automotive Division
           </h1>
           <p 
-            className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto"
+            className="text-lg md:text-xl max-w-2xl mx-auto font-bold"
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: '#e2e8f0',
+              color: '#FFFFFF',
+              fontWeight: '700',
               maxWidth: '42rem',
               margin: '0 auto',
+              textShadow: '0 2px 8px rgba(0,0,0,0.9)',
             }}
           >
             Leading innovation in automotive technology and sustainable transportation solutions.
@@ -99,11 +102,56 @@ export default function AutomotiveDivision() {
             Key Focus Areas
           </h3>
           <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', color: '#cbd5e1', lineHeight: '1.75' }}>
-            <li>Electric Vehicle Technology & Infrastructure</li>
-            <li>Autonomous Driving Systems</li>
-            <li>Smart Manufacturing Solutions</li>
-            <li>Sustainable Supply Chain Management</li>
-            <li>Connected Vehicle Technologies</li>
+            <li>
+              <a 
+                href="/opportunities#ev-infrastructure" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities#ev-infrastructure'); }}
+                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
+                style={{ color: '#cbd5e1' }}
+              >
+                Electric Vehicle Technology & Infrastructure
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/opportunities#autonomous-systems" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities#autonomous-systems'); }}
+                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
+                style={{ color: '#cbd5e1' }}
+              >
+                Autonomous Driving Systems
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/opportunities#smart-manufacturing" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities#smart-manufacturing'); }}
+                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
+                style={{ color: '#cbd5e1' }}
+              >
+                Smart Manufacturing Solutions
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/opportunities#supply-chain" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities#supply-chain'); }}
+                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
+                style={{ color: '#cbd5e1' }}
+              >
+                Sustainable Supply Chain Management
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/opportunities#connected-vehicles" 
+                onClick={(e) => { e.preventDefault(); router.push('/opportunities#connected-vehicles'); }}
+                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
+                style={{ color: '#cbd5e1' }}
+              >
+                Connected Vehicle Technologies
+              </a>
+            </li>
           </ul>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1rem', color: '#fde047' }}>

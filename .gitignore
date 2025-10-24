@@ -43,3 +43,5 @@ next-env.d.ts
 # backup files
 Project_Documents/*.zip
 *.backup.*
+
+.vercel

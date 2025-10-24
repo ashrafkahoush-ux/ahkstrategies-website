@@ -56,7 +56,7 @@ export default function HumanIntelligencePage() {
           }}
         >
           <h1 
-            className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg"
+            className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg"
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
               fontWeight: 'bold',
@@ -67,12 +67,14 @@ export default function HumanIntelligencePage() {
             Human <span style={{ color: '#facc15' }}>Intelligence</span>
           </h1>
           <p 
-            className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto"
+            className="text-lg md:text-xl max-w-2xl mx-auto font-bold"
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: '#e2e8f0',
+              color: '#FFFFFF',
+              fontWeight: '700',
               maxWidth: '42rem',
               margin: '0 auto',
+              textShadow: '0 2px 8px rgba(0,0,0,0.9)',
             }}
           >
             People-first strategy, decision clarity, and leadership systems that compound over time.

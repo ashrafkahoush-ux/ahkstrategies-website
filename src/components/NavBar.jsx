@@ -1,20 +1,29 @@
 'use client'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/pillars/legacy', label: 'Legacy' },
-  { href: '/pillars/people', label: 'People' },
-  { href: '/pillars/innovation', label: 'Innovation' },
-  { href: '/pillars/vision', label: 'Vision' },
-  { href: '/pillars/human-intelligence', label: 'Human Intelligence' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'Home', labelAr: 'الرئيسية' },
+  { href: '/pillars/legacy', label: 'Legacy', labelAr: 'الإرث' },
+  { href: '/pillars/people', label: 'People', labelAr: 'الأشخاص' },
+  { href: '/pillars/innovation', label: 'Innovation', labelAr: 'الابتكار' },
+  { href: '/pillars/vision', label: 'Vision', labelAr: 'الرؤية' },
+  { href: '/pillars/human-intelligence', label: 'Human Intelligence', labelAr: 'الذكاء البشري' },
+  { href: '/projects', label: 'Projects', labelAr: 'المشاريع' },
+  { href: '/opportunities', label: 'Opportunities', labelAr: 'الفرص' },
+  { href: '/contact', label: 'Contact', labelAr: 'اتصل بنا' },
 ]
 
 export default function NavBar() {
   const pathname = usePathname()
+  const { isArabic, toggleLanguage } = useLanguage()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <header 
@@ -49,7 +58,15 @@ export default function NavBar() {
             letterSpacing: '0.025em',
           }}
         >
-          AHK<span style={{ color: '#facc15' }}>Strategies</span>
+          {mounted ? (
+            isArabic ? (
+              <>استراتيجيات <span style={{ color: '#facc15' }}>AHK</span></>
+            ) : (
+              <>AHK<span style={{ color: '#facc15' }}>Strategies</span></>
+            )
+          ) : (
+            <>AHK<span style={{ color: '#facc15' }}>Strategies</span></>
+          )}
         </div>
 
         <ul 
@@ -60,9 +77,10 @@ export default function NavBar() {
             listStyle: 'none',
             margin: 0,
             padding: 0,
+            flexDirection: mounted && isArabic ? 'row-reverse' : 'row',
           }}
         >
-          {LINKS.map(({ href, label }) => {
+          {LINKS.map(({ href, label, labelAr }) => {
             const active = pathname === href
             return (
               <li key={href}>
@@ -91,51 +109,55 @@ export default function NavBar() {
                     })
                   }}
                 >
-                  {label}
+                  {mounted && isArabic ? labelAr : label}
                 </Link>
               </li>
             )
           })}
         </ul>
 
-        <div 
-          className="flex gap-2"
-          style={{
-            display: 'flex',
-            gap: '0.5rem',
-          }}
-        >
-          <button 
-            className="text-xs text-slate-400 border border-slate-700 px-2 py-0.5 rounded hover:text-yellow-400 hover:border-yellow-400"
+        {mounted && (
+          <div 
+            className="flex gap-2"
             style={{
-              fontSize: '0.75rem',
-              color: '#94a3b8',
-              border: '1px solid #334155',
-              padding: '0.125rem 0.5rem',
-              borderRadius: '0.25rem',
-              background: 'transparent',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
+              display: 'flex',
+              gap: '0.5rem',
             }}
           >
-            EN
-          </button>
-          <button 
-            className="text-xs text-slate-400 border border-slate-700 px-2 py-0.5 rounded hover:text-yellow-400 hover:border-yellow-400"
-            style={{
-              fontSize: '0.75rem',
-              color: '#94a3b8',
-              border: '1px solid #334155',
-              padding: '0.125rem 0.5rem',
-              borderRadius: '0.25rem',
-              background: 'transparent',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
-            }}
-          >
-            AR
-          </button>
-        </div>
+            <button 
+              onClick={() => toggleLanguage('en')}
+              style={{
+                fontSize: '0.875rem',
+                fontWeight: 600,
+                border: !isArabic ? '2px solid #facc15' : '2px solid rgba(255, 255, 255, 0.3)',
+                color: !isArabic ? '#facc15' : '#ffffff',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.375rem',
+                background: !isArabic ? 'rgba(250, 204, 21, 0.1)' : 'transparent',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              EN
+            </button>
+            <button 
+              onClick={() => toggleLanguage('ar')}
+              style={{
+                fontSize: '0.875rem',
+                fontWeight: 600,
+                border: isArabic ? '2px solid #facc15' : '2px solid rgba(255, 255, 255, 0.3)',
+                color: isArabic ? '#facc15' : '#ffffff',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.375rem',
+                background: isArabic ? 'rgba(250, 204, 21, 0.1)' : 'transparent',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              AR
+            </button>
+          </div>
+        )}
       </nav>
     </header>
   )

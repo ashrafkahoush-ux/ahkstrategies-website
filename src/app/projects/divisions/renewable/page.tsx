@@ -53,23 +53,26 @@ export default function RenewableDivision() {
           }}
         >
           <h1 
-            className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg"
+            className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg"
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
               fontWeight: 'bold',
               marginBottom: '1rem',
+              color: '#facc15',
               textShadow: '0 4px 12px rgba(0,0,0,0.8)',
             }}
           >
             Renewable Energy Division
           </h1>
           <p 
-            className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto"
+            className="text-lg md:text-xl max-w-2xl mx-auto font-bold"
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: '#e2e8f0',
+              color: '#FFFFFF',
+              fontWeight: '700',
               maxWidth: '42rem',
               margin: '0 auto',
+              textShadow: '0 2px 8px rgba(0,0,0,0.9)',
             }}
           >
             Driving the future of sustainable energy through innovative renewable solutions and green technology.
@@ -95,16 +98,96 @@ export default function RenewableDivision() {
             that power a greener future while addressing global climate challenges.
           </p>
           
-          <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1rem', color: '#fde047' }}>
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1.5rem', color: '#fde047' }}>
             Key Focus Areas
           </h3>
-          <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', color: '#cbd5e1', lineHeight: '1.75' }}>
-            <li>Solar Energy Solutions</li>
-            <li>Wind Power Development</li>
-            <li>Energy Storage Systems</li>
-            <li>Green Hydrogen Technology</li>
-            <li>Sustainable Infrastructure Planning</li>
-          </ul>
+          
+          {/* Clickable Focus Area Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            {/* Card 1: Solar & Wind Energy */}
+            <div 
+              onClick={() => router.push('/opportunities')}
+              className="group cursor-pointer bg-gradient-to-br from-[#1e1b4b]/40 to-[#0f172a]/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/20 hover:scale-[1.02]"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl">☀️</div>
+                <div>
+                  <h4 className="text-lg font-bold text-amber-400 mb-2 group-hover:text-yellow-300">
+                    Solar & Wind Energy Solutions
+                  </h4>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    Large-scale solar farms, wind power development, and hybrid renewable systems.
+                  </p>
+                  <span className="text-amber-400 text-sm font-semibold group-hover:gap-2 inline-flex items-center gap-1">
+                    Explore Opportunity →
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Energy Storage */}
+            <div 
+              onClick={() => router.push('/opportunities')}
+              className="group cursor-pointer bg-gradient-to-br from-[#1e1b4b]/40 to-[#0f172a]/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/20 hover:scale-[1.02]"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl">🔋</div>
+                <div>
+                  <h4 className="text-lg font-bold text-amber-400 mb-2 group-hover:text-yellow-300">
+                    Advanced Energy Storage Systems
+                  </h4>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    Battery storage, grid integration, and energy management solutions.
+                  </p>
+                  <span className="text-amber-400 text-sm font-semibold group-hover:gap-2 inline-flex items-center gap-1">
+                    Explore Opportunity →
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Green Hydrogen */}
+            <div 
+              onClick={() => router.push('/opportunities')}
+              className="group cursor-pointer bg-gradient-to-br from-[#1e1b4b]/40 to-[#0f172a]/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/20 hover:scale-[1.02]"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl">💧</div>
+                <div>
+                  <h4 className="text-lg font-bold text-amber-400 mb-2 group-hover:text-yellow-300">
+                    Green Hydrogen Technology
+                  </h4>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    Hydrogen production, storage, and distribution for clean energy future.
+                  </p>
+                  <span className="text-amber-400 text-sm font-semibold group-hover:gap-2 inline-flex items-center gap-1">
+                    Explore Opportunity →
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Sustainable Infrastructure */}
+            <div 
+              onClick={() => router.push('/opportunities')}
+              className="group cursor-pointer bg-gradient-to-br from-[#1e1b4b]/40 to-[#0f172a]/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/20 hover:scale-[1.02]"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl">🌱</div>
+                <div>
+                  <h4 className="text-lg font-bold text-amber-400 mb-2 group-hover:text-yellow-300">
+                    Sustainable Infrastructure Planning
+                  </h4>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    Smart grids, microgrid solutions, and green building technologies.
+                  </p>
+                  <span className="text-amber-400 text-sm font-semibold group-hover:gap-2 inline-flex items-center gap-1">
+                    Explore Opportunity →
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1rem', color: '#fde047' }}>
             Our Commitment

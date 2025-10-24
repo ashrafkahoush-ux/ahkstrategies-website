@@ -67,12 +67,14 @@ const People = () => {
             People & <span style={{ color: '#facc15' }}>Culture</span>
           </h1>
           <p 
-            className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto"
+            className="text-lg md:text-xl max-w-2xl mx-auto font-bold"
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: '#e2e8f0',
+              color: '#FFFFFF',
+              fontWeight: '700',
               maxWidth: '42rem',
               margin: '0 auto',
+              textShadow: '0 2px 8px rgba(0,0,0,0.9)',
             }}
           >
             Our people are our living architecture — the foundation of progress and creativity.

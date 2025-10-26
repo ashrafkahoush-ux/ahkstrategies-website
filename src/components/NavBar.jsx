@@ -6,24 +6,75 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 const LINKS = [
   { href: '/', label: 'Home', labelAr: 'الرئيسية' },
-  { href: '/pillars/legacy', label: 'Legacy', labelAr: 'الإرث' },
-  { href: '/pillars/people', label: 'People', labelAr: 'الأشخاص' },
-  { href: '/pillars/innovation', label: 'Innovation', labelAr: 'الابتكار' },
   { href: '/pillars/vision', label: 'Vision', labelAr: 'الرؤية' },
-  { href: '/pillars/human-intelligence', label: 'Human Intelligence', labelAr: 'الذكاء البشري' },
+  { 
+    href: '/services', 
+    label: 'Services', 
+    labelAr: 'الخدمات',
+    dropdown: [
+      { href: '/services/boutique', label: 'AHK Boutique', labelAr: 'بوتيك AHK' },
+      { href: '/services/launchpad', label: 'AHK LaunchPad', labelAr: 'منصة الإطلاق AHK' },
+      { href: '/services/studios', label: 'AHK Studios', labelAr: 'استوديوهات AHK' },
+      { href: '/services/academy', label: 'AHK Academy', labelAr: 'أكاديمية AHK' },
+      { href: '/services/consulting-hub', label: 'AHK Consulting Hub', labelAr: 'مركز الاستشارات AHK' },
+    ]
+  },
   { href: '/projects', label: 'Projects', labelAr: 'المشاريع' },
   { href: '/opportunities', label: 'Opportunities', labelAr: 'الفرص' },
-  { href: '/contact', label: 'Contact', labelAr: 'اتصل بنا' },
+  { href: '/about-us', label: 'About Us', labelAr: 'من نحن' },
 ]
 
 export default function NavBar() {
   const pathname = usePathname()
   const { isArabic, toggleLanguage } = useLanguage()
   const [mounted, setMounted] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null)
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Prevent hydration mismatch by not rendering interactive elements until mounted
+  if (!mounted) {
+    return (
+      <header 
+        className="sticky top-0 z-50 backdrop-blur-lg bg-[#020617]/70 border-b border-white/10"
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 50,
+          backdropFilter: 'blur(12px)',
+          backgroundColor: 'rgba(2, 6, 23, 0.7)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        }}
+      >
+        <nav 
+          className="mx-auto max-w-7xl px-6 flex h-16 items-center justify-between"
+          style={{
+            maxWidth: '80rem',
+            margin: '0 auto',
+            padding: '0 1.5rem',
+            display: 'flex',
+            height: '4rem',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div 
+            className="text-white text-xl font-semibold tracking-wide"
+            style={{
+              color: 'white',
+              fontSize: '1.25rem',
+              fontWeight: 600,
+              letterSpacing: '0.025em',
+            }}
+          >
+            AHK<span style={{ color: '#facc15' }}>Strategies</span>
+          </div>
+        </nav>
+      </header>
+    )
+  }
 
   return (
     <header 
@@ -80,12 +131,19 @@ export default function NavBar() {
             flexDirection: mounted && isArabic ? 'row-reverse' : 'row',
           }}
         >
-          {LINKS.map(({ href, label, labelAr }) => {
-            const active = pathname === href
+          {LINKS.map((link) => {
+            const active = pathname === link.href || (link.dropdown && link.dropdown.some(sub => pathname === sub.href))
+            const hasDropdown = link.dropdown && link.dropdown.length > 0
+            
             return (
-              <li key={href}>
+              <li 
+                key={link.href}
+                style={{ position: 'relative' }}
+                onMouseEnter={() => hasDropdown && setOpenDropdown(link.href)}
+                onMouseLeave={() => hasDropdown && setOpenDropdown(null)}
+              >
                 <Link
-                  href={href}
+                  href={link.href}
                   className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
                     active
                       ? 'bg-yellow-400/20 text-yellow-300 shadow-inner shadow-yellow-500/20'
@@ -109,8 +167,57 @@ export default function NavBar() {
                     })
                   }}
                 >
-                  {mounted && isArabic ? labelAr : label}
+                  {mounted && isArabic ? link.labelAr : link.label}
                 </Link>
+
+                {/* Dropdown Menu */}
+                {hasDropdown && openDropdown === link.href && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: 0,
+                      marginTop: '0.5rem',
+                      backgroundColor: 'rgba(2, 6, 23, 0.95)',
+                      backdropFilter: 'blur(12px)',
+                      borderRadius: '0.5rem',
+                      border: '1px solid rgba(212, 175, 55, 0.2)',
+                      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+                      minWidth: '200px',
+                      zIndex: 100,
+                      padding: '0.5rem',
+                    }}
+                  >
+                    {link.dropdown.map((subLink) => (
+                      <Link
+                        key={subLink.href}
+                        href={subLink.href}
+                        style={{
+                          display: 'block',
+                          padding: '0.5rem 0.75rem',
+                          fontSize: '0.875rem',
+                          color: pathname === subLink.href ? '#fde047' : '#e2e8f0',
+                          textDecoration: 'none',
+                          borderRadius: '0.375rem',
+                          transition: 'all 0.2s',
+                          backgroundColor: pathname === subLink.href ? 'rgba(250, 204, 21, 0.1)' : 'transparent',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = 'rgba(250, 204, 21, 0.1)'
+                          e.currentTarget.style.color = '#fde047'
+                        }}
+                        onMouseLeave={(e) => {
+                          if (pathname !== subLink.href) {
+                            e.currentTarget.style.backgroundColor = 'transparent'
+                            e.currentTarget.style.color = '#e2e8f0'
+                          }
+                        }}
+                      >
+                        {mounted && isArabic ? subLink.labelAr : subLink.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </li>
             )
           })}

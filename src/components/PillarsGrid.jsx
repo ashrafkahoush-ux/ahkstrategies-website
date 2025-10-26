@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const pillars = [
   { name: 'Legacy', href: '/pillars/legacy', img: '/assets/ai_images/pillars/legacy.png' },
-  { name: 'People', href: '/pillars/people', img: '/assets/ai_images/pillars/people.png' },
+  { name: 'Services', href: '/services', img: '/assets/ai_images/pillars/services.png' },
   { name: 'Innovation', href: '/pillars/innovation', img: '/assets/ai_images/pillars/innovation.png' },
   { name: 'Vision', href: '/pillars/vision', img: '/assets/ai_images/pillars/vision.png' },
   { name: 'Projects', href: '/projects', img: '/assets/ai_images/pillars/projects.png' },

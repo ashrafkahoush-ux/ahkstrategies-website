@@ -1,24 +1,74 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import PageTransition from "../components/PageTransition";
 import { LanguageProvider } from "../contexts/LanguageContext";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ahkstrategies.com'),
-  title: "AHKStrategies - Where Vision Meets Human Intelligence",
-  description: "AHKStrategies is a forward-thinking organization built on six foundational pillars: Legacy & Continuity, People & Culture, Innovation & Design Thinking, Vision & Foresight, Human Intelligence, and Strategic Projects.",
+  metadataBase: new URL('https://www.ahkstrategies.net'),
+  title: {
+    default: "AHKStrategies — AI-Powered Strategy & Market Intelligence for MENA Growth",
+    template: "%s | AHKStrategies"
+  },
+  description: "AHKStrategies — AI-powered strategy, automation, and consulting for MENA and European growth. Explore our Services: Boutique, LaunchPad, Studios, Academy, and Consulting Hub — where intelligence transforms innovation into measurable impact.",
+  keywords: [
+    "AI strategy",
+    "automation",
+    "consulting",
+    "MENA growth",
+    "digital transformation",
+    "AHK Boutique",
+    "LaunchPad",
+    "Studios",
+    "Academy",
+    "Consulting Hub",
+    "MENA market intelligence",
+    "business consulting",
+    "Ashraf Kahoush",
+    "cross-border partnerships",
+    "strategic advisory",
+    "market entry strategy",
+  ],
+  authors: [{ name: "Ashraf Kahoush" }],
+  creator: "AHKStrategies",
+  publisher: "AHKStrategies",
   openGraph: {
-    title: "AHKStrategies - Where Vision Meets Human Intelligence",
-    description: "Building enduring systems through six strategic pillars of excellence",
-    images: ["/assets/images/share-default.png"],
     type: "website",
+    locale: "en_US",
+    url: "https://www.ahkstrategies.net",
+    siteName: "AHKStrategies",
+    title: "AHKStrategies | From Vision to Services — Intelligence that Empowers Growth",
+    description: "Explore AHKStrategies' full-service ecosystem — AI-driven insights, automation, media creation, learning, and consulting.",
+    images: [
+      {
+        url: "/assets/ai_images/pillars/services.png",
+        width: 1200,
+        height: 630,
+        alt: "AHKStrategies Services — AI-driven solutions for business growth",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AHKStrategies - Where Vision Meets Human Intelligence",
-    description: "Building enduring systems through six strategic pillars of excellence",
-    images: ["/assets/images/share-default.png"],
+    title: "AHKStrategies | From Vision to Services — Intelligence that Empowers Growth",
+    description: "Explore AHKStrategies' full-service ecosystem — AI-driven insights, automation, media creation, learning, and consulting.",
+    images: ["/assets/ai_images/pillars/services.png"],
+    creator: "@akahoush",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "google-site-verification-code", // Add your actual code
   },
 };
 
@@ -40,6 +90,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="relative z-0">
             <PageTransition>{children}</PageTransition>
           </main>
+
+          {/* Global Footer */}
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

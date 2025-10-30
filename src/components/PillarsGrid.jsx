@@ -2,68 +2,75 @@
 import Link from 'next/link';
 
 const pillars = [
-  { name: 'Studio', href: '/services/studios', video: '/assets/ai_videos/ahk_studio.mp4', fallback: '/assets/ai_images/pillars/services.png' },
-  { name: 'Boutique', href: '/services/boutique', video: '/assets/ai_videos/ahk_boutique.mp4', fallback: '/assets/ai_images/pillars/services.png' },
-  { name: 'Hub', href: '/services/consulting-hub', video: '/assets/ai_videos/ahk_hub.mp4', fallback: '/assets/ai_images/pillars/services.png' },
-  { name: 'Launchpad', href: '/services/launchpad', video: '/assets/ai_videos/ahk_launchpad.mp4', fallback: '/assets/ai_images/pillars/services.png' },
-  { name: 'Projects', href: '/projects', video: '/assets/ai_videos/ahk_projects.mp4', fallback: '/assets/ai_images/pillars/projects.png' },
-  { name: 'Academy', href: '/services/academy', video: '/assets/ai_videos/ahk_academy.mp4', fallback: '/assets/ai_images/pillars/services.png' },
+  { name: 'AHK Academy', href: '/services/academy', video: '/assets/ai_images/pillars/ahk_academy_pillar.mp4' },
+  { name: 'AHK Boutique', href: '/services/boutique', video: '/assets/ai_images/pillars/ahk_boutique_pillar.mp4' },
+  { name: 'AHK Hub', href: '/services/consulting-hub', video: '/assets/ai_images/pillars/ahk_hub_pillar.mp4' },
+  { name: 'AHK LaunchPad', href: '/services/launchpad', video: '/assets/ai_images/pillars/ahk_launchpad_pillar.mp4' },
+  { name: 'AHK Projects', href: '/projects', video: '/assets/ai_images/pillars/ahk_projects_pillar.mp4' },
+  { name: 'AHK Studios', href: '/services/studios', video: '/assets/ai_images/pillars/ahk_studio_pillar.mp4' },
 ];
 
 export default function PillarsGrid() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-12 relative z-10">
-      {/* 3x2 Grid: 3 columns, 2 rows */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {pillars.map(p => (
-          <Link 
-            key={p.name} 
-            href={p.href} 
-            className="group relative block overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+    <section className="w-full max-w-7xl mx-auto px-4 relative z-10" style={{ marginTop: '2cm' }}>
+      {/* 3×2 Grid Layout with vertical spacing */}
+      <div className="grid grid-cols-3 gap-x-8" style={{ rowGap: '1cm' }}>
+        {pillars.map((pillar) => (
+          <Link
+            key={pillar.name}
+            href={pillar.href}
+            className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 group cursor-pointer"
+            style={{ 
+              width: '81%', // 90% of 90% = 81%
+              margin: '0 auto',
+              border: '4px solid transparent',
+              background: 'linear-gradient(#0A0F1E, #0A0F1E) padding-box, linear-gradient(135deg, #00d4ff, #ffffff, #00f0ff, #7ce8ff) border-box',
+              boxShadow: '0 0 30px rgba(0, 212, 255, 0.6), 0 0 60px rgba(0, 240, 255, 0.4), 0 8px 32px rgba(0, 212, 255, 0.5), inset 0 0 30px rgba(124, 232, 255, 0.15)',
+              transform: 'perspective(1000px) rotateX(2deg)',
+              borderRadius: '16px',
+            }}
           >
-            {/* Video Container with Aspect Ratio */}
-            <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: '1 / 1' }}>
-              {/* Video Background */}
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 w-full h-full object-cover"
+            <div
+              className="absolute inset-0 rounded-xl pointer-events-none"
+              style={{
+                boxShadow: 'inset 0 2px 8px rgba(255, 255, 255, 0.3), inset 0 -2px 8px rgba(0, 212, 255, 0.3)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+              }}
+            />
+            
+            {/* Title at top center */}
+            <div className="absolute top-0 left-0 right-0 z-20 w-full" style={{ marginTop: '5mm' }}>
+              <h3 
+                className="transition-colors"
+                style={{
+                  fontSize: '1.5rem',
+                  textAlign: 'center',
+                  width: '100%',
+                  textShadow: '0 4px 12px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.8)',
+                  fontWeight: 900,
+                  letterSpacing: '0.5px',
+                  fontFamily: 'inherit',
+                  display: 'block',
+                }}
               >
-                <source src={p.video} type="video/mp4" />
-                {/* Fallback image if video fails */}
-                <img src={p.fallback} alt={p.name} className="w-full h-full object-cover" />
-              </video>
-
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/35"></div>
-
-              {/* Text Content */}
-              <div className="absolute inset-0 flex items-end justify-center pb-6 z-10">
-                <h3 className="text-2xl font-bold text-white drop-shadow-lg group-hover:text-[#00d4ff] transition-colors duration-300">
-                  {p.name}
-                </h3>
-              </div>
+                <span style={{ color: '#FFFFFF' }}>AHK </span>
+                <span style={{ color: '#facc15' }}>{pillar.name.replace('AHK ', '')}</span>
+              </h3>
             </div>
+
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-auto rounded-lg"
+            >
+              <source src={pillar.video} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
           </Link>
         ))}
       </div>
-
-      {/* Responsive CSS */}
-      <style jsx>{`
-        @media (max-width: 1023px) {
-          .grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 639px) {
-          .grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

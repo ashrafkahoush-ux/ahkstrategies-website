@@ -3,10 +3,10 @@ import React from 'react';
 
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center h-[55vh] w-full overflow-hidden bg-[#020617]">
+    <section className="relative flex flex-col items-center justify-center h-[55vh] w-full overflow-hidden bg-[#0A0F1E]">
       {/* Background video */}
       <video
-        src="/assets/ai_videos/hero-video.mp4"
+        src="/assets/ai_videos/home2.mp4"
         autoPlay
         loop
         muted
@@ -15,7 +15,7 @@ export default function HeroSection() {
       ></video>
 
       {/* Overlay gradient for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/40 via-transparent to-[#020617]/80 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/40 via-transparent to-[#0A0F1E]/80 pointer-events-none"></div>
     </section>
   );
 }

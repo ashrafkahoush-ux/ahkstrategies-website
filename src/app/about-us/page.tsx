@@ -115,7 +115,10 @@ export default function AboutUsPage() {
                 alt="Ashraf Kahoush"
                 width={220}
                 height={220}
-                style={{ objectFit: 'cover' }}
+                style={{ 
+                  objectFit: 'cover',
+                  objectPosition: 'center 30%'
+                }}
               />
             </div>
             <h3

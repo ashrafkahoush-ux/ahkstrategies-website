@@ -1,13 +1,12 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const Vision = () => {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-[#0b132b] text-white relative">
+    <div className="min-h-screen bg-[#0A0F1E] text-white relative">
       {/* Back Button - Fixed at bottom left of page */}
       <button
         onClick={() => router.back()}
@@ -25,10 +24,25 @@ const Vision = () => {
         <span className="text-sm font-bold text-white">Back</span>
       </button>
 
-      {/* Hero Section with Static Navy Background */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-[#0b132b]">
-        {/* Gradient Overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b132b]/90 via-[#0b132b] to-[#0b132b]"></div>
+      {/* Hero Section with Video Background */}
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectFit: 'cover' }}
+        >
+          <source src="/assets/ai_videos/vision.mp4" type="video/mp4" />
+        </video>
+        
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#0A0F1E]"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4), #0A0F1E)',
+          }}
+        />
         
         <div 
           className="relative z-10 text-center px-6 max-w-4xl"

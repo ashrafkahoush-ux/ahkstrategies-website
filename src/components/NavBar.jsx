@@ -7,6 +7,9 @@ import { useLanguage } from '../contexts/LanguageContext'
 const LINKS = [
   { href: '/', label: 'Home', labelAr: 'الرئيسية' },
   { href: '/pillars/vision', label: 'Vision', labelAr: 'الرؤية' },
+  { href: '/pillars/legacy', label: 'Legacy', labelAr: 'الإرث' },
+  { href: '/pillars/human-intelligence', label: 'Human Intelligence', labelAr: 'الذكاء البشري' },
+  { href: '/pillars/innovation', label: 'Innovation', labelAr: 'الابتكار' },
   { 
     href: '/services', 
     label: 'Services', 
@@ -38,13 +41,13 @@ export default function NavBar() {
   if (!mounted) {
     return (
       <header 
-        className="sticky top-0 z-50 backdrop-blur-lg bg-[#020617]/70 border-b border-white/10"
+        className="sticky top-0 z-50 backdrop-blur-lg bg-[#0A0F1E]/70 border-b border-white/10"
         style={{
           position: 'sticky',
           top: 0,
           zIndex: 50,
           backdropFilter: 'blur(12px)',
-          backgroundColor: 'rgba(2, 6, 23, 0.7)',
+          backgroundColor: 'rgba(10, 15, 30, 0.7)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         }}
       >
@@ -78,13 +81,13 @@ export default function NavBar() {
 
   return (
     <header 
-      className="sticky top-0 z-50 backdrop-blur-lg bg-[#020617]/70 border-b border-white/10"
+      className="sticky top-0 z-50 backdrop-blur-lg bg-[#0A0F1E]/70 border-b border-white/10"
       style={{
         position: 'sticky',
         top: 0,
         zIndex: 50,
         backdropFilter: 'blur(12px)',
-        backgroundColor: 'rgba(2, 6, 23, 0.7)',
+        backgroundColor: 'rgba(10, 15, 30, 0.7)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
       }}
     >
@@ -144,27 +147,33 @@ export default function NavBar() {
               >
                 <Link
                   href={link.href}
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
-                    active
-                      ? 'bg-yellow-400/20 text-yellow-300 shadow-inner shadow-yellow-500/20'
-                      : 'bg-white/5 text-slate-200 hover:bg-white/10 hover:text-yellow-300'
-                  }`}
+                  className="block px-3 py-1.5 rounded-md text-sm font-medium text-slate-200 transition-all duration-300 ease-out hover:scale-110"
                   style={{
                     padding: '0.375rem 0.75rem',
                     borderRadius: '0.375rem',
                     fontSize: '0.875rem',
                     fontWeight: 500,
-                    transition: 'all 0.2s',
                     textDecoration: 'none',
                     display: 'inline-block',
-                    ...(active ? {
-                      backgroundColor: 'rgba(250, 204, 21, 0.2)',
-                      color: '#fde047',
-                      boxShadow: 'inset 0 2px 4px 0 rgba(234, 179, 8, 0.2)',
-                    } : {
-                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                      color: '#e2e8f0',
-                    })
+                    transition: 'all 0.3s ease-out',
+                    backgroundColor: active ? 'rgba(250, 204, 21, 0.2)' : 'rgba(255, 255, 255, 0.05)',
+                    color: active ? '#fde047' : '#e2e8f0',
+                    boxShadow: active ? 'inset 0 2px 4px 0 rgba(234, 179, 8, 0.2)' : 'none',
+                    transform: 'scale(1)',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!active) {
+                      e.currentTarget.style.backgroundColor = 'rgba(250, 204, 21, 0.15)'
+                      e.currentTarget.style.color = '#fde047'
+                    }
+                    e.currentTarget.style.transform = 'scale(1.1)'
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!active) {
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'
+                      e.currentTarget.style.color = '#e2e8f0'
+                    }
+                    e.currentTarget.style.transform = 'scale(1)'
                   }}
                 >
                   {mounted && isArabic ? link.labelAr : link.label}
@@ -178,8 +187,9 @@ export default function NavBar() {
                       position: 'absolute',
                       top: '100%',
                       left: 0,
-                      marginTop: '0.5rem',
-                      backgroundColor: 'rgba(2, 6, 23, 0.95)',
+                      marginTop: '0',
+                      paddingTop: '0.75rem',
+                      backgroundColor: 'rgba(10, 15, 30, 0.95)',
                       backdropFilter: 'blur(12px)',
                       borderRadius: '0.5rem',
                       border: '1px solid rgba(212, 175, 55, 0.3)',
@@ -189,6 +199,8 @@ export default function NavBar() {
                       padding: '0.5rem',
                       animation: 'slideDown 0.2s ease-out',
                     }}
+                    onMouseEnter={() => setOpenDropdown(link.href)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     {link.dropdown.map((subLink, index) => (
                       <Link

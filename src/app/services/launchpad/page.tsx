@@ -5,14 +5,56 @@ export default function LaunchPadPage() {
   const router = useRouter()
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#020617' }}>
-      <section style={{ background: 'linear-gradient(180deg, rgba(58,78,122,0.2) 0%, rgba(2,6,23,1) 100%)', paddingTop: '6rem', paddingBottom: '4rem', textAlign: 'center' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🚀</div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 'bold', color: '#D4AF37', marginBottom: '1.5rem' }}>
-            AHK LaunchPad
+    <div className="min-h-screen bg-[#0A0F1E] text-white relative">
+      {/* Back Button */}
+      <button
+        onClick={() => router.back()}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
+        style={{
+          position: 'fixed',
+          bottom: '1.5rem',
+          right: '1.5rem',
+          zIndex: 50,
+          background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
+          boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
+        }}
+      >
+        <span style={{ fontSize: '1.25rem', color: 'white' }}>←</span>
+        <span className="text-sm font-bold text-white">Back</span>
+      </button>
+
+      {/* Hero Section with Video Background */}
+      <section className="relative h-[70vh] flex items-end justify-center overflow-hidden pb-16">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectFit: 'cover' }}
+        >
+          <source src="/assets/ai_videos/ahk_launchpad.mp4" type="video/mp4" />
+        </video>
+        
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#0A0F1E]"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4), #0A0F1E)',
+          }}
+        />
+        
+        <div className="relative z-10 text-center px-6 max-w-4xl">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4" style={{ 
+            textShadow: '0 4px 12px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.8)',
+            fontWeight: 900 
+          }}>
+            AHK <span style={{ color: '#facc15' }}>LaunchPad</span>
           </h1>
-          <p style={{ fontSize: '1.25rem', color: '#cbd5e1', lineHeight: '1.8', maxWidth: '700px', margin: '0 auto' }}>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto font-bold" style={{ 
+            textShadow: '0 3px 10px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.9)',
+            color: '#ffffff',
+            fontWeight: 700
+          }}>
             Automation, CRM, and workflow systems designed to transform SMEs into agile, data-driven organizations ready for scale.
           </p>
         </div>

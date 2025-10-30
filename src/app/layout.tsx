@@ -2,7 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import PageTransition from "../components/PageTransition";
 import { LanguageProvider } from "../contexts/LanguageContext";
 
 export const metadata: Metadata = {
@@ -86,9 +85,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Global Navigation */}
           <NavBar />
 
-          {/* Page Transition Wrapper */}
+          {/* Main Content */}
           <main className="relative z-0">
-            <PageTransition>{children}</PageTransition>
+            {children}
           </main>
 
           {/* Global Footer */}

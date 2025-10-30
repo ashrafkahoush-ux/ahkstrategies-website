@@ -173,6 +173,7 @@ export default function NavBar() {
                 {/* Dropdown Menu */}
                 {hasDropdown && openDropdown === link.href && (
                   <div
+                    className="animate-fadeIn"
                     style={{
                       position: 'absolute',
                       top: '100%',
@@ -181,36 +182,46 @@ export default function NavBar() {
                       backgroundColor: 'rgba(2, 6, 23, 0.95)',
                       backdropFilter: 'blur(12px)',
                       borderRadius: '0.5rem',
-                      border: '1px solid rgba(212, 175, 55, 0.2)',
-                      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
-                      minWidth: '200px',
+                      border: '1px solid rgba(212, 175, 55, 0.3)',
+                      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1)',
+                      minWidth: '220px',
                       zIndex: 100,
                       padding: '0.5rem',
+                      animation: 'slideDown 0.2s ease-out',
                     }}
                   >
-                    {link.dropdown.map((subLink) => (
+                    {link.dropdown.map((subLink, index) => (
                       <Link
                         key={subLink.href}
                         href={subLink.href}
                         style={{
                           display: 'block',
-                          padding: '0.5rem 0.75rem',
+                          padding: '0.75rem 1rem',
                           fontSize: '0.875rem',
                           color: pathname === subLink.href ? '#fde047' : '#e2e8f0',
                           textDecoration: 'none',
                           borderRadius: '0.375rem',
-                          transition: 'all 0.2s',
-                          backgroundColor: pathname === subLink.href ? 'rgba(250, 204, 21, 0.1)' : 'transparent',
+                          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                          backgroundColor: pathname === subLink.href ? 'rgba(250, 204, 21, 0.15)' : 'transparent',
+                          marginBottom: index < link.dropdown.length - 1 ? '0.25rem' : '0',
+                          position: 'relative',
+                          overflow: 'hidden',
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(250, 204, 21, 0.1)'
+                          e.currentTarget.style.backgroundColor = 'rgba(250, 204, 21, 0.15)'
                           e.currentTarget.style.color = '#fde047'
+                          e.currentTarget.style.transform = 'translateX(4px)'
+                          e.currentTarget.style.paddingLeft = '1.25rem'
+                          e.currentTarget.style.boxShadow = '0 2px 8px rgba(212, 175, 55, 0.2)'
                         }}
                         onMouseLeave={(e) => {
                           if (pathname !== subLink.href) {
                             e.currentTarget.style.backgroundColor = 'transparent'
                             e.currentTarget.style.color = '#e2e8f0'
                           }
+                          e.currentTarget.style.transform = 'translateX(0)'
+                          e.currentTarget.style.paddingLeft = '1rem'
+                          e.currentTarget.style.boxShadow = 'none'
                         }}
                       >
                         {mounted && isArabic ? subLink.labelAr : subLink.label}

@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { LanguageProvider } from "../contexts/LanguageContext";
 import { GoogleAnalytics } from "../components/GoogleAnalytics";
+import EmmaChatWidget from "../components/EmmaChatWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ahkstrategies.net'),
@@ -94,6 +95,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {/* Global Footer */}
           <Footer />
+
+          {/* Emma AI Chat Widget */}
+          <EmmaChatWidget />
         </LanguageProvider>
       </body>
     </html>

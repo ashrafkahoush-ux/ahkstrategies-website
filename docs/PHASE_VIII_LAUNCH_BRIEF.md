@@ -7,7 +7,7 @@
 
 ### Environment Configuration: LOCKED & LOADED
 ```bash
-✅ GEMINI_API_KEY=AIzaSyBJRmw4C1vGzfYAnCPJL0cQYcXHa9OgKbU
+✅ GEMINI_API_KEY=<REDACTED - DEPRECATED KEY - See Phase X Security Patch>
 ✅ NEXT_PUBLIC_GA_MEASUREMENT_ID=G-5CV5JTG71J
 ✅ GOOGLE_SERVICE_ACCOUNT_KEY=[CONFIGURED - 2048 chars]
 ✅ GDRIVE_KNOWLEDGE_BASE_FOLDER_ID=1e5q0cQtlhCGztmuWRWU16MWVTk6ldPMk
@@ -101,7 +101,7 @@ vercel --prod
 **Vercel Dashboard:**
 1. Go to: https://vercel.com/[your-project]/settings/environment-variables
 2. Add these 4 variables:
-   - `GEMINI_API_KEY` = `AIzaSyBJRmw4C1vGzfYAnCPJL0cQYcXHa9OgKbU`
+   - `GEMINI_API_KEY` = `<REDACTED - DEPRECATED - Use new key from Phase X Security Patch>`
    - `NEXT_PUBLIC_GA_MEASUREMENT_ID` = `G-5CV5JTG71J`
    - `GOOGLE_SERVICE_ACCOUNT_KEY` = `[entire JSON from .env.local]`
    - `GDRIVE_KNOWLEDGE_BASE_FOLDER_ID` = `1e5q0cQtlhCGztmuWRWU16MWVTk6ldPMk`

@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, startTransition } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -34,7 +34,9 @@ export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState(null)
 
   useEffect(() => {
-    setMounted(true)
+    startTransition(() => {
+      setMounted(true)
+    })
   }, [])
 
   // Prevent hydration mismatch by not rendering interactive elements until mounted

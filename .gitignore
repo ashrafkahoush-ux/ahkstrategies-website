@@ -45,3 +45,6 @@ Project_Documents/*.zip
 *.backup.*
 
 .vercel
+
+# Google Drive temp files
+.tmp.driveupload/

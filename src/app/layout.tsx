@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { LanguageProvider } from "../contexts/LanguageContext";
+import { GoogleAnalytics } from "../components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ahkstrategies.net'),
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </head>
       <body className="relative min-h-screen bg-[#0A0F1E] text-slate-100 antialiased overflow-x-hidden selection:bg-white/10 selection:text-white" suppressHydrationWarning>
+        <GoogleAnalytics />
         <LanguageProvider>
           {/* Global Navigation */}
           <NavBar />

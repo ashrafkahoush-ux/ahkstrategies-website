@@ -9,7 +9,9 @@ export default function OpportunitiesPage() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    React.startTransition(() => {
+      setMounted(true);
+    });
   }, []);
 
   return (

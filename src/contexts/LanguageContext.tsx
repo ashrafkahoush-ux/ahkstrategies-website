@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, startTransition } from 'react';
 
 type LanguageContextType = {
   isArabic: boolean;
@@ -15,15 +15,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Load language preference from localStorage
     const savedLang = localStorage.getItem('language');
-    if (savedLang === 'ar') {
-      setIsArabic(true);
-      document.documentElement.dir = 'rtl';
-      document.documentElement.lang = 'ar';
-    } else {
-      document.documentElement.dir = 'ltr';
-      document.documentElement.lang = 'en';
-    }
-    setMounted(true);
+    startTransition(() => {
+      if (savedLang === 'ar') {
+        setIsArabic(true);
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+      } else {
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = 'en';
+      }
+      setMounted(true);
+    });
   }, []);
 
   const toggleLanguage = (lang: 'en' | 'ar') => {

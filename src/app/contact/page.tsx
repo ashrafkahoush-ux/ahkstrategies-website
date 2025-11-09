@@ -12,7 +12,10 @@ const Contact = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    // Fix: Use startTransition to avoid cascading renders
+    React.startTransition(() => {
+      setMounted(true);
+    });
   }, []);
 
   // Form state

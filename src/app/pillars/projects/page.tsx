@@ -33,6 +33,17 @@ const Projects = () => {
           <strong>AHKStrategies</strong> transforms foresight into frameworks and partnerships into progress.  
           Each project is a manifestation of collaboration, designed to bring sustainable innovation and measurable growth to life.
         </p>
+        
+        {/* Investor Projects Link */}
+        <div className="mt-12">
+          <Link 
+            href="/pillars/projects/investor" 
+            className="inline-block px-8 py-4 bg-[#ffd700] text-[#0a1433] font-bold rounded-lg hover:bg-[#ffed4e] transition-colors shadow-lg"
+          >
+            View Investor Edition Projects →
+          </Link>
+        </div>
+        
         <Link href="/" className="block mt-10 text-[#00d4ff] hover:text-white transition-colors">
           ← Back to Home
         </Link>

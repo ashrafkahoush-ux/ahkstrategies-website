@@ -77,7 +77,7 @@ export default function AcademyPage() {
         </div>
 
         <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '1.5rem', color: '#e2e8f0', marginBottom: '1.5rem' }}>Invest in your team's future</h3>
+          <h3 style={{ fontSize: '1.5rem', color: '#e2e8f0', marginBottom: '1.5rem' }}>Invest in your team&apos;s future</h3>
           <button onClick={() => router.push('/contact')} style={{ backgroundColor: '#D4AF37', color: '#020617', padding: '1rem 3rem', borderRadius: '0.5rem', fontSize: '1.125rem', fontWeight: 700, border: 'none', cursor: 'pointer', transition: 'all 0.3s' }}>
             Explore Programs
           </button>

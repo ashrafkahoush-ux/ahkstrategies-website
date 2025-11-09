@@ -19,17 +19,17 @@ Replace deprecated Gemini API key with new EMMA Command Center (Secure Key) acro
 **Local Development (.env.local)**
 ```bash
 # Old Key (DEPRECATED):
-GEMINI_API_KEY=AIzaSyBJRmw4C1vGzfYAnCPJL0cQYcXHa9OgKbU
+GEMINI_API_KEY=<REDACTED - DEPRECATED>
 
 # New Key (ACTIVE - EMMA Command Center Secure Key):
-GEMINI_API_KEY=AIzaSyCBKcsy3gimEttuEbhaOAlH4v2RKNzh6kk
+GEMINI_API_KEY=<REDACTED - STORED IN .env.local>
 ```
 ✅ Updated successfully
 
 **Production Configuration (.env.production)**
 ```bash
 # Created new production environment file
-GEMINI_API_KEY=AIzaSyCBKcsy3gimEttuEbhaOAlH4v2RKNzh6kk
+GEMINI_API_KEY=<REDACTED - STORED IN .env.production>
 ```
 ✅ Created successfully
 
@@ -145,7 +145,7 @@ Body: {}
 2. **Update Production Environment Variables:**
    ```
    Variable: GEMINI_API_KEY
-   Value: AIzaSyCBKcsy3gimEttuEbhaOAlH4v2RKNzh6kk
+   Value: <REDACTED - OBTAIN FROM SECURE CREDENTIAL STORE>
    Environment: Production, Preview, Development
    ```
 

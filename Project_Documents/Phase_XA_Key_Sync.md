@@ -23,7 +23,7 @@ Ensure both environments use the same active key with zero deprecated tokens rem
 **Environment File: `.env.local`**
 ```bash
 # EMMA Command Center (Secure Key) - Updated Phase X Security Patch
-GEMINI_API_KEY=AIzaSyCBKcsy3gimEttuEbhaOAlH4v2RKNzh6kk
+GEMINI_API_KEY=<REDACTED - STORED IN .env.local ONLY>
 ```
 ✅ **Status:** ACTIVE  
 ✅ **File Location:** `c:\Users\ashra\ahkstrategies-website\.env.local`  
@@ -148,7 +148,7 @@ Response:
 **Vercel Environment Variables Required:**
 ```
 Variable: GEMINI_API_KEY
-Value: AIzaSyCBKcsy3gimEttuEbhaOAlH4v2RKNzh6kk
+Value: <REDACTED - OBTAIN NEW KEY FROM GOOGLE AI STUDIO>
 Environment: Production, Preview, Development
 ```
 
@@ -199,8 +199,8 @@ curl https://www.ahkstrategies.net/api/chat \
 2. **Update Environment Variable:**
    ```
    Variable: GEMINI_API_KEY
-   Old Value: AIzaSyBJRmw4C1vGzfYAnCPJL0cQYcXHa9OgKbU (DEPRECATED)
-   New Value: AIzaSyCBKcsy3gimEttuEbhaOAlH4v2RKNzh6kk
+   Old Value: <REDACTED - DEPRECATED>
+   New Value: <REDACTED - OBTAIN FROM SECURE CREDENTIAL STORE>
    ```
 
 3. **Trigger Redeployment:**
@@ -230,7 +230,7 @@ curl https://www.ahkstrategies.net/api/chat \
 2. **Initialize Environment:**
    ```bash
    # Create .env.local
-   echo "GEMINI_API_KEY=AIzaSyCBKcsy3gimEttuEbhaOAlH4v2RKNzh6kk" > .env.local
+   echo "GEMINI_API_KEY=<YOUR_NEW_KEY_HERE>" > .env.local
    echo "NEXT_PUBLIC_GA_MEASUREMENT_ID=G-5CV5JTG71J" >> .env.local
    ```
 

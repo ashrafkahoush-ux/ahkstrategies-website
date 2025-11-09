@@ -7,7 +7,9 @@ export default function Home() {
   return (
     <main className="relative min-h-screen text-white overflow-hidden">
       <HeroSection />
-      <PillarsGrid />
+      <div id="pillars">
+        <PillarsGrid />
+      </div>
     </main>
   );
 }

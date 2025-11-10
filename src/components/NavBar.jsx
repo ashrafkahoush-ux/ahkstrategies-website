@@ -1,296 +1,106 @@
-'use client'
-import { useState, useEffect, startTransition } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useLanguage } from '../contexts/LanguageContext'
+'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
-const LINKS = [
-  { href: '/', label: 'Home', labelAr: 'الرئيسية' },
-  { href: '/pillars/vision', label: 'Vision', labelAr: 'الرؤية' },
-  { href: '/pillars/legacy', label: 'Legacy', labelAr: 'الإرث' },
-  { 
-    href: '/services', 
-    label: 'Services', 
-    labelAr: 'الخدمات',
-    dropdown: [
-      { href: '/projects', label: 'Projects', labelAr: 'المشاريع' },
-      { href: '/services/consulting-hub', label: 'Consulting Hub', labelAr: 'مركز الاستشارات' },
-      { href: '/services/launchpad', label: 'LaunchPad', labelAr: 'منصة الإطلاق' },
-      { href: '/services/studios', label: 'Studios', labelAr: 'استوديوهات' },
-      { href: '/services/academy', label: 'Academy', labelAr: 'أكاديمية' },
-      { href: '/services/boutique', label: 'Boutique', labelAr: 'بوتيك' },
-    ]
-  },
-  { href: '/pillars/human-intelligence', label: 'Human Intelligence', labelAr: 'الذكاء البشري' },
-  { href: '/pillars/innovation', label: 'Innovation', labelAr: 'الابتكار' },
-  { href: '/opportunities', label: 'Opportunities', labelAr: 'الفرص' },
-  { href: '/about-us', label: 'About Us', labelAr: 'من نحن' },
-]
+const NavBar = () => {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-export default function NavBar() {
-  const pathname = usePathname()
-  const { isArabic, toggleLanguage } = useLanguage()
-  const [mounted, setMounted] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState(null)
-
-  useEffect(() => {
-    startTransition(() => {
-      setMounted(true)
-    })
-  }, [])
-
-  // Prevent hydration mismatch by not rendering interactive elements until mounted
-  if (!mounted) {
-    return (
-      <header 
-        className="sticky top-0 z-50 backdrop-blur-lg bg-[#0A0F1E]/70 border-b border-white/10"
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          backdropFilter: 'blur(12px)',
-          backgroundColor: 'rgba(10, 15, 30, 0.7)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        }}
-      >
-        <nav 
-          className="mx-auto max-w-7xl px-6 flex h-16 items-center justify-between"
-          style={{
-            maxWidth: '80rem',
-            margin: '0 auto',
-            padding: '0 1.5rem',
-            display: 'flex',
-            height: '4rem',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <div 
-            className="text-white text-xl font-semibold tracking-wide"
-            style={{
-              color: 'white',
-              fontSize: '1.25rem',
-              fontWeight: 600,
-              letterSpacing: '0.025em',
-            }}
-          >
-            AHK<span style={{ color: '#facc15' }}>Strategies</span>
-          </div>
-        </nav>
-      </header>
-    )
-  }
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Vision', href: '/pillars/vision' },
+    { label: 'Legacy', href: '/pillars/legacy' },
+    { label: 'Innovation', href: '/pillars/innovation' },
+    { label: 'Human Intelligence', href: '/pillars/human-intelligence' },
+    { label: 'Services', href: '/services' },
+    { label: 'Projects', href: '/projects' },
+  ];
 
   return (
-    <header 
-      className="sticky top-0 z-50 backdrop-blur-lg bg-[#0A0F1E]/70 border-b border-white/10"
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-        backdropFilter: 'blur(12px)',
-        backgroundColor: 'rgba(10, 15, 30, 0.7)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-      }}
-    >
-      <nav 
-        className="mx-auto max-w-7xl px-6 flex h-16 items-center justify-between"
-        style={{
-          maxWidth: '80rem',
-          margin: '0 auto',
-          padding: '0 1.5rem',
-          display: 'flex',
-          height: '4rem',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
-        <div 
-          className="text-white text-xl font-semibold tracking-wide"
-          style={{
-            color: 'white',
-            fontSize: '1.25rem',
-            fontWeight: 600,
-            letterSpacing: '0.025em',
-          }}
-        >
-          {mounted ? (
-            isArabic ? (
-              <>استراتيجيات <span style={{ color: '#facc15' }}>AHK</span></>
-            ) : (
-              <>AHK<span style={{ color: '#facc15' }}>Strategies</span></>
-            )
-          ) : (
-            <>AHK<span style={{ color: '#facc15' }}>Strategies</span></>
-          )}
-        </div>
-
-        <ul 
-          className="flex gap-3 sm:gap-5"
-          style={{
-            display: 'flex',
-            gap: '0.75rem',
-            listStyle: 'none',
-            margin: 0,
-            padding: 0,
-            flexDirection: mounted && isArabic ? 'row-reverse' : 'row',
-          }}
-        >
-          {LINKS.map((link) => {
-            const active = pathname === link.href || (link.dropdown && link.dropdown.some(sub => pathname === sub.href))
-            const hasDropdown = link.dropdown && link.dropdown.length > 0
-            
-            return (
-              <li 
-                key={link.href}
-                style={{ position: 'relative' }}
-                onMouseEnter={() => hasDropdown && setOpenDropdown(link.href)}
-                onMouseLeave={() => hasDropdown && setOpenDropdown(null)}
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-gradient-to-r from-ahk-navy/95 to-ahk-navy-light/95 border-b border-ahk-gold/20 shadow-glow">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo with animated 3D video */}
+        <Link href="/" className="flex items-center space-x-3 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-ahk-gold rounded-xl blur-lg opacity-50 animate-pulse"></div>
+            <div className="relative w-12 h-12 bg-gradient-to-br from-ahk-gold to-ahk-gold-light rounded-xl overflow-hidden shadow-glow">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                aria-label="AHK Strategies animated logo"
+                className="w-full h-full object-cover"
               >
-                <Link
-                  href={link.href}
-                  className="block px-3 py-1.5 rounded-md text-sm font-medium text-slate-200 transition-all duration-300 ease-out hover:scale-110"
-                  style={{
-                    padding: '0.375rem 0.75rem',
-                    borderRadius: '0.375rem',
-                    fontSize: '0.875rem',
-                    fontWeight: 500,
-                    textDecoration: 'none',
-                    display: 'inline-block',
-                    transition: 'all 0.3s ease-out',
-                    backgroundColor: active ? 'rgba(250, 204, 21, 0.2)' : 'rgba(255, 255, 255, 0.05)',
-                    color: active ? '#fde047' : '#e2e8f0',
-                    boxShadow: active ? 'inset 0 2px 4px 0 rgba(234, 179, 8, 0.2)' : 'none',
-                    transform: 'scale(1)',
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!active) {
-                      e.currentTarget.style.backgroundColor = 'rgba(250, 204, 21, 0.15)'
-                      e.currentTarget.style.color = '#fde047'
-                    }
-                    e.currentTarget.style.transform = 'scale(1.1)'
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!active) {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'
-                      e.currentTarget.style.color = '#e2e8f0'
-                    }
-                    e.currentTarget.style.transform = 'scale(1)'
-                  }}
-                >
-                  {mounted && isArabic ? link.labelAr : link.label}
-                </Link>
-
-                {/* Dropdown Menu */}
-                {hasDropdown && openDropdown === link.href && (
-                  <div
-                    className="animate-fadeIn"
-                    style={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: 0,
-                      marginTop: '0',
-                      paddingTop: '0.75rem',
-                      backgroundColor: 'rgba(10, 15, 30, 0.95)',
-                      backdropFilter: 'blur(12px)',
-                      borderRadius: '0.5rem',
-                      border: '1px solid rgba(212, 175, 55, 0.3)',
-                      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1)',
-                      minWidth: '220px',
-                      zIndex: 100,
-                      padding: '0.5rem',
-                      animation: 'slideDown 0.2s ease-out',
-                    }}
-                    onMouseEnter={() => setOpenDropdown(link.href)}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                  >
-                    {link.dropdown.map((subLink, index) => (
-                      <Link
-                        key={subLink.href}
-                        href={subLink.href}
-                        style={{
-                          display: 'block',
-                          padding: '0.75rem 1rem',
-                          fontSize: '0.875rem',
-                          color: pathname === subLink.href ? '#fde047' : '#e2e8f0',
-                          textDecoration: 'none',
-                          borderRadius: '0.375rem',
-                          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                          backgroundColor: pathname === subLink.href ? 'rgba(250, 204, 21, 0.15)' : 'transparent',
-                          marginBottom: index < link.dropdown.length - 1 ? '0.25rem' : '0',
-                          position: 'relative',
-                          overflow: 'hidden',
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(250, 204, 21, 0.15)'
-                          e.currentTarget.style.color = '#fde047'
-                          e.currentTarget.style.transform = 'translateX(4px)'
-                          e.currentTarget.style.paddingLeft = '1.25rem'
-                          e.currentTarget.style.boxShadow = '0 2px 8px rgba(212, 175, 55, 0.2)'
-                        }}
-                        onMouseLeave={(e) => {
-                          if (pathname !== subLink.href) {
-                            e.currentTarget.style.backgroundColor = 'transparent'
-                            e.currentTarget.style.color = '#e2e8f0'
-                          }
-                          e.currentTarget.style.transform = 'translateX(0)'
-                          e.currentTarget.style.paddingLeft = '1rem'
-                          e.currentTarget.style.boxShadow = 'none'
-                        }}
-                      >
-                        {mounted && isArabic ? subLink.labelAr : subLink.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </li>
-            )
-          })}
-        </ul>
-
-        {mounted && (
-          <div 
-            className="flex gap-2"
-            style={{
-              display: 'flex',
-              gap: '0.5rem',
-            }}
-          >
-            <button 
-              onClick={() => toggleLanguage('en')}
-              style={{
-                fontSize: '0.875rem',
-                fontWeight: 600,
-                border: !isArabic ? '2px solid #facc15' : '2px solid rgba(255, 255, 255, 0.3)',
-                color: !isArabic ? '#facc15' : '#ffffff',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.375rem',
-                background: !isArabic ? 'rgba(250, 204, 21, 0.1)' : 'transparent',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-            >
-              EN
-            </button>
-            <button 
-              onClick={() => toggleLanguage('ar')}
-              style={{
-                fontSize: '0.875rem',
-                fontWeight: 600,
-                border: isArabic ? '2px solid #facc15' : '2px solid rgba(255, 255, 255, 0.3)',
-                color: isArabic ? '#facc15' : '#ffffff',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.375rem',
-                background: isArabic ? 'rgba(250, 204, 21, 0.1)' : 'transparent',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-            >
-              AR
-            </button>
+                <source src="/assets/ai_images/3D-animated-logo.mp4" type="video/mp4" />
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-ahk-gold to-ahk-gold-light">
+                  <span className="text-ahk-navy font-black text-xl">AHK</span>
+                </div>
+              </video>
+            </div>
           </div>
-        )}
-      </nav>
+          <div className="flex flex-col">
+            <span className="text-2xl font-black font-display bg-gradient-to-r from-ahk-gold to-ahk-gold-light bg-clip-text text-transparent">
+              AHK
+            </span>
+            <span className="text-xs font-semibold tracking-wider uppercase text-ahk-gold-light/80">
+              Strategies
+            </span>
+          </div>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex space-x-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                pathname === item.href
+                  ? 'bg-gradient-to-r from-ahk-gold to-ahk-gold-light text-ahk-navy shadow-glow'
+                  : 'text-ahk-light-slate hover:bg-ahk-gold/10 hover:text-ahk-gold'
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="lg:hidden text-ahk-gold focus:outline-none text-2xl focus-visible:outline-ahk-gold"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {menuOpen && (
+        <div className="lg:hidden bg-ahk-navy/98 backdrop-blur-xl border-t border-ahk-gold/20 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+          <div className="flex flex-col space-y-2 px-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className={`px-4 py-3 text-base font-medium rounded-lg transition-all ${
+                  pathname === item.href
+                    ? 'bg-gradient-to-r from-ahk-gold to-ahk-gold-light text-ahk-navy shadow-glow'
+                    : 'text-ahk-light-slate hover:bg-ahk-gold/10 hover:text-ahk-gold'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
-  )
-}
+  );
+};
+
+export default NavBar;

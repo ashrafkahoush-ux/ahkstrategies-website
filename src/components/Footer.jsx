@@ -1,171 +1,92 @@
-"use client";
+'use client';
+import Link from 'next/link';
 
-export default function Footer() {
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  const footerLinks = {
+    company: [
+      { label: 'About Us', href: '/about-us' },
+      { label: 'Vision', href: '/pillars/vision' },
+      { label: 'Legacy', href: '/pillars/legacy' },
+      { label: 'Innovation', href: '/pillars/innovation' },
+    ],
+    services: [
+      { label: 'Consulting Hub', href: '/services/consulting-hub' },
+      { label: 'LaunchPad', href: '/services/launchpad' },
+      { label: 'Studios', href: '/services/studios' },
+      { label: 'Academy', href: '/services/academy' },
+      { label: 'Boutique', href: '/services/boutique' },
+    ],
+    projects: [
+      { label: 'AHK Projects', href: '/projects' },
+      { label: 'Opportunities', href: '/opportunities' },
+    ],
+    contact: [
+      { label: 'Contact Us', href: '/contact' },
+    ],
+  };
+
   return (
-    <footer 
-      style={{
-        marginTop: '5rem',
-        paddingTop: '3rem',
-        paddingBottom: '2rem',
-        textAlign: 'center',
-        backgroundColor: '#0C111D',
-        borderTop: '1px solid',
-        borderImage: 'linear-gradient(90deg, transparent, #D4AF37, transparent) 1',
-      }}
-    >
-      {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-        {/* Copyright & Website */}
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#cbd5e1',
-            marginBottom: '0.75rem',
-            fontFamily: 'Lato, sans-serif',
-            fontWeight: 300,
-          }}
-        >
-          © 2025 AHKStrategies |{' '}
-          <a
-            href="https://www.ahkstrategies.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: '#D4AF37',
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.textDecoration = 'underline'
-              e.currentTarget.style.color = '#fde047'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.textDecoration = 'none'
-              e.currentTarget.style.color = '#D4AF37'
-            }}
-          >
-            www.ahkstrategies.net
-          </a>
-        </p>
-
-        {/* Contact Information */}
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#cbd5e1',
-            marginBottom: '1.5rem',
-            fontFamily: 'Lato, sans-serif',
-            fontWeight: 300,
-          }}
-        >
-          Cairo, Egypt |{' '}
-          <a
-            href="mailto:ashraf@ahkstrategies.net"
-            style={{
-              color: '#D4AF37',
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#fde047'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#D4AF37'
-            }}
-          >
-            ashraf@ahkstrategies.net
-          </a>
-          {' '} | +20 104 078 7571
-        </p>
-
-        {/* Social Links */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '1.5rem',
-            marginTop: '1rem',
-          }}
-        >
-          <span style={{ fontSize: '0.875rem', color: '#94a3b8' }}>Follow Us →</span>
-          
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/company/108551881/admin/dashboard/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '36px',
-              height: '36px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(212, 175, 55, 0.1)',
-              border: '1px solid #D4AF37',
-              color: '#D4AF37',
-              transition: 'all 0.3s',
-              textDecoration: 'none',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#D4AF37'
-              e.currentTarget.style.color = '#020617'
-              e.currentTarget.style.transform = 'translateY(-3px)'
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(212, 175, 55, 0.4)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(212, 175, 55, 0.1)'
-              e.currentTarget.style.color = '#D4AF37'
-              e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = 'none'
-            }}
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-          </a>
-
-          {/* X (Twitter) */}
-          <a
-            href="https://x.com/akahoush"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X (Twitter)"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '36px',
-              height: '36px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(212, 175, 55, 0.1)',
-              border: '1px solid #D4AF37',
-              color: '#D4AF37',
-              transition: 'all 0.3s',
-              textDecoration: 'none',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#D4AF37'
-              e.currentTarget.style.color = '#020617'
-              e.currentTarget.style.transform = 'translateY(-3px)'
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(212, 175, 55, 0.4)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(212, 175, 55, 0.1)'
-              e.currentTarget.style.color = '#D4AF37'
-              e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = 'none'
-            }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
+    <footer className="relative mt-20 border-t border-ahk-gold/20 bg-gradient-to-b from-ahk-navy/50 to-ahk-navy-dark/80 backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="lg:col-span-2">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="relative w-14 h-14 bg-gradient-to-br from-ahk-gold to-ahk-gold-light rounded-xl overflow-hidden shadow-glow">
+                <video autoPlay loop muted playsInline aria-hidden="true" className="w-full h-full object-cover">
+                  <source src="/assets/ai_images/3D-animated-logo.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div>
+                <h3 className="text-xl font-black font-display bg-gradient-to-r from-ahk-gold to-ahk-gold-light bg-clip-text text-transparent">AHK STRATEGIES</h3>
+                <p className="text-xs font-semibold tracking-wider uppercase text-ahk-gold-light/80">Strategic Dashboard</p>
+              </div>
+            </div>
+            <p className="text-ahk-light-slate/70 text-sm leading-relaxed mb-4">Where Human Intuition and AI Move as One. Empowering strategic growth through intelligence, innovation, and execution excellence.</p>
+          </div>
+          <div>
+            <h4 className="text-ahk-gold font-bold mb-4 text-sm uppercase tracking-wider">Company</h4>
+            <ul className="space-y-2">
+              {footerLinks.company.map((link) => (
+                <li key={link.href}><Link href={link.href} className="text-ahk-light-slate/70 hover:text-ahk-gold text-sm transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-ahk-gold font-bold mb-4 text-sm uppercase tracking-wider">Services</h4>
+            <ul className="space-y-2">
+              {footerLinks.services.map((link) => (
+                <li key={link.href}><Link href={link.href} className="text-ahk-light-slate/70 hover:text-ahk-gold text-sm transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-ahk-gold font-bold mb-4 text-sm uppercase tracking-wider">Projects</h4>
+            <ul className="space-y-2 mb-6">
+              {footerLinks.projects.map((link) => (
+                <li key={link.href}><Link href={link.href} className="text-ahk-light-slate/70 hover:text-ahk-gold text-sm transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+            <h4 className="text-ahk-gold font-bold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+            <ul className="space-y-2">
+              {footerLinks.contact.map((link) => (
+                <li key={link.href}><Link href={link.href} className="text-ahk-light-slate/70 hover:text-ahk-gold text-sm transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-ahk-gold/20 bg-ahk-navy-dark/60">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-ahk-light-slate/60 text-sm">© {currentYear} AHKStrategies | <a href="https://www.ahkstrategies.net" className="text-ahk-gold hover:text-ahk-gold-light transition-colors">www.ahkstrategies.net</a></p>
+            <p className="text-ahk-light-slate/60 text-sm">Cairo, Egypt | <a href="mailto:ashraf@ahkstrategies.net" className="text-ahk-gold hover:text-ahk-gold-light transition-colors">ashraf@ahkstrategies.net</a> | +20 104 078 7571</p>
+          </div>
         </div>
       </div>
     </footer>
   );
-}
+};
 
+export default Footer;

@@ -1,13 +1,16 @@
 'use client';
 import Link from 'next/link';
 
+// Cache bust timestamp for emergency deployment
+const CACHE_VERSION = '?v=20251110-1320';
+
 const pillars = [
-  { name: 'Projects', href: '/projects', video: '/assets/ai_images/pillars/ahk_projects_pillar.mp4', gradient: 'from-[#D4AF37]/20 via-[#00D9FF]/20 to-[#D4AF37]/20', borderGlow: 'shadow-[0_0_30px_rgba(212,175,55,0.4)]' },
-  { name: 'Hub', href: '/services/consulting-hub', video: '/assets/ai_images/pillars/ahk_hub_pillar.mp4', gradient: 'from-[#00D9FF]/20 via-[#D4AF37]/20 to-[#00D9FF]/20', borderGlow: 'shadow-[0_0_30px_rgba(0,217,255,0.4)]' },
-  { name: 'LaunchPad', href: '/services/launchpad', video: '/assets/ai_images/pillars/ahk_launchpad_pillar.mp4', gradient: 'from-[#D4AF37]/20 via-[#A78BFA]/20 to-[#D4AF37]/20', borderGlow: 'shadow-[0_0_30px_rgba(167,139,250,0.4)]' },
-  { name: 'Studios', href: '/services/studios', video: '/assets/ai_images/pillars/ahk_studio_pillar.mp4', gradient: 'from-[#A78BFA]/20 via-[#4ADE80]/20 to-[#A78BFA]/20', borderGlow: 'shadow-[0_0_30px_rgba(74,222,128,0.4)]' },
-  { name: 'Academy', href: '/services/academy', video: '/assets/ai_images/pillars/ahk_academy_pillar.mp4', gradient: 'from-[#4ADE80]/20 via-[#00D9FF]/20 to-[#4ADE80]/20', borderGlow: 'shadow-[0_0_30px_rgba(0,217,255,0.4)]' },
-  { name: 'Boutique', href: '/services/boutique', video: '/assets/ai_images/pillars/ahk_boutique_pillar.mp4', gradient: 'from-[#00D9FF]/20 via-[#D4AF37]/20 to-[#00D9FF]/20', borderGlow: 'shadow-[0_0_30px_rgba(212,175,55,0.4)]' },
+  { name: 'Projects', href: '/projects', video: `/assets/ai_images/pillars/ahk_projects_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#D4AF37]/20 via-[#00D9FF]/20 to-[#D4AF37]/20', borderGlow: 'shadow-[0_0_30px_rgba(212,175,55,0.4)]' },
+  { name: 'Hub', href: '/services/consulting-hub', video: `/assets/ai_images/pillars/ahk_hub_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#00D9FF]/20 via-[#D4AF37]/20 to-[#00D9FF]/20', borderGlow: 'shadow-[0_0_30px_rgba(0,217,255,0.4)]' },
+  { name: 'LaunchPad', href: '/services/launchpad', video: `/assets/ai_images/pillars/ahk_launchpad_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#D4AF37]/20 via-[#A78BFA]/20 to-[#D4AF37]/20', borderGlow: 'shadow-[0_0_30px_rgba(167,139,250,0.4)]' },
+  { name: 'Studios', href: '/services/studios', video: `/assets/ai_images/pillars/ahk_studio_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#A78BFA]/20 via-[#4ADE80]/20 to-[#A78BFA]/20', borderGlow: 'shadow-[0_0_30px_rgba(74,222,128,0.4)]' },
+  { name: 'Academy', href: '/services/academy', video: `/assets/ai_images/pillars/ahk_academy_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#4ADE80]/20 via-[#00D9FF]/20 to-[#4ADE80]/20', borderGlow: 'shadow-[0_0_30px_rgba(0,217,255,0.4)]' },
+  { name: 'Boutique', href: '/services/boutique', video: `/assets/ai_images/pillars/ahk_boutique_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#00D9FF]/20 via-[#D4AF37]/20 to-[#00D9FF]/20', borderGlow: 'shadow-[0_0_30px_rgba(212,175,55,0.4)]' },
 ];
 
 export default function PillarsGrid() {

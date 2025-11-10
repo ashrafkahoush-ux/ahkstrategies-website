@@ -1,0 +1,32 @@
+ahkstrategies-website@0.1.0 C:\Users\ashra\ahkstrategies-website
+Γö£ΓöÇΓöÇ @emnapi/core@1.7.0 extraneous
+Γö£ΓöÇΓöÇ @emnapi/runtime@1.7.0 extraneous
+Γö£ΓöÇΓöÇ @emnapi/wasi-threads@1.1.0 extraneous
+Γö£ΓöÇΓöÇ @google/generative-ai@0.24.1
+Γö£ΓöÇΓöÇ @napi-rs/wasm-runtime@0.2.12 extraneous
+Γö£ΓöÇΓöÇ @tailwindcss/postcss@4.1.17
+Γö£ΓöÇΓöÇ @tybys/wasm-util@0.10.1 extraneous
+Γö£ΓöÇΓöÇ @types/node@20.19.24
+Γö£ΓöÇΓöÇ @types/react-dom@19.2.2
+Γö£ΓöÇΓöÇ @types/react@19.2.2
+Γö£ΓöÇΓöÇ autoprefixer@10.4.21
+Γö£ΓöÇΓöÇ babel-plugin-react-compiler@1.0.0
+Γö£ΓöÇΓöÇ docx@9.5.1
+Γö£ΓöÇΓöÇ eslint-config-next@16.0.0
+Γö£ΓöÇΓöÇ eslint@9.39.1
+Γö£ΓöÇΓöÇ framer-motion@12.23.24
+Γö£ΓöÇΓöÇ globby@15.0.0
+Γö£ΓöÇΓöÇ googleapis@165.0.0
+Γö£ΓöÇΓöÇ husky@9.1.7
+Γö£ΓöÇΓöÇ lucide-react@0.546.0
+Γö£ΓöÇΓöÇ next@15.1.0
+Γö£ΓöÇΓöÇ node-cron@4.2.1
+Γö£ΓöÇΓöÇ postcss@8.5.6
+Γö£ΓöÇΓöÇ react-dom@18.3.1
+Γö£ΓöÇΓöÇ react@18.3.1
+Γö£ΓöÇΓöÇ recharts@2.15.4
+Γö£ΓöÇΓöÇ rimraf@6.1.0
+Γö£ΓöÇΓöÇ sharp@0.34.5
+Γö£ΓöÇΓöÇ tailwindcss@4.1.17
+ΓööΓöÇΓöÇ typescript@5.9.3
+

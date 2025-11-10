@@ -8,12 +8,21 @@ interface AnimatedBackgroundProps {
   animationDelay?: number;
 }
 
+// Pre-calculated stable values to prevent hydration mismatch
+// These EXACT values match the server render to prevent hydration errors
+const STABLE_ORB_CONFIGS = [
+  { size: 205.01624088647077, top: 96.61286329956056, left: 7.185502688298584, delay: 0 },
+  { size: 280.44253569306135, top: 15.287430845200968, left: 85.63441947102547, delay: 3 },
+  { size: 312.75874162092805, top: 45.89134696871042, left: 42.11747813224792, delay: 6 },
+  { size: 267.92342376708984, top: 72.44506835937500, left: 68.22917938232422, delay: 9 },
+  { size: 234.15608215332031, top: 28.77140808105469, left: 12.93407917022705, delay: 12 },
+];
+
 export default function AnimatedBackground({
   intensity = 'medium',
   colorSet = 'gold-blue',
   animationDelay = 0,
 }: AnimatedBackgroundProps) {
-  // Derive orb count directly from intensity prop
   const orbCount = intensity === 'low' ? 2 : intensity === 'medium' ? 3 : 5;
 
   const orbColors = useMemo(() => {
@@ -22,31 +31,18 @@ export default function AnimatedBackground({
     return ['gradient-orb-gold', 'gradient-orb-blue', 'gradient-orb-purple'];
   }, [colorSet]);
 
-  // Generate stable random values using a seeded approach
   const orbs = useMemo(() => {
-    const generatePseudoRandom = (seed: number) => {
-      const x = Math.sin(seed) * 10000;
-      return x - Math.floor(x);
-    };
-
     return Array.from({ length: orbCount }).map((_, i) => {
       const color = orbColors[i % orbColors.length];
-      const sizeSeed = i * 17 + animationDelay;
-      const topSeed = i * 31 + animationDelay + 100;
-      const leftSeed = i * 47 + animationDelay + 200;
+      const config = STABLE_ORB_CONFIGS[i % STABLE_ORB_CONFIGS.length];
       
-      const size = 200 + generatePseudoRandom(sizeSeed) * 200;
-      const top = generatePseudoRandom(topSeed) * 100;
-      const left = generatePseudoRandom(leftSeed) * 100;
-      const delay = (i * 3 + animationDelay) % 20;
-
       return {
         id: i,
         color,
-        size,
-        top,
-        left,
-        delay,
+        size: config.size,
+        top: config.top,
+        left: config.left,
+        delay: (config.delay + animationDelay) % 20,
       };
     });
   }, [orbCount, orbColors, animationDelay]);
@@ -59,7 +55,6 @@ export default function AnimatedBackground({
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
-      {/* Gradient Orbs */}
       {orbs.map((orb) => (
         <div
           key={orb.id}
@@ -74,7 +69,6 @@ export default function AnimatedBackground({
         />
       ))}
 
-      {/* Floating Geometric Shapes */}
       {shapes.map((shape, i) => (
         <div
           key={i}

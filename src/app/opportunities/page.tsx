@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '../../contexts/LanguageContext';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import Watermark from '@/components/Watermark';
 
 export default function OpportunitiesPage() {
   const router = useRouter();
@@ -15,7 +17,11 @@ export default function OpportunitiesPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#020617] via-[#0a0f2e] to-[#020617] text-white relative">
+    <div className="min-h-screen bg-gradient-to-b from-[#020617] via-[#0a0f2e] to-[#020617] text-white relative overflow-hidden">
+      {/* Letterhead Background Effects */}
+      <AnimatedBackground intensity="medium" colorSet="gold-blue" />
+      <Watermark />
+      
       {/* Back Button */}
       <button
         onClick={() => router.back()}
@@ -35,7 +41,7 @@ export default function OpportunitiesPage() {
       </button>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-6">
+      <section className="relative py-20 px-6 z-10 fade-in-down">
         <div className="max-w-6xl mx-auto text-center">
           <h1 
             className="font-bold mb-8" 
@@ -65,34 +71,66 @@ export default function OpportunitiesPage() {
       </section>
 
       {/* Key Focus Areas Section */}
-      <section className="max-w-6xl mx-auto px-6 py-8 pb-20">
-        <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem', color: '#fde047' }}>
-          {mounted && isArabic ? 'مجالات التركيز الرئيسية' : 'Key Focus Areas'}
-        </h3>
-        <ul style={{ listStyle: 'disc', paddingLeft: mounted && isArabic ? '0' : '1.5rem', paddingRight: mounted && isArabic ? '1.5rem' : '0', color: '#cbd5e1', lineHeight: '1.75' }}>
-          {mounted && isArabic ? (
-            <>
-              <li>تكنولوجيا السيارات الكهربائية والبنية التحتية</li>
-              <li>أنظمة القيادة الذاتية</li>
-              <li>حلول التصنيع الذكي</li>
-              <li>إدارة سلسلة التوريد المستدامة</li>
-              <li>تقنيات السيارات المتصلة</li>
-            </>
-          ) : (
-            <>
-              <li>Electric Vehicle Technology & Infrastructure</li>
-              <li>Autonomous Driving Systems</li>
-              <li>Smart Manufacturing Solutions</li>
-              <li>Sustainable Supply Chain Management</li>
-              <li>Connected Vehicle Technologies</li>
-            </>
-          )}
-        </ul>
+      <section className="max-w-6xl mx-auto px-6 py-8 pb-20 z-10 relative fade-in-up">
+        <div
+          style={{
+            background: 'rgba(212, 175, 55, 0.05)',
+            border: '1px solid rgba(212, 175, 55, 0.25)',
+            borderRadius: '1rem',
+            padding: '2.5rem 2rem',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+          }}
+        >
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1.5rem', color: '#fde047', textAlign: 'center' }}>
+            {mounted && isArabic ? 'مجالات التركيز الرئيسية' : 'Key Focus Areas'}
+          </h3>
+          <ul style={{ 
+            listStyle: 'disc', 
+            paddingLeft: mounted && isArabic ? '0' : '1.5rem', 
+            paddingRight: mounted && isArabic ? '1.5rem' : '0', 
+            color: '#cbd5e1', 
+            lineHeight: '1.75',
+            fontSize: '1.125rem',
+            maxWidth: '900px',
+            margin: '0 auto'
+          }}>
+            {mounted && isArabic ? (
+              <>
+                <li style={{ marginBottom: '0.75rem' }}>تكنولوجيا السيارات الكهربائية والبنية التحتية</li>
+                <li style={{ marginBottom: '0.75rem' }}>أنظمة القيادة الذاتية</li>
+                <li style={{ marginBottom: '0.75rem' }}>حلول التصنيع الذكي</li>
+                <li style={{ marginBottom: '0.75rem' }}>إدارة سلسلة التوريد المستدامة</li>
+                <li>تقنيات السيارات المتصلة</li>
+              </>
+            ) : (
+              <>
+                <li style={{ marginBottom: '0.75rem' }}>Electric Vehicle Technology & Infrastructure</li>
+                <li style={{ marginBottom: '0.75rem' }}>Autonomous Driving Systems</li>
+                <li style={{ marginBottom: '0.75rem' }}>Smart Manufacturing Solutions</li>
+                <li style={{ marginBottom: '0.75rem' }}>Sustainable Supply Chain Management</li>
+                <li>Connected Vehicle Technologies</li>
+              </>
+            )}
+          </ul>
+        </div>
       </section>
 
       {/* Call to Action Section */}
-      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
-        <div className="bg-gradient-to-br from-[#1e1b4b]/60 to-[#0f172a]/60 backdrop-blur-lg border border-white/10 rounded-3xl p-12">
+      <section className="max-w-6xl mx-auto px-6 py-20 text-center z-10 relative fade-in-up">
+        <div className="bg-gradient-to-br from-[#1e1b4b]/60 to-[#0f172a]/60 backdrop-blur-lg border border-white/10 rounded-3xl p-12"
+          style={{
+            boxShadow: '0 12px 40px rgba(212, 175, 55, 0.15)',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow = '0 16px 48px rgba(212, 175, 55, 0.25)'
+            e.currentTarget.style.transform = 'translateY(-4px)'
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow = '0 12px 40px rgba(212, 175, 55, 0.15)'
+            e.currentTarget.style.transform = 'translateY(0)'
+          }}
+        >
           <h2 className="text-4xl font-bold mb-6 text-white">
             {mounted && isArabic ? (
               <>هل أنت مستعد <span className="text-amber-400">للتعاون؟</span></>
@@ -114,6 +152,41 @@ export default function OpportunitiesPage() {
           </button>
         </div>
       </section>
+
+      {/* Letterhead CSS Animations */}
+      <style jsx>{`
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .fade-in-down {
+          animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+          animation-delay: 0.2s;
+          opacity: 0;
+        }
+      `}</style>
     </div>
   );
 }

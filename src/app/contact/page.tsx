@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import Watermark from '@/components/Watermark';
 import founderPhoto from '../../../public/assets/images/founder/ashraf kahoush photo.png';
 
 const Contact = () => {
@@ -36,7 +38,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#000814] via-[#001021] to-[#010615] text-white relative">
+    <div className="min-h-screen bg-gradient-to-b from-[#000814] via-[#001021] to-[#010615] text-white relative overflow-hidden">
+      {/* Letterhead Background Effects */}
+      <AnimatedBackground intensity="medium" colorSet="gold-blue" />
+      <Watermark />
+      
       {/* Back Button */}
       <button
         onClick={() => router.back()}
@@ -56,7 +62,7 @@ const Contact = () => {
       </button>
 
       {/* Header Section */}
-      <section className="text-center py-20 px-6">
+      <section className="text-center py-20 px-6 relative z-10 fade-in-down">
         <h1 
           className="text-5xl md:text-6xl font-bold tracking-tight" 
           style={{ 
@@ -71,7 +77,7 @@ const Contact = () => {
       </section>
 
       {/* Founder Section */}
-      <section className="max-w-4xl mx-auto px-6 pb-20">
+      <section className="max-w-4xl mx-auto px-6 pb-20 relative z-10 fade-in-up">
         <div className="text-center">
           {/* Founder Photo with Floating Animation */}
           <div className="flex justify-center mb-8">
@@ -114,7 +120,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Us Form Section - Centered Compact Card with 3D Frame */}
-      <section className="flex justify-center px-6 pb-16">
+      <section className="flex justify-center px-6 pb-16 relative z-10 fade-in-up">
         <div 
           className="overflow-hidden relative"
           style={{
@@ -240,7 +246,7 @@ const Contact = () => {
       </section>
 
       {/* Company Contact Section - Bottom of Page */}
-      <section className="flex justify-center px-6 pb-16 pt-12">
+      <section className="flex justify-center px-6 pb-16 pt-12 relative z-10 fade-in-up">
         <div className="flex justify-center flex-wrap gap-6 text-slate-300 text-sm">
           <a href="mailto:info@ahkstrategies.net" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
             <Mail className="text-amber-400" size={18}/>
@@ -280,9 +286,41 @@ const Contact = () => {
             transform: translateY(-6px);
           }
         }
+
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         
         .animate-float {
           animation: float 6s ease-in-out infinite;
+        }
+
+        .fade-in-down {
+          animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+          animation-delay: 0.2s;
+          opacity: 0;
         }
       `}</style>
     </div>

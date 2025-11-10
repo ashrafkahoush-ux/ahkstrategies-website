@@ -1,0 +1,12 @@
+{
+  "directive_id": "XIV",
+  "issuer": "MEGA-EMMA",
+  "target_agent": "MEGA-ERIC",
+  "classification": "System Calibration",
+  "priority": "High",
+  "command": "heartbeat",
+  "status": "pending",
+  "timestamp": "2025-11-09T14:30:00Z",
+  "message": "MEGA-EMMA signal pulse",
+  "expected_response": "alive"
+}

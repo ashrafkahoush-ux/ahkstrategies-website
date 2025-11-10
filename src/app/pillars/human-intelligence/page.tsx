@@ -1,12 +1,18 @@
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import Watermark from '@/components/Watermark';
 
 export default function HumanIntelligencePage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-[#0A0F1E] text-white relative">
+    <div className="min-h-screen bg-[#0A0F1E] text-white relative overflow-hidden">
+      {/* Letterhead Background Effects */}
+      <AnimatedBackground intensity="high" colorSet="full-spectrum" />
+      <Watermark />
+      
       {/* Back Button - Fixed at bottom left of page */}
       <button
         onClick={() => router.back()}
@@ -25,7 +31,7 @@ export default function HumanIntelligencePage() {
       </button>
 
       {/* Hero Section with Video Background */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden z-10">
         <video
           autoPlay
           loop
@@ -45,7 +51,7 @@ export default function HumanIntelligencePage() {
         />
         
         <div 
-          className="relative z-10 text-center px-6 max-w-4xl"
+          className="relative z-10 text-center px-6 max-w-4xl fade-in-down"
           style={{
             position: 'relative',
             zIndex: 10,
@@ -83,14 +89,23 @@ export default function HumanIntelligencePage() {
 
       {/* Content Section */}
       <section 
-        className="max-w-6xl mx-auto px-6 py-16"
+        className="max-w-6xl mx-auto px-6 py-16 relative z-10 fade-in-up"
         style={{
           maxWidth: '72rem',
           margin: '0 auto',
           padding: '4rem 1.5rem',
         }}
       >
-        <div className="prose prose-invert max-w-none">
+        <div 
+          className="prose prose-invert max-w-none"
+          style={{
+            background: 'rgba(212, 175, 55, 0.05)',
+            padding: '3rem 2.5rem',
+            borderRadius: '1rem',
+            border: '1px solid rgba(212, 175, 55, 0.2)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+          }}
+        >
           <p 
             className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-8 italic text-center"
             style={{
@@ -113,6 +128,41 @@ export default function HumanIntelligencePage() {
           </p>
         </div>
       </section>
+
+      {/* Letterhead CSS Animations */}
+      <style jsx>{`
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .fade-in-down {
+          animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+          animation-delay: 0.3s;
+          opacity: 0;
+        }
+      `}</style>
     </div>
   );
 }

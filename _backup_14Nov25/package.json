@@ -1,0 +1,45 @@
+{
+  "name": "ahkstrategies-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "prepare": "husky",
+    "snapshot:now": "node scripts/snapshot.js",
+    "snapshot:diff": "node scripts/diff.js",
+    "start:cron": "node scripts/cron.js",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "framer-motion": "^12.23.24",
+    "googleapis": "^165.0.0",
+    "lucide-react": "^0.546.0",
+    "next": "15.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "^2.15.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "babel-plugin-react-compiler": "1.0.0",
+    "docx": "^9.5.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0",
+    "globby": "^15.0.0",
+    "husky": "^9.1.7",
+    "node-cron": "^4.2.1",
+    "postcss": "^8.5.6",
+    "rimraf": "^6.0.1",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5"
+  }
+}

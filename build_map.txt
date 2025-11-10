@@ -1,0 +1,6 @@
+Folder PATH listing for volume OS
+Volume serial number is AE6F-FC16
+C:\USERS\ASHRA\AHKSTRATEGIES-WEBSITE\.NEXT\SERVER\APP
+Invalid path - \USERS\ASHRA\AHKSTRATEGIES-WEBSITE\.NEXT\SERVER\APP
+No subfolders exist 
+

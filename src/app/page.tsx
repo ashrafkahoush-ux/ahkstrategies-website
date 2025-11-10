@@ -1,7 +1,6 @@
 'use client';
 import HeroSection from "../components/HeroSection";
 import PillarsGrid from "../components/PillarsGrid";
-import ParticleBG from "../components/ParticleBG";
 
 export default function Home() {
   return (

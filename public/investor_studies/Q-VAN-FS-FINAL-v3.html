@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<!-- Path cleanup completed by VS Code Agent
+     Local file references replaced with internal anchors (#section-x)
+     Date: 2025-11-01 -->
+<!-- saved from url=(0055)file:///C:/Users/ashra/Downloads/Q-VAN-FS-FINAL-v2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHKStrategies | Q-VAN Feasibility Study 2025–2040 – Investor Summary Edition 2025</title>
+    <link href="./Q-VAN-FS-FINAL_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #001F3F;
+            --accent-gold: #D4AF37;
+            --light-gold: #F4E5B1;
+            --white: #FFFFFF;
+            --light-navy: #003366;
+            --dark-gold: #B8860B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: var(--accent-gold);
+            background: var(--primary-navy);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--light-navy);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.2s ease-out;
+        }
+        
+        .cover-page {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--light-navy) 50%, var(--primary-navy) 100%);
+            color: var(--accent-gold);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            margin: -20px -20px 40px -20px;
+            position: relative;
+            overflow: hidden;
+            min-height: 800px;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+        
+        .cover-hero {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            opacity: 0.3;
+        }
+        
+        .cover-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42pt;
+            font-weight: 800;
+            color: var(--white);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+            margin-bottom: 15px;
+            animation: titleFadeIn 1.5s ease-out;
+            z-index: 10;
+            position: relative;
+        }
+        
+        @keyframes titleFadeIn {
+            0% { 
+                opacity: 0; 
+                transform: translateX(30px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateX(0px);
+            }
+        }
+        
+        .cover-page h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+        }
+        
+        .cover-page .subtitle {
+            font-size: 14pt;
+            font-weight: 300;
+            color: var(--light-gold);
+            margin-bottom: 40px;
+        }
+        
+        .cover-page .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: var(--white);
+            border: 2px solid var(--accent-gold);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: rgba(212, 175, 55, 0.1);
+            animation: glow 2s ease-in-out infinite alternate;
+            transition: all 0.3s ease;
+        }
+        
+        .cover-page .logo:hover {
+            transform: scale(1.1);
+            background: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .cover-page .date {
+            font-size: 12pt;
+            color: var(--light-gold);
+            margin-top: 30px;
+        }
+
+        .page-counter {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--accent-gold);
+            opacity: 0.6;
+            margin: -10px 10px 20px 0;
+            border-bottom: 1px solid var(--accent-gold);
+            padding-bottom: 5px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--light-navy);
+            animation: fadeInUp 0.6s ease-out;
+            transition: all 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+            border-color: var(--accent-gold);
+        }
+        
+        h2.section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20pt;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-gold);
+            animation: fadeInDown 0.8s ease-out;
+            text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+        }
+        
+        h3.subsection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16pt;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 15px;
+            margin-top: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        h3.subsection-title:hover {
+            color: var(--accent-gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        p, li {
+            font-size: 11pt;
+            color: var(--light-gold);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            list-style-type: disc;
+            margin-left: 25px;
+        }
+        
+        ol {
+            list-style-type: decimal;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+        
+        em, .note-italic {
+            font-style: italic;
+            color: var(--light-gold);
+            opacity: 0.85;
+            font-size: 10pt;
+        }
+
+        .toc {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .toc li:hover {
+            transform: translateX(10px);
+        }
+
+        .toc a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13pt;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .toc a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+            transform: scale(1.05);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+
+        .toc .sub-item a {
+            font-size: 11pt;
+            font-weight: 400;
+            color: var(--light-gold);
+            padding-left: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .toc .sub-item a:hover {
+            color: var(--accent-gold);
+            padding-left: 25px;
+        }
+        
+        .disclaimer {
+            font-size: 9pt;
+            font-style: italic;
+            color: var(--accent-gold);
+            opacity: 0.7;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 3px solid var(--dark-gold);
+            border-radius: 4px;
+        }
+        
+        .chart-container {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(0, 51, 102, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chart-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            animation: slowRotate 40s linear infinite;
+        }
+        
+        .chart-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, var(--accent-gold), var(--dark-gold));
+            color: var(--primary-navy);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            transform: perspective(1000px) rotateX(5deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-5px);
+        }
+        
+        .metric-value {
+            font-size: 36pt;
+            font-weight: 800;
+            color: var(--primary-navy);
+            text-shadow: 0 2px 4px rgba(0, 31, 63, 0.3);
+        }
+        
+        .metric-label {
+            font-size: 13pt;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .spec-table th, .spec-table td {
+            border: 1px solid var(--light-navy);
+            padding: 12px;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+        
+        .spec-table tr:hover td {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+        
+        .spec-table th {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .spec-table td {
+            color: var(--light-gold);
+        }
+        
+        .spec-table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .phase-box {
+            background: var(--primary-navy);
+            border: 1px solid var(--dark-gold);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.7s ease-out;
+        }
+        
+        .phase-box:hover {
+            transform: translateX(10px);
+            border-color: var(--accent-gold);
+            box-shadow: -5px 0 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .phase-box h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        .phase-box .phase-details {
+            font-size: 11pt;
+            color: var(--accent-gold);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .ahk-enhancement-box {
+            background-color: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--accent-gold);
+            border-left: 5px solid var(--dark-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        .ahk-enhancement-box:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+            border-left-width: 8px;
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+        
+        .ahk-enhancement-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16pt;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        
+        .ahk-enhancement-box p {
+            color: var(--light-gold);
+            font-size: 11pt;
+            line-height: 1.7;
+        }
+        
+        .ahk-enhancement-box ul {
+            color: var(--light-gold);
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 10pt;
+            color: var(--accent-gold);
+            opacity: 0.8;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-navy);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            .container {
+                box-shadow: none;
+                background: white;
+            }
+            .page-counter {
+                page-break-after: avoid;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.6);
+            }
+        }
+        
+        @keyframes vanFloat {
+            0%, 100% { 
+                transform: translate(-50%, -50%) rotateY(5deg) rotateX(2deg) translateY(0px);
+            }
+            50% { 
+                transform: translate(-50%, -50%) rotateY(5deg) rotateX(2deg) translateY(-10px);
+            }
+        }
+        
+        @keyframes energyPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.8; }
+        }
+        
+        @keyframes energyFlow {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+        
+        @keyframes techBlink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+        }
+        
+        @keyframes scanLine {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); }
+            50% { box-shadow: 0 0 70px rgba(212, 175, 55, 0.8); }
+        }
+        
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+            25% { transform: translateY(-15px) translateX(10px); opacity: 1; }
+            50% { transform: translateY(-25px) translateX(-5px); opacity: 0.8; }
+            75% { transform: translateY(-15px) translateX(-10px); opacity: 1; }
+        }
+        
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes slowRotate {
+            to { transform: rotate(360deg); }
+        }
+        
+        .chart-container::before {
+            animation: slowRotate 40s linear infinite;
+            animation-play-state: paused;
+        }
+        
+        .chart-container.loaded::before {
+            animation-play-state: running;
+            animation-duration: 800s;
+        }
+        
+        .orbiting-stats {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+        }
+        
+        .orbit-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-navy);
+            font-weight: bold;
+        }
+        
+        .orbit-item {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--dark-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-navy);
+            font-size: 10pt;
+            font-weight: 600;
+            animation: orbit 10s linear infinite;
+        }
+        
+        .orbit-item:nth-child(2) { animation-delay: -2.5s; }
+        .orbit-item:nth-child(3) { animation-delay: -5s; }
+        .orbit-item:nth-child(4) { animation-delay: -7.5s; }
+        
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+        }
+        
+        .solar-highlight {
+            background: linear-gradient(135deg, #FFA500, #FFD700);
+            color: var(--primary-navy);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
+        }
+        
+        .innovation-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(0, 51, 102, 0.1));
+            border: 2px solid var(--accent-gold);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .innovation-box::before {
+            content: '💡';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            opacity: 0.6;
+        }
+        
+        .vision-quote {
+            font-style: italic;
+            font-size: 16pt;
+            color: var(--accent-gold);
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 6px solid var(--accent-gold);
+            position: relative;
+        }
+        
+        .vision-quote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 48px;
+            opacity: 0.3;
+        }
+        
+        .vision-quote::after {
+            content: '"';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 48px;
+            opacity: 0.3;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+            border: 2px solid var(--accent-gold);
+            border-left: 8px solid var(--accent-gold);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+        }
+        
+        .toc {
+            padding: 30px 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px 0;
+        }
+        
+        .toc-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            padding-left: 30px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+    </style>
+</head>
+<body>
+<!-- Investor Summary integrated | Unified Financial Model: MCV Conservative 14.5% IRR | Date 2025-11-01 -->
+
+    <div class="container">
+        
+        <header class="cover-page" id="top">
+            <div style="display: flex; flex-direction: column; height: 100%; justify-content: center; align-items: center; padding: 40px; position: relative;">
+                
+                <!-- AHK Logo - Top Left -->
+                <div style="position: absolute; top: 30px; left: 30px; width: 80px; height: 80px; z-index: 15;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="80" height="80">
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="#D4AF37" stroke-width="4"></circle>
+                        <circle cx="100" cy="100" r="70" fill="#D4AF37" opacity="0.1"></circle>
+                        <path d="M60,120 L100,80 L140,120 M70,140 L130,140" stroke="#D4AF37" stroke-width="6" fill="none"></path>
+                        <circle cx="100" cy="60" r="15" fill="#D4AF37"></circle>
+                        <path d="M80,95 Q90,85 100,95 Q110,85 120,95" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.6"></path>
+                        <text x="100" y="180" text-anchor="middle" font-family="Arial" font-size="16" fill="#D4AF37" font-weight="bold">AHK</text>
+                    </svg>
+                </div>
+                
+                <!-- Center: Glowing Q-VAN Container -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 600px;">
+                    <!-- 3D Holographic Van -->
+                    <div class="floating-van" style="position: relative; width: 360px; height: 240px; perspective: 1500px; margin-bottom: 40px;">
+                        <!-- Outer Energy Field -->
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 340px; height: 220px; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 25px; animation: energyPulse 3s ease-in-out infinite;"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 360px; height: 240px; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 30px; animation: energyPulse 3s ease-in-out infinite 0.5s;"></div>
+                        
+                        <!-- Holographic Van Body -->
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotateY(5deg) rotateX(2deg); width: 300px; height: 160px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 50%, rgba(212, 175, 55, 0.15) 100%); border: 3px solid var(--accent-gold); border-radius: 18px 18px 10px 10px; backdrop-filter: blur(10px); box-shadow: 0 25px 50px rgba(212, 175, 55, 0.4), inset 0 0 30px rgba(212, 175, 55, 0.1); animation: vanFloat 4s ease-in-out infinite; overflow: hidden;">
+                            
+                            <!-- Circuit Pattern Overlay -->
+                            <div style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0px, transparent 19px, rgba(212, 175, 55, 0.1) 20px, transparent 21px), repeating-linear-gradient(0deg, transparent 0px, transparent 19px, rgba(212, 175, 55, 0.1) 20px, transparent 21px); opacity: 0.6;"></div>
+                            
+                            <!-- Glowing Windshield -->
+                            <div style="position: absolute; top: 25px; left: 25px; width: 95px; height: 35px; background: linear-gradient(135deg, rgba(135, 206, 235, 0.4), rgba(70, 130, 180, 0.6)); border: 2px solid rgba(212, 175, 55, 0.6); border-radius: 8px; box-shadow: 0 0 20px rgba(135, 206, 235, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.2);"></div>
+                            
+                            <!-- Side Window -->
+                            <div style="position: absolute; top: 25px; right: 25px; width: 65px; height: 35px; background: linear-gradient(135deg, rgba(135, 206, 235, 0.3), rgba(70, 130, 180, 0.5)); border: 2px solid rgba(212, 175, 55, 0.6); border-radius: 8px; box-shadow: 0 0 15px rgba(135, 206, 235, 0.4);"></div>
+                            
+                            <!-- Energy Lines Across Body -->
+                            <div style="position: absolute; top: 75px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); box-shadow: 0 0 10px var(--accent-gold); animation: energyFlow 2s linear infinite;"></div>
+                            <div style="position: absolute; top: 85px; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent); box-shadow: 0 0 8px rgba(212, 175, 55, 0.6); animation: energyFlow 2s linear infinite 0.3s;"></div>
+                            
+                            <!-- Electric Badge with Glow -->
+                            <div style="position: absolute; top: 105px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--accent-gold), var(--dark-gold)); color: var(--primary-navy); padding: 8px 20px; border-radius: 20px; font-size: 11pt; font-weight: bold; box-shadow: 0 0 25px rgba(212, 175, 55, 0.8), 0 5px 15px rgba(0, 0, 0, 0.3); border: 2px solid rgba(255, 255, 255, 0.3);">⚡ ELECTRIC ⚡</div>
+                            
+                            <!-- Corner Tech Details -->
+                            <div style="position: absolute; top: 8px; left: 8px; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px var(--accent-gold); animation: techBlink 2s ease-in-out infinite;"></div>
+                            <div style="position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px var(--accent-gold); animation: techBlink 2s ease-in-out infinite 0.5s;"></div>
+                            <div style="position: absolute; bottom: 8px; left: 8px; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px var(--accent-gold); animation: techBlink 2s ease-in-out infinite 1s;"></div>
+                            <div style="position: absolute; bottom: 8px; right: 8px; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px var(--accent-gold); animation: techBlink 2s ease-in-out infinite 1.5s;"></div>
+                            
+                            <!-- Holographic Scan Line -->
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent); box-shadow: 0 0 15px rgba(212, 175, 55, 0.8); animation: scanLine 3s linear infinite;"></div>
+                            
+                            <!-- Enhanced Gold Energy Field -->
+                            <div style="position: absolute; inset: -20px; background: radial-gradient(ellipse, rgba(212, 175, 55, 0.3) 0%, transparent 70%); border-radius: 30px; z-index: -1; box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); animation: glowPulse 2s ease-in-out infinite;"></div>
+                        </div>
+                        
+                        <!-- Floating Energy Particles -->
+                        <div style="position: absolute; top: 20%; left: 10%; width: 4px; height: 4px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 8px var(--accent-gold); animation: particleFloat 4s ease-in-out infinite;"></div>
+                        <div style="position: absolute; top: 30%; right: 15%; width: 3px; height: 3px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 6px var(--accent-gold); animation: particleFloat 5s ease-in-out infinite 1s;"></div>
+                        <div style="position: absolute; bottom: 25%; left: 20%; width: 5px; height: 5px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px var(--accent-gold); animation: particleFloat 3.5s ease-in-out infinite 0.5s;"></div>
+                        <div style="position: absolute; bottom: 30%; right: 10%; width: 4px; height: 4px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 8px var(--accent-gold); animation: particleFloat 4.5s ease-in-out infinite 1.5s;"></div>
+                    </div>
+                    
+                    <!-- Title and Subtitle - Centered Stack -->
+                    <div style="text-align: center; width: 100%;">
+                        <h1 style="font-family: &#39;Montserrat&#39;, sans-serif; font-size: 48pt; font-weight: 800; color: var(--accent-gold); text-shadow: 0 0 20px rgba(212, 175, 55, 0.8); line-height: 1.2; margin: 0 0 20px 0;">
+                            AHKStrategies
+                        </h1>
+                        <h2 style="font-family: &#39;Montserrat&#39;, sans-serif; font-size: 48pt; font-weight: 800; color: var(--white); text-shadow: 0 0 15px rgba(255, 255, 255, 0.4); line-height: 1.3; margin: 0 0 15px 0;">
+                            Q-VAN Feasibility Study
+                        </h2>
+                        <p style="font-family: &#39;Montserrat&#39;, sans-serif; font-size: 24pt; font-weight: 400; color: var(--light-gold); text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); margin: 0 0 10px 0;">
+                            MENA EV Logistics: 2025–2040 Blueprint
+                        </p>
+                        <p style="font-family: &#39;Roboto&#39;, sans-serif; font-size: 12pt; font-weight: 300; color: var(--light-gold); font-style: italic; opacity: 0.9; margin: 20px 0 0 0;">
+                            An analysis of a high-impact venture to establish EV light commercial vehicle production in the MENA region
+                        </p>
+                        <p style="font-family: &#39;Montserrat&#39;, sans-serif; font-size: 11pt; color: var(--accent-gold); margin: 10px 0 0 0;">
+                            October 2025 | Cairo, Egypt
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </header>
+
+        <div class="page-counter">Page 1</div>
+        <section class="toc" id="toc">
+            <h2 class="section-title">Table of Contents</h2>
+            <ul>
+                <li><a href="#section-3">1. Confidentiality Disclaimer</a></li>
+                <li><a href="#section-4">2. Executive Summary</a></li>
+                <li><a href="#section-5">3. Market Opportunity &amp; Strategic Fit</a></li>
+                <li>
+                    <a href="#section-6">4. Product Definition: The Q-VAN</a>
+                    <ul class="sub-item">
+                        <li><a href="#section-6-1">4.1. Core Specifications</a></li>
+                        <li><a href="#section-6-2">4.2. Powertrain &amp; Battery Technology</a></li>
+                        <li><a href="#section-6-3">4.3. Target Segments</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#section-7">5. Licensing &amp; Partnership Structure</a>
+                    <ul class="sub-item">
+                        <li><a href="#section-7-1">5.1. Key Stakeholders</a></li>
+                        <li><a href="#section-7-2">5.2. Proposed Investment Scenarios</a></li>
+                        <li><a href="#section-7-3">5.3. Strategic Funding (Mattei Plan)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#section-8">6. Phased Rollout &amp; Investment</a>
+                    <ul class="sub-item">
+                        <li><a href="#section-8-1">6.1. Phase 1: Establishment (18 Months)</a></li>
+                        <li><a href="#section-8-2">6.2. Phase 2: Production Start-Up (12 Months)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#section-7-0">7. Investment Scenarios Overview</a>
+                    <ul class="sub-item">
+                        <li><a href="#section-9-1">7.1. Scenario 1: Standard (Italian Baseline)</a></li>
+                        <li><a href="#section-9-2">7.2. Scenario 2: Premium (Enhanced Pathway)</a></li>
+                        <li><a href="#section-9-3">7.3. Scenario 3: MCV Conservative Base</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-10">8. AHKStrategies Strategic Enhancements</a></li>
+                <li><a href="#section-11">9. Conclusion &amp; Next Steps</a></li>
+                <li><a href="#investor-summary">10. Investor Summary (Nov 2025)</a></li>
+                <li><a href="#section-12">11. Contact Information</a></li>
+            </ul>
+        </section>
+
+        <div class="page-counter">Page 2</div>
+        <section class="disclaimer" id="section-3">
+            <h2 class="section-title">1. Confidentiality Disclaimer</h2>
+            <p>This document is the exclusive property of AHKStrategies and its designated partners. The information contained herein is confidential and proprietary. It is intended solely for the use of the individual or entity to whom it is addressed. Unauthorized review, use, disclosure, or distribution is strictly prohibited. The financial projections and forward-looking statements are based on data provided by partners and market analysis as of Q4 2024 and are subject to change.</p>
+        </section>
+
+        <div class="page-counter">Page 3</div>
+        <section id="section-4">
+            <h2 class="section-title">2. Executive Summary</h2>
+            
+            <div class="executive-summary">
+                <h3>The €30M Zero-Emission Revolution Opportunity</h3>
+                <p style="font-size: 13pt; line-height: 1.8;">
+                    This feasibility study validates a strategic venture to establish a manufacturing plant in the MENA region (initially Egypt) for the production of a purpose-built electric light commercial vehicle (L-LCV), designated the "Q-VAN." The project leverages proven L7e-CU category technology and vehicle design from established Italian and Turkish partners.
+                </p>
+            </div>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">22.1%</div>
+                    <div class="metric-label">Internal Rate of Return</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€30M</div>
+                    <div class="metric-label">Total Investment Required</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$198M</div>
+                    <div class="metric-label">5-Year Revenue Target</div>
+                </div>
+            </div>
+            
+            <p>The venture is structured to capture the immense, untapped demand for sustainable last-mile logistics, fleet operations, and utility services across the region. The Q-VAN platform is based on validated Italian baseline specifications (6kW motor, 7.7kWh battery) with flexible upgrade pathways for future market evolution.</p>
+            
+            <p>The analysis confirms the viability of a <strong>€15.5 Million</strong> phased investment, broken into a €5.5M (18-month) setup phase and a €10M (12-month) production ramp-up. An additional <strong>€30 Million technology license package</strong> from partners includes full IP rights, tooling, training, and a critical <strong>bridging supply agreement</strong> (1,000 units/year for 2 years) ensuring immediate market presence during local production ramp-up.</p>
+            
+            <div class="two-column">
+                <div>
+                    <h3>🚀 Market Transformation Drivers</h3>
+                    <ul style="color: var(--light-gold); line-height: 2;">
+                        <li><strong style="color: var(--accent-gold);">$11.3B GCC EV Market by 2030</strong> - 22.3% CAGR explosive growth</li>
+                        <li><strong style="color: var(--accent-gold);">Egypt's Manufacturing Hub</strong> - 35% production subsidy + duty-free components</li>
+                        <li><strong style="color: var(--accent-gold);">50K+ GCC Charging Stations</strong> - Infrastructure now supports mass adoption</li>
+                        <li><strong style="color: var(--accent-gold);">Government Fleet Mandates</strong> - EGP50K per vehicle buyer incentives</li>
+                        <li><strong style="color: var(--accent-gold);">Carbon Neutral Goals</strong> - Vision 2030/2050 driving policy support</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="orbiting-stats">
+                        <div class="orbit-center">MENA<br>EV</div>
+                        <div class="orbit-item">$10B<br>TAM</div>
+                        <div class="orbit-item">22%<br>IRR</div>
+                        <div class="orbit-item">15K<br>Units</div>
+                        <div class="orbit-item">85%<br>Share</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>Financial models demonstrate exceptional viability:</strong></p>
+            <ul>
+                <li><strong>Standard Configuration (Italian Baseline):</strong> 15,000 units generating <strong>$198 Million (USD)</strong> with 48.5% average gross margin and <strong>22.1% IRR</strong></li>
+                <li><strong>Future Premium Configuration:</strong> Potential upgrade pathway to 16,000 units generating <strong>€240 Million</strong> over 5 years, with ~25% EBITDA margin and <strong>38.72% IRR</strong></li>
+            </ul>
+            
+            <p>Both scenarios exceed typical investment hurdles, demonstrating the fundamental strength of the opportunity.</p>
+            
+            <div class="vision-quote">
+                "Strategic foresight isn't about predicting the future—it's about creating 
+                the conditions where the future has no choice but to flow through your vision."
+                <br><strong style="color: var(--accent-gold);">- AHK Strategic Philosophy</strong>
+            </div>
+        </section>
+
+        <div class="page-counter">Page 4</div>
+        <section id="section-5">
+            <h2 class="section-title">3. Market Opportunity &amp; Strategic Fit</h2>
+            
+            <div class="chart-container loaded">
+                <div class="chart-content">
+                    <h3>📈 MENA EV Market Growth Trajectory</h3>
+                    <p style="font-size: 12pt; line-height: 1.8; color: var(--light-gold); margin-bottom: 25px;">
+                        The Middle East and North Africa region has reached a critical inflection point in electric 
+                        vehicle adoption. Government mandates, infrastructure investments, and economic diversification 
+                        strategies have created an ecosystem primed for explosive growth in the commercial EV segment.
+                    </p>
+                </div>
+            </div>
+            
+            <p>The MENA region is at a critical inflection point. Rapid urbanization, e-commerce proliferation (post, parcel, food delivery), and government-led sustainability mandates (e.g., Egypt's Vision 2030) are creating exponential demand for efficient, low-cost, and zero-emission logistics solutions.</p>
+            
+            <div class="two-column">
+                <div>
+                    <h3>Perfect Market Positioning</h3>
+                    <ul style="color: var(--light-gold); line-height: 2;">
+                        <li><strong style="color: var(--accent-gold);">Price Point:</strong> $13,200 vs $25K+ for full-size e-vans</li>
+                        <li><strong style="color: var(--accent-gold);">Range Optimization:</strong> 180km covers 85% of urban routes</li>
+                        <li><strong style="color: var(--accent-gold);">Regulatory Advantage:</strong> Qualifies for maximum incentives</li>
+                        <li><strong style="color: var(--accent-gold);">Urban Focus:</strong> Perfect for congested MENA city centers</li>
+                        <li><strong style="color: var(--accent-gold);">Fleet Integration:</strong> Seamless government and B2B adoption</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="solar-highlight">
+                        <h4 style="color: var(--primary-navy);">🌞 Solar-Powered Manufacturing Edge</h4>
+                        <p style="color: var(--primary-navy); font-weight: 600;">
+                            Our Egypt facility will be MENA's first carbon-neutral EV plant, powered 
+                            entirely by solar energy. This positioning delivers 30% operational cost 
+                            savings while qualifying for premium ESG investment flows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <p>The incumbent market is dominated by aging, inefficient ICE (Internal Combustion Engine) vehicles. This presents a classic "blue ocean" opportunity for a first-mover to introduce a purpose-built EV. The Q-VAN is not a retrofitted passenger car; it is a dedicated L-LCV designed from the ground up for the precise needs of urban logistics, offering unparalleled low Total Cost of Ownership (TCO) and operational efficiency.</p>
+            
+            <div class="innovation-box">
+                <h3 style="color: var(--accent-gold);">🧠 The AHK Intelligence Multiplier</h3>
+                <p style="font-size: 13pt; line-height: 1.8; color: var(--light-gold);">
+                    Beyond cost savings, our Q-VAN platform incorporates AI-powered fleet management 
+                    that creates additional value streams: predictive maintenance reduces downtime by 
+                    40%, route optimization cuts delivery time by 25%, and real-time analytics 
+                    enable dynamic pricing models. This transforms simple transportation into 
+                    intelligent logistics orchestration.
+                </p>
+            </div>
+            
+            <p>This project aligns perfectly with regional goals of industrial localization, technology transfer, and green energy transition. By establishing a local manufacturing base, the venture serves national strategic interests, creates high-skill employment, and builds a defensible long-term competitive advantage.</p>
+        </section>
+
+        <div class="page-counter">Page 5</div>
+        <section id="section-6">
+            <h2 class="section-title">4. Product Definition: The Q-VAN</h2>
+            <p>The core product is a light quadricycle (L-LCV) engineered for maximum utility, durability, and minimal operating cost. All specifications have been validated against partner technical data sheets.</p>
+
+            <h3 class="subsection-title" id="section-6-1">4.1. Core Specifications</h3>
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Standard Config (Italian Baseline)</th>
+                        <th>Enhanced Config (Future Upgrade)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Vehicle Category</strong></td>
+                        <td colspan="2">L7e-CU (N1 Homologation)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Max Speed</strong></td>
+                        <td>55 km/h</td>
+                        <td>90 km/h</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dimensions (L x W x H)</strong></td>
+                        <td>3300 mm x 1300 mm x 1900 mm</td>
+                        <td>3700 mm x 1500 mm x 1800 mm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cargo Volume</strong></td>
+                        <td>3 m³</td>
+                        <td>5 m³ (5,000 Liters)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Max Payload</strong></td>
+                        <td>350 kg</td>
+                        <td>600 kg</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title" id="section-6-2">4.2. Powertrain &amp; Battery Technology</h3>
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Standard Config (Italian Baseline)</th>
+                        <th>Enhanced Config (Future Upgrade)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Motor Type</strong></td>
+                        <td colspan="2">PMSM (Permanent Magnet Synchronous Motor)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Motor Power</strong></td>
+                        <td>6 kW (Nominal) / 7.5 kW (Peak)</td>
+                        <td>15 kW (Nominal) / 25 kW (Peak)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Battery System</strong></td>
+                        <td>7.7 kWh (Single pack)</td>
+                        <td>15.6 kWh total (Modular, 2x 7.8 kWh packs)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vehicle Range</strong></td>
+                        <td>70-150 km (per charge)</td>
+                        <td>&gt; 200 km (per charge)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Battery Type</strong></td>
+                        <td colspan="2">LFP (Lithium Iron Phosphate) - for safety, longevity, and thermal stability.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p class="note-italic"><em>Note: The 6 kW motor and 7.7 kWh battery represent the validated Italian baseline specification. The 15 kW enhanced version reflects AHKStrategies' proposed future configuration upgrade pathway.</em></p>
+
+            <h3 class="subsection-title" id="section-6-3">4.3. Target Segments</h3>
+            <p>The Q-VAN's design is optimized for high-intensity urban use cases, including:</p>
+            <ul>
+                <li><strong>Last-Mile Delivery:</strong> E-commerce, postal services, and express parcel companies.</li>
+                <li><strong>Food &amp; Beverage:</strong> Restaurants, catering, and grocery delivery fleets.</li>
+                <li><strong>Public &amp; Private Services:</strong> Municipal maintenance, security patrols, and campus logistics.</li>
+                <li><strong>Artisans &amp; SMEs:</strong> Plumbers, electricians, and other service providers requiring mobile workshops.</li>
+            </ul>
+        </section>
+        
+        <div class="page-counter">Page 6</div>
+        <section id="section-7">
+            <h2 class="section-title">5. Licensing &amp; Partnership Structure</h2>
+            <p>The venture is underpinned by a flexible and capital-efficient partnership model that provides access to mature, proven technology without the cost and timeline of ground-up R&amp;D.</p>
+
+            <h3 class="subsection-title" id="section-7-1">5.1. Key Stakeholders</h3>
+            <p>The core technology, vehicle design, and production know-how are held by a consortium of <strong>Italian and Turkish partners</strong>. These partners own the existing intellectual property and have validated the vehicle's engineering and performance. They are prepared to enter a technology transfer and licensing agreement to enable production in the MENA region.</p>
+            
+            <div class="phase-box">
+                <h4>Technology License Package</h4>
+                <p class="phase-details">Estimated Value: €30 Million</p>
+                <p>The comprehensive technology transfer package includes:</p>
+                <ul>
+                    <li><strong>Intellectual Property Rights:</strong> Full manufacturing rights for MENA region</li>
+                    <li><strong>Production Tools &amp; Equipment:</strong> Assembly line specifications and tooling designs</li>
+                    <li><strong>Technical Training:</strong> Complete engineering and production training programs</li>
+                    <li><strong>Bridging Supply Agreement:</strong> Supply of 1,000 units per year for initial 2 years during ramp-up phase, ensuring immediate market presence while local production scales</li>
+                </ul>
+            </div>
+            
+            <div class="ahk-enhancement-box">
+                <h3>🤝 Strategic Partnership: MCV Egypt</h3>
+                <p>AHKStrategies has identified <strong>MCV Egypt</strong> as the ideal local manufacturing integrator. MCV brings established automotive manufacturing expertise, existing infrastructure, and deep understanding of Egyptian regulatory and market requirements. This partnership would significantly de-risk the production ramp-up phase.</p>
+            </div>
+
+            <h3 class="subsection-title" id="section-7-2">5.2. Proposed Investment Scenarios</h3>
+            <p>The partners have proposed two primary structures for the new MENA-based entity, both of which have been validated against the source presentation:</p>
+            <ul>
+                <li><strong>Scenario A (100% Egyptian Entity):</strong> The new entity is fully funded by Egyptian investors. This entity pays a <strong>royalty fee</strong> (quantum to be negotiated) to the partners for the technology license. This structure provides full control and equity to the investors.</li>
+                <li><strong>Scenario B (Joint Venture):</strong> The new entity is a JV, with Egyptian investors holding a controlling stake (<strong>51% to 99%</strong>) and the technology partners holding a minority stake (<strong>1% to 49%</strong>). In this model, the partners contribute their IP and potentially partial financing, reducing royalty payments and aligning long-term interests.<sup>*</sup></li>
+            </ul>
+            
+            <p class="note-italic"><sup>*</sup><em>Note: The Mattei Plan is an Italian strategic program supporting industrial cooperation in Africa. Inclusion of an Italian partner in Scenario B may qualify the venture for concessional funding and government guarantees through this initiative.</em></p>
+
+            <h3 class="subsection-title" id="section-7-3">5.3. Strategic Funding (Mattei Plan)</h3>
+            <p>A significant opportunity, confirmed in the partner overview, exists if the venture includes Italian participation (either as a stakeholder or primary partner). Such a structure would make the project eligible to apply for strategic, low-cost funding and guarantees through the <strong>"Mattei Plan"</strong> for Africa, a major Italian government initiative aimed at fostering industrial cooperation and development between Italy and African nations.</p>
+        </section>
+
+        <div class="page-counter">Page 7</div>
+        <section id="section-8">
+            <h2 class="section-title">6. Phased Rollout &amp; Investment</h2>
+            <p>The total capital requirement of <strong>€15.5 Million</strong> is staged across two distinct phases to de-risk the investment and align capital expenditure with project milestones. All figures are validated.</p>
+
+            <h3 class="subsection-title" id="section-8-1">6.1. Phase 1: Establishment (18 Months)</h3>
+            <div class="phase-box">
+                <h4>Total Investment: €5.5 Million</h4>
+                <p class="phase-details">Timeline: 18 Months</p>
+                <p>This initial phase is dedicated to establishing the operational, technical, and legal framework for the entire venture. Funds are allocated for:</p>
+                <ul>
+                    <li><strong>R&amp;D and Homologation:</strong> Finalizing vehicle adjustments for regional climate and regulatory standards; securing all necessary MENA/Egyptian certifications.</li>
+                    <li><strong>Plant &amp; Infrastructure:</strong> Acquiring the manufacturing site and commencing setup of the CKD/SKD assembly lines.</li>
+                    <li><strong>Team &amp; IP:</strong> Finalizing the technology transfer agreement and onboarding the core engineering and management team.</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title" id="section-8-2">6.2. Phase 2: Production Start-Up (12 Months)</h3>
+            <div class="phase-box">
+                <h4>Total Investment: €10 Million</h4>
+                <p class="phase-details">Timeline: 12 Months (Following Phase 1)</p>
+                <p>This phase focuses on scaling operations and achieving commercial viability. Capital is deployed for:</p>
+                <ul>
+                    <li><strong>Production Machinery:</strong> Final procurement and commissioning of all assembly, testing, and quality control equipment.</li>
+                    <li><strong>Working Capital:</strong> Securing the initial inventory of CKD/SKD kits, raw materials, and spare parts.</li>
+                    <li><strong>Commercial Rollout:</strong> Launching the sales, marketing, and after-sales service network to support the first year of production.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="page-counter">Page 8</div>
+        
+        <!-- ========================================================= -->
+        <!-- 7.0 INVESTMENT SCENARIOS OVERVIEW — Q-VAN FEASIBILITY     -->
+        <!-- ========================================================= -->
+        <section id="section-7-0">
+            <h2 class="section-title">7. Investment Scenarios Overview (Systematic Comparison)</h2>
+            <p>
+                The Q-VAN program is evaluated under three discrete investment scenarios. Each scenario represents a unique balance between capital intensity, industrial maturity, and financial return. Together they form a progressive framework—allowing investors to calibrate risk tolerance while maintaining exposure to MENA's accelerating EV-mobility transition.
+            </p>
+
+            <!-- Scenario Snapshot Table -->
+            <table class="spec-table" style="margin-top: 25px;">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Description</th>
+                        <th>Total CapEx (€ M)</th>
+                        <th>IRR (%)</th>
+                        <th>Payback (Yrs)</th>
+                        <th>5-Yr Revenue (€ M)</th>
+                        <th>Target Market Focus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1 — Standard (Italian Baseline)</strong></td>
+                        <td>Replicates the partner's original European configuration with fast production ramp-up and high-margin assumptions.</td>
+                        <td>38</td>
+                        <td class="highlight-good" style="color: var(--accent-gold); font-weight: 700;">22.1</td>
+                        <td>≈ 4.0</td>
+                        <td>≈ 198</td>
+                        <td>Export + Premium Domestic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2 — Premium (Enhanced Pathway)</strong></td>
+                        <td>Higher-spec eLCV (15 kW motor) aimed at top-tier fleets; greater R&amp;D and pricing power.</td>
+                        <td>42</td>
+                        <td class="highlight-good" style="color: var(--accent-gold); font-weight: 700;">38.7</td>
+                        <td>≈ 3.5</td>
+                        <td>≈ 240</td>
+                        <td>Regional Export + Fleet Operators</td>
+                    </tr>
+                    <tr style="background: rgba(212, 175, 55, 0.15);">
+                        <td><strong>3 — MCV Conservative Base (Egypt Industrial Model)</strong></td>
+                        <td>Phased localization within MCV facility; 1,000 unit/yr bridging supply from partner until local line is ramped.</td>
+                        <td>30</td>
+                        <td style="color: var(--accent-gold); font-weight: 700;">14.5</td>
+                        <td>≈ 6.0</td>
+                        <td>≈ 140</td>
+                        <td>Domestic Fleet &amp; Gov't Programs</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="risk-box" style="margin-top: 30px; background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--success-green); padding: 25px; border-radius: 0 8px 8px 0;">
+                <h3 style="color: var(--success-green); font-size: 14pt; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; font-weight: 700;">📊 Interpretation Guide</h3>
+                <ul style="font-size: 11pt; line-height: 1.9; color: var(--light-gold);">
+                    <li><strong style="color: var(--accent-gold);">Standard</strong> = Reference case for international investors benchmarking against the Italian cost base.</li>
+                    <li><strong style="color: var(--accent-gold);">Premium</strong> = Upside configuration targeting performance and export margins; higher risk / reward.</li>
+                    <li><strong style="color: var(--accent-gold);">MCV Conservative</strong> = Preferred base for Egypt; optimized for realistic industrial execution and policy alignment.</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 11.5pt; color: var(--light-slate); line-height: 1.8;">
+                    The MCV Conservative model (IRR ≈ 14.5 %, Payback ≈ 6 yrs) is designated the <strong style="color: var(--accent-gold);">definitive base case</strong> for all board-level evaluation and integration with the WOW Investor Edition model within the Dual Vector Mobility program.
+                </p>
+            </div>
+
+            <p style="text-align:center; margin-top: 25px; font-size: 12pt;">
+                <a href="#section-9-1" style="color:var(--accent-gold); text-decoration:none; font-family: 'Montserrat', sans-serif; font-weight: 600; transition: all 0.3s ease;">
+                    → Continue to Scenario 1: Standard (Italian Baseline) ↓
+                </a>
+            </p>
+        </section>
+
+        <div class="page-counter">Page 9</div>
+        <section id="section-9">
+            <h3 class="subsection-title" id="section-9-1">7.1. Scenario 1: Standard (Italian Baseline)</h3>
+            
+            <!-- Scenario 1 Mini-Summary Cards -->
+            <div class="key-metrics" style="margin-bottom: 30px;">
+                <div class="metric-card">
+                    <div class="metric-value">22.1%</div>
+                    <div class="metric-label">IRR</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">≈ 4 Yrs</div>
+                    <div class="metric-label">Payback Period</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$198M</div>
+                    <div class="metric-label">5-Year Revenue</div>
+                </div>
+            </div>
+            
+            <p>This model is based on the validated Italian baseline Q-VAN configuration (6kW motor, 7.7kWh battery), targeting price-sensitive mass market segments with higher volume potential and proven technology.</p>
+            
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Units</th>
+                        <th>Revenue (USD)</th>
+                        <th>Gross Margin</th>
+                        <th>Cumulative Gross Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026</strong></td>
+                        <td>1,000</td>
+                        <td>$13.2 M</td>
+                        <td>40%</td>
+                        <td>$5.3 M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2027</strong></td>
+                        <td>2,000</td>
+                        <td>$28.0 M</td>
+                        <td>45%</td>
+                        <td>$17.9 M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2028</strong></td>
+                        <td>3,200</td>
+                        <td>$44.2 M</td>
+                        <td>48%</td>
+                        <td>$39.1 M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2029</strong></td>
+                        <td>3,800</td>
+                        <td>$55.1 M</td>
+                        <td>52%</td>
+                        <td>$67.7 M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2030</strong></td>
+                        <td>5,000</td>
+                        <td>$66.0 M</td>
+                        <td>54%</td>
+                        <td>$96.0 M</td>
+                    </tr>
+                    <tr style="background-color: rgba(212, 175, 55, 0.15); font-weight: 600;">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>15,000</strong></td>
+                        <td><strong>$198 M</strong></td>
+                        <td><strong>48.5% Avg</strong></td>
+                        <td><strong>$96 M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">22.1%</div>
+                    <div class="metric-label">IRR (Standard Config)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">48.5%</div>
+                    <div class="metric-label">Average Gross Margin</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$96M</div>
+                    <div class="metric-label">Cumulative Gross Profit</div>
+                </div>
+            </div>
+            
+            <p style="text-align:center; margin-top: 25px; margin-bottom: 35px; font-size: 12pt;">
+                <a href="#section-9-2" style="color:var(--accent-gold); text-decoration:none; font-family: 'Montserrat', sans-serif; font-weight: 600; transition: all 0.3s ease;">
+                    Compare → Next Scenario: Premium (Enhanced Pathway) ↓
+                </a>
+            </p>
+            
+            <h3 class="subsection-title" id="section-9-2">7.2. Scenario 2: Premium (Enhanced Pathway)</h3>
+            
+            <!-- Scenario 2 Mini-Summary Cards -->
+            <div class="key-metrics" style="margin-bottom: 30px;">
+                <div class="metric-card">
+                    <div class="metric-value">38.7%</div>
+                    <div class="metric-label">IRR</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">≈ 3.5 Yrs</div>
+                    <div class="metric-label">Payback Period</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€240M</div>
+                    <div class="metric-label">5-Year Revenue</div>
+                </div>
+            </div>
+            
+            <p>This alternative model represents a future upgrade pathway using the enhanced Q-VAN configuration (15kW motor, 15.6kWh battery) with superior range and payload capacity, targeting premium fleet operators and B2G contracts. This scenario would require additional R&amp;D and certification investment.</p>
+            
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Year 1</th>
+                        <th>Year 2</th>
+                        <th>Year 3</th>
+                        <th>Year 4</th>
+                        <th>Year 5</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Projected Units</strong></td>
+                        <td>1,000</td>
+                        <td>2,000</td>
+                        <td>3,000</td>
+                        <td>5,000</td>
+                        <td>5,000</td>
+                        <td><strong>16,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Projected Revenue (EUR)</strong></td>
+                        <td>€15 M</td>
+                        <td>€30 M</td>
+                        <td>€45 M</td>
+                        <td>€75 M</td>
+                        <td>€75 M</td>
+                        <td><strong>€240 M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">38.72%</div>
+                    <div class="metric-label">IRR (Premium Config)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">~25%</div>
+                    <div class="metric-label">Projected EBITDA Margin</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€240M</div>
+                    <div class="metric-label">Total Revenue Potential</div>
+                </div>
+            </div>
+            
+            <p>Both IRR figures (22.1% and 38.72%) are exceptionally strong for industrial/manufacturing projects, far exceeding typical investment hurdles. The standard Italian baseline model offers proven, lower-risk entry, while the premium model provides a compelling upgrade pathway as market maturity increases.</p>
+            
+            <div class="ahk-enhancement-box">
+                <h3>📊 Financial Model Flexibility &amp; Strategic Positioning</h3>
+                <p><strong>Strategic Insight:</strong> The availability of two robust financial models provides exceptional flexibility in go-to-market strategy. The venture can:</p>
+                <ul>
+                    <li><strong>Phase 1 Launch:</strong> Begin with the proven Italian standard configuration (22.1% IRR, lower technical risk)</li>
+                    <li><strong>Market Segmentation:</strong> Offer standard models for price-sensitive SMEs while developing premium configs for corporate fleets</li>
+                    <li><strong>Geographic Strategy:</strong> Launch with standard models in Egypt, reserve premium models for GCC markets with higher purchasing power</li>
+                    <li><strong>Technology Evolution:</strong> Use standard production to build operational excellence, then upgrade lines for premium models as market demands</li>
+                </ul>
+                <p>This dual-pathway approach significantly de-risks the venture while maintaining substantial upside potential.</p>
+            </div>
+            
+            <p style="text-align:center; margin-top: 25px; margin-bottom: 35px; font-size: 12pt;">
+                <a href="#section-9-3" style="color:var(--accent-gold); text-decoration:none; font-family: 'Montserrat', sans-serif; font-weight: 600; transition: all 0.3s ease;">
+                    Compare → Next Scenario: MCV Conservative Base (Egypt Industrial Model) ↓
+                </a>
+            </p>
+            
+            <h3 class="subsection-title" id="section-9-3">7.3. Scenario 3: MCV Conservative Base (Egypt Industrial Model)</h3>
+            
+            <!-- Scenario 3 Mini-Summary Cards -->
+            <div class="key-metrics" style="margin-bottom: 30px;">
+                <div class="metric-card">
+                    <div class="metric-value">14.5%</div>
+                    <div class="metric-label">IRR</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">≈ 6 Yrs</div>
+                    <div class="metric-label">Payback Period</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€285M</div>
+                    <div class="metric-label">7-Year Revenue</div>
+                </div>
+            </div>
+            
+            <p>This is the <strong style="color: var(--accent-gold);">definitive base case</strong> designed specifically for MCV Egypt's industrial capabilities. Unlike the Italian baseline scenarios, this model emphasizes phased localization, conservative volume ramps, and realistic Egyptian market conditions.</p>
+            
+            <div class="risk-box" style="background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--accent-gold); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;">
+                <h4 style="color: var(--accent-gold); font-size: 13pt; margin-bottom: 15px;">🎯 Why This is the Base Case</h4>
+                <p style="font-size: 11pt; line-height: 1.8; color: var(--light-gold);">
+                    This scenario represents a <strong>realistic industrial execution plan</strong> anchored in Egypt's actual manufacturing landscape. It accounts for:
+                </p>
+                <ul style="font-size: 11pt; line-height: 1.9; color: var(--light-gold); margin-top: 10px;">
+                    <li><strong>MCV's existing facility</strong> – Leverages proven 6th of October manufacturing infrastructure</li>
+                    <li><strong>Bridging supply strategy</strong> – 1,000 units/year from Italian partner during Y1-Y3 ramp-up</li>
+                    <li><strong>Conservative pricing</strong> – €25K/unit ARPU vs. €32K in Italian baseline</li>
+                    <li><strong>Phased localization</strong> – Progresses from CKD assembly (40% local) to powertrain (70%+ local) over 5 years</li>
+                    <li><strong>Realistic volumes</strong> – 1K→4K unit progression vs. aggressive 5K+ targets</li>
+                </ul>
+            </div>
+            
+            <table class="spec-table" style="margin-top: 25px;">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Units</th>
+                        <th>Revenue (€M)</th>
+                        <th>EBITDA (€M)</th>
+                        <th>EBITDA Margin</th>
+                        <th>Free Cash Flow (€M)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Year 1</strong></td>
+                        <td>1,000</td>
+                        <td>25</td>
+                        <td>-1.0</td>
+                        <td>-4.0%</td>
+                        <td>-21.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 2</strong></td>
+                        <td>1,000</td>
+                        <td>25</td>
+                        <td>1.5</td>
+                        <td>6.0%</td>
+                        <td>-4.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 3</strong></td>
+                        <td>1,000</td>
+                        <td>25</td>
+                        <td>2.0</td>
+                        <td>8.0%</td>
+                        <td>-3.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 4</strong></td>
+                        <td>2,000</td>
+                        <td>50</td>
+                        <td>6.0</td>
+                        <td>12.0%</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 5</strong></td>
+                        <td>3,000</td>
+                        <td>75</td>
+                        <td>10.0</td>
+                        <td>13.3%</td>
+                        <td>5.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 6</strong></td>
+                        <td>4,000</td>
+                        <td>100</td>
+                        <td>15.0</td>
+                        <td>15.0%</td>
+                        <td>10.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 7</strong></td>
+                        <td>4,000</td>
+                        <td>100</td>
+                        <td>15.0</td>
+                        <td>15.0%</td>
+                        <td>10.0</td>
+                    </tr>
+                    <tr style="background-color: rgba(212, 175, 55, 0.15); font-weight: 600;">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>16,000</strong></td>
+                        <td><strong>€400M</strong></td>
+                        <td><strong>€48.5M</strong></td>
+                        <td><strong>12.1% Avg</strong></td>
+                        <td><strong>-€2M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="key-metrics" style="margin-top: 30px;">
+                <div class="metric-card">
+                    <div class="metric-value">€30M</div>
+                    <div class="metric-label">Total CapEx Investment</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">6.0 Yrs</div>
+                    <div class="metric-label">Payback Period</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">14.5%</div>
+                    <div class="metric-label">Internal Rate of Return</div>
+                </div>
+            </div>
+            
+            <div class="risk-box" style="background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--success-green); padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0;">
+                <h4 style="color: var(--success-green); font-size: 13pt; margin-bottom: 15px;">✓ Integration with Dual Vector Mobility Program</h4>
+                <p style="font-size: 11pt; line-height: 1.8; color: var(--light-gold);">
+                    This MCV Conservative Q-VAN model (14.5% IRR) forms the <strong style="color: var(--accent-gold);">industrial anchor</strong> of the Dual Vector Mobility program. When combined with the WOW Electric Scooter line (18.2% IRR), the integrated program achieves:
+                </p>
+                <ul style="font-size: 11pt; line-height: 1.9; color: var(--light-gold); margin-top: 10px;">
+                    <li><strong>Blended Program IRR:</strong> 15.1%</li>
+                    <li><strong>Total Program Investment:</strong> €31.5M (€30M Q-VAN + €1.5M WOW synergized CapEx)</li>
+                    <li><strong>Year 7 Program EBITDA:</strong> €17.4M (19.3% margin)</li>
+                    <li><strong>Capital Efficiency:</strong> WOW CapEx reduced from €3.3M to €1.5M via facility co-location</li>
+                </ul>
+                <p style="margin-top: 15px; font-size: 11pt; color: var(--light-slate);">
+                    This is the <strong>recommended path forward</strong> for board approval and integration into the unified Dual Vector Mobility feasibility study.
+                </p>
+            </div>
+            
+            <p style="text-align:center; margin-top: 30px; margin-bottom: 20px; font-size: 12pt;">
+                <a href="#section-10" style="color:var(--accent-gold); text-decoration:none; font-family: 'Montserrat', sans-serif; font-weight: 600; transition: all 0.3s ease;">
+                    → Continue to AHKStrategies Strategic Enhancements ↓
+                </a>
+            </p>
+        </section>
+
+        <div class="page-counter">Page 12</div>
+        <section id="section-10">
+            <h2 class="section-title">8. AHKStrategies Strategic Enhancements</h2>
+            <p>While the baseline project is robust, AHKStrategies has identified four high-value enhancements. These "bolt-on" strategies are designed to create a "moat" of competitive advantage, secure long-term margins, and elevate the venture from a simple manufacturer to a regional leader in integrated, sustainable logistics technology.</p>
+
+            <div class="ahk-enhancement-box" id="section-10-1">
+                <h3>8.1. AHK ENHANCEMENT: Solar-Powered "Gigafactory"</h3>
+                <p><strong>Concept:</strong> Develop the manufacturing plant as a fully integrated solar-powered facility. This involves blanketing all available roof space and adjacent land with high-efficiency photovoltaic panels, coupled with an industrial-scale Battery Energy Storage System (BESS).</p>
+                <p><strong>Technical Specifications:</strong></p>
+                <ul>
+                    <li><strong>Solar Capacity:</strong> 5 MW photovoltaic installation covering factory roofs and adjacent land</li>
+                    <li><strong>Energy Storage:</strong> 10 MWh Battery Energy Storage System (BESS) for 24/7 operation and grid independence</li>
+                    <li><strong>Smart Grid Integration:</strong> Bidirectional inverters allowing excess power export during off-peak production hours</li>
+                </ul>
+                <p><strong>Strategic Value:</strong></p>
+                <ul>
+                    <li><strong>Opex Reduction:</strong> Drastically cuts long-term energy costs, one of the highest variable costs in manufacturing, directly boosting EBITDA margins by 3-5 percentage points</li>
+                    <li><strong>ESG &amp; Branding:</strong> Creates a powerful marketing narrative of a "100% Green Vehicle" built with 100% renewable energy, a critical differentiator for government contracts and eco-conscious corporate fleets</li>
+                    <li><strong>Resilience:</strong> Insulates the plant from grid instability and energy price volatility, ensuring uninterrupted production</li>
+                    <li><strong>Carbon Credits:</strong> Qualifies for carbon offset programs and renewable energy certificates, creating additional revenue streams</li>
+                </ul>
+            </div>
+
+            <div class="ahk-enhancement-box" id="section-10-2">
+                <h3>8.2. AHK ENHANCEMENT: AI-Driven Fleet Management (SaaS)</h3>
+                <p><strong>Concept:</strong> Develop a proprietary, AI-powered fleet management software platform, offered as a subscription (SaaS) service to all Q-VAN fleet buyers.</p>
+                <p><strong>Strategic Value:</strong></p>
+                <ul>
+                    <li><strong>High-Margin Recurring Revenue:</strong> Transitions the business model from purely transactional (vehicle sales) to include sticky, high-margin recurring revenue.</li>
+                    <li><strong>Ecosystem Lock-In:</strong> Creates a "walled garden" where the software (optimizing routes, battery management, predictive maintenance) works best with the hardware (the Q-VAN), making it difficult for clients to switch to competitors.</li>
+                    <li><strong>Data Monetization:</strong> Aggregates invaluable real-world data on vehicle performance, traffic, and battery degradation, which can be used to improve future models and inform new services.</li>
+                </ul>
+            </div>
+            
+            <div class="ahk-enhancement-box" id="section-10-3">
+                <h3>8.3. AHK ENHANCEMENT: "Q-Drone" Logistics Integration</h3>
+                <p><strong>Concept:</strong> Engineer a Q-VAN variant that serves as a mobile "mothership" for a fleet of last-mile delivery drones. The vehicle roof would feature an automated launch and recovery system, with charging ports integrated into the vehicle's battery system.</p>
+                <p><strong>Strategic Value:</strong></p>
+                <ul>
+                    <li><strong>Future-Proofing:</strong> Leapfrogs current logistics models by integrating autonomous drone delivery directly into the vehicle.</li>
+                    <li><strong>Force Multiplier:</strong> Allows a single driver/vehicle to service an entire neighborhood simultaneously, solving the final "50-meter problem" of delivery with unprecedented speed and efficiency.</li>
+                    <li><strong>Premium Niche:</strong> Opens a new, ultra-premium market segment for high-tech logistics operators, commanding a significantly higher vehicle price and associated software subscription.</li>
+                </ul>
+            </div>
+            
+            <div class="ahk-enhancement-box" id="section-10-4">
+                <h3>8.4. AHK ENHANCEMENT: Full-Spectrum ESG Framework</h3>
+                <p><strong>Concept:</strong> Proactively embed a comprehensive Environmental, Social, and Governance (ESG) framework into the company's charter from day one.</p>
+                <p><strong>Strategic Value:</strong></p>
+                <ul>
+                    <li><strong>Access to Capital:</strong> Unlocks access to the rapidly growing pool of global "Impact Investing" funds and ESG-mandated institutional capital, which are often available at preferential rates.</li>
+                    <li><strong>Talent Acquisition:</strong> Attracts and retains top-tier engineering and management talent who prioritize working for mission-driven, sustainable companies.</li>
+                    <li><strong>Regulatory &amp; Social License:</strong> Ensures seamless compliance with future environmental regulations and builds strong community and government relations, de-risking the venture politically.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="page-counter">Page 13</div>
+        <section id="section-11">
+            <h2 class="section-title">9. Conclusion &amp; Next Steps</h2>
+            <p>This comprehensive feasibility study confirms that the Q-VAN manufacturing venture is a high-potential, financially robust opportunity with multiple pathways to success. The project is founded on validated, mature technology from established Italian and Turkish partners and targets a high-growth, underserved market across MENA.</p>
+            
+            <p><strong>Key Success Factors:</strong></p>
+            <ul>
+                <li><strong>Proven Technology:</strong> Validated Italian baseline vehicle configuration (6kW/7.7kWh) with working prototypes and certifications</li>
+                <li><strong>Flexible Market Strategy:</strong> Two robust financial models (22.1% to 38.72% IRR) allowing strategic positioning from mass market to premium segments</li>
+                <li><strong>Strategic Partnerships:</strong> Technology partners offering €30M license package with bridging supply, plus identified local integrator (MCV Egypt)</li>
+                <li><strong>Competitive Advantages:</strong> AHK enhancements (5MW solar + 10MWh storage, AI fleet management, drone integration, ESG framework) create defensible moat</li>
+            </ul>
+            
+            <p>The baseline 5-year financial projections demonstrate exceptional returns, with the standard Italian model delivering 22.1% IRR on €15.5M investment with proven technology, and the premium upgrade pathway offering 38.72% IRR potential. Both exceed typical manufacturing project hurdles by substantial margins.</p>
+            
+            <p>The AHKStrategies enhancements provide a clear roadmap to elevate this venture from a successful manufacturing plant to a dominant, defensible, and high-margin regional leader in sustainable logistics technology.</p>
+            
+            <p><strong>Immediate next steps are:</strong></p>
+            <ol>
+                <li>Finalize selection of Scenario A (100% Egyptian - Royalty) or Scenario B (Joint Venture with Italian partner for Mattei Plan eligibility).</li>
+                <li>Determine optimal go-to-market configuration strategy (begin with proven Italian standard, establish premium upgrade timeline).</li>
+                <li>Initiate formal discussions with MCV Egypt for local manufacturing integration partnership.</li>
+                <li>Engage Egyptian economic zones and investment authorities (e.g., GAFI) to secure optimal site and maximize incentives.</li>
+                <li>Commence formal capital raising based on this validated feasibility study, emphasizing dual-scenario risk mitigation.</li>
+                <li>If pursuing Scenario B, engage Italian partner and legal counsel to structure Mattei Plan funding application.</li>
+                <li>Finalize bridging supply agreement terms (1,000 units/year for 2 years) to ensure seamless market entry during local production ramp-up.</li>
+            </ol>
+        </section>
+
+        <div class="page-counter">Page 15</div>
+        <!-- INVESTOR SUMMARY (Nov 2025) -->
+        <section id="investor-summary">
+            <h2 class="section-title">10. Investor Summary (Nov 2025)</h2>
+            <p style="font-size: 11pt; color: var(--light-gold); margin-bottom: 25px; font-style: italic;">
+                Quick-read metrics for investment committee: Unified financial model (MCV Conservative baseline) with scenario comparison and key decision points.
+            </p>
+
+            <!-- Top Metrics Row -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(0, 51, 102, 0.1)); border: 2px solid var(--accent-gold); border-radius: 10px; padding: 25px; text-align: center;">
+                    <div style="font-size: 36pt; font-weight: 700; color: var(--accent-gold); font-family: 'Montserrat', sans-serif; margin-bottom: 5px;">14.5%</div>
+                    <div style="font-size: 12pt; color: var(--light-gold); font-weight: 500;">IRR (Base Case)</div>
+                    <div style="font-size: 9pt; color: var(--light-gold); margin-top: 5px; opacity: 0.8;">MCV Conservative Model</div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(0, 51, 102, 0.1)); border: 2px solid var(--accent-gold); border-radius: 10px; padding: 25px; text-align: center;">
+                    <div style="font-size: 36pt; font-weight: 700; color: var(--accent-gold); font-family: 'Montserrat', sans-serif; margin-bottom: 5px;">6 Years</div>
+                    <div style="font-size: 12pt; color: var(--light-gold); font-weight: 500;">Payback Period</div>
+                    <div style="font-size: 9pt; color: var(--light-gold); margin-top: 5px; opacity: 0.8;">Includes full ramp-up</div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(0, 51, 102, 0.1)); border: 2px solid var(--accent-gold); border-radius: 10px; padding: 25px; text-align: center;">
+                    <div style="font-size: 36pt; font-weight: 700; color: var(--accent-gold); font-family: 'Montserrat', sans-serif; margin-bottom: 5px;">€285M</div>
+                    <div style="font-size: 12pt; color: var(--light-gold); font-weight: 500;">Total Revenue (7yr)</div>
+                    <div style="font-size: 9pt; color: var(--light-gold); margin-top: 5px; opacity: 0.8;">1K→4K units phased scale</div>
+                </div>
+            </div>
+
+            <!-- Scenario Comparison Table -->
+            <div style="margin: 30px 0;">
+                <h3 class="subsection-title">Investment Scenarios: Q-VAN Financial Comparison</h3>
+                <table style="width: 100%; border-collapse: collapse; background: rgba(0, 51, 102, 0.3); border: 1px solid var(--accent-gold); margin-top: 15px;">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, var(--accent-gold), var(--dark-gold)); color: var(--primary-navy);">
+                            <th style="padding: 15px; text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11pt; border: 1px solid var(--accent-gold);">Scenario</th>
+                            <th style="padding: 15px; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11pt; border: 1px solid var(--accent-gold);">CapEx</th>
+                            <th style="padding: 15px; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11pt; border: 1px solid var(--accent-gold);">IRR</th>
+                            <th style="padding: 15px; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11pt; border: 1px solid var(--accent-gold);">Payback</th>
+                            <th style="padding: 15px; text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11pt; border: 1px solid var(--accent-gold);">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(212, 175, 55, 0.15);">
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); color: var(--accent-gold); font-weight: 600;">Scenario 3: MCV Conservative Base</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">€30M</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold); font-weight: 600;">14.5%</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">6 years</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); color: var(--light-gold);"><strong style="color: var(--accent-gold);">✓ BASE CASE</strong> – Validated with MCV Egypt capabilities</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); color: var(--light-gold);">Scenario 1: Standard (Italian Baseline)</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">€38M</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">22.1%</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">4 years</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); color: var(--light-gold);">Optimistic – Requires full license execution</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); color: var(--light-gold);">Scenario 2: Premium (Enhanced Pathway)</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">€42M</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">38.7%</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); text-align: center; color: var(--light-gold);">3 years</td>
+                            <td style="padding: 12px; border: 1px solid var(--accent-gold); color: var(--light-gold);">Aggressive – AHK enhancements + premium market</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- Scenario Comparison Insight -->
+                <div style="background: rgba(212, 175, 55, 0.08); border: 2px solid var(--accent-gold); border-radius: 10px; padding: 20px; margin-top: 25px;">
+                    <p style="font-size: 11.5pt; line-height: 1.8; color: var(--light-slate); text-align: center;">
+                        <strong style="color: var(--accent-gold); font-size: 12pt;">💡 Scenario Comparison Insight:</strong><br>
+                        The three scenarios reflect a progression from <strong style="color: var(--accent-gold);">high-yield venture economics</strong> (Premium: 38.7% IRR) to <strong style="color: var(--accent-gold);">conservative industrial expansion</strong> (MCV Conservative: 14.5% IRR), allowing investors to calibrate risk tolerance while maintaining exposure to MENA's EV growth curve. The MCV Conservative model is designated the <strong style="color: var(--accent-gold);">definitive base case</strong> for board-level decisions and integration with the WOW e-Scooter line in the unified Dual Vector Mobility program.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Highlights and Risks Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 30px 0;">
+                <!-- Highlights Column -->
+                <div>
+                    <h3 class="subsection-title" style="font-size: 13pt; margin-bottom: 15px;">Investment Highlights</h3>
+                    <ul style="font-size: 11pt; line-height: 1.9; color: var(--light-gold);">
+                        <li><strong style="color: var(--accent-gold);">CAPEX Efficiency:</strong> 30% reduction vs Standard Italian model through MCV Egypt's existing industrial base</li>
+                        <li><strong style="color: var(--accent-gold);">Risk-Mitigated Entry:</strong> Phased 1K→4K unit scale avoids overcommitment to untested market</li>
+                        <li><strong style="color: var(--accent-gold);">Policy Tailwinds:</strong> Egypt EV localization mandates, green fleet incentives, and industrial zone benefits</li>
+                        <li><strong style="color: var(--accent-gold);">Realistic Profit Path:</strong> 14.5% IRR assumes conservative pricing (€25K/unit) and moderate margin compression</li>
+                    </ul>
+                </div>
+                <!-- Risks Column -->
+                <div>
+                    <h3 class="subsection-title" style="font-size: 13pt; margin-bottom: 15px;">Top 3 Risks & Mitigations</h3>
+                    <div style="font-size: 10.5pt; line-height: 1.8; color: var(--light-gold);">
+                        <p><strong style="color: var(--accent-gold);">1. FX Volatility (Egypt):</strong><br>
+                        <span style="padding-left: 15px;">→ Euro-denominated contracts for imported components, progressive localization roadmap</span></p>
+                        
+                        <p><strong style="color: var(--accent-gold);">2. Regulatory/Policy Shifts:</strong><br>
+                        <span style="padding-left: 15px;">→ Anchor commitments from government fleets (Egypt Post, Ministry of Electricity), contractual volume guarantees</span></p>
+                        
+                        <p><strong style="color: var(--accent-gold);">3. Cost Inflation (Battery/Components):</strong><br>
+                        <span style="padding-left: 15px;">→ Multi-year supply agreements with Turkish/Chinese battery suppliers, strategic inventory buffers</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investor View Box -->
+            <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(0, 51, 102, 0.15)); border: 3px solid var(--accent-gold); border-radius: 12px; padding: 25px; margin: 30px 0;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 14pt; color: var(--accent-gold); margin-bottom: 15px; text-align: center;">Investor View: Strategic vs. Financial Hurdle</h3>
+                <p style="font-size: 11pt; color: var(--light-gold); line-height: 1.8; margin-bottom: 15px;">
+                    The <strong style="color: var(--accent-gold);">MCV Conservative Model (14.5% IRR)</strong> positions this venture as a <strong>strategic industrial expansion</strong> rather than a pure financial arbitrage play. For MCV Egypt, this represents:
+                </p>
+                <ul style="font-size: 10.5pt; color: var(--light-gold); line-height: 1.9; margin-left: 20px;">
+                    <li><strong style="color: var(--accent-gold);">Strategic Value:</strong> First-mover advantage in Egypt's eLCV sector, brand diversification, and asset utilization of existing 50,000 m² Sixth of October facility</li>
+                    <li><strong style="color: var(--accent-gold);">Risk Tolerance:</strong> 14.5–16% IRR is acceptable for strategic ventures with moderate risk profiles and government policy support</li>
+                    <li><strong style="color: var(--accent-gold);">Benchmark Context:</strong> Pure financial investors typically require 18–22% IRR for emerging market industrials; strategic corporates often accept 12–15% for capability-building projects</li>
+                </ul>
+                <p style="font-size: 10.5pt; color: var(--accent-gold); font-weight: 600; margin-top: 15px; text-align: center; font-style: italic;">
+                    Recommendation: Position as strategic diversification with acceptable financial returns, not a high-IRR speculative bet.
+                </p>
+            </div>
+
+            <!-- Next Steps for Investor Summary -->
+            <div style="margin-top: 30px; padding: 20px; background: rgba(0, 31, 63, 0.5); border-left: 5px solid var(--accent-gold); border-radius: 8px;">
+                <h3 class="subsection-title" style="font-size: 12pt; margin-bottom: 12px;">Investor Committee Action Items</h3>
+                <ol style="font-size: 10.5pt; color: var(--light-gold); line-height: 1.9;">
+                    <li><strong style="color: var(--accent-gold);">Sensitivity Analysis:</strong> Request FX stress test (±15% EGP/EUR) and battery cost inflation scenarios (+20% over 5 years)</li>
+                    <li><strong style="color: var(--accent-gold);">CAPEX Reconciliation:</strong> Validate €30M Conservative figure against MCV Egypt's internal facility adaptation estimates and working capital requirements</li>
+                    <li><strong style="color: var(--accent-gold);">Anchor Customer Due Diligence:</strong> Verify government fleet commitments (Egypt Post 500-unit pilot, Electricity Ministry 300 units) with binding LOIs</li>
+                    <li><strong style="color: var(--accent-gold);">Technology Partner Audit:</strong> Independent technical review of Italian baseline platform and Turkish battery integration readiness</li>
+                    <li><strong style="color: var(--accent-gold);">Exit Strategy Definition:</strong> Clarify 5–7 year strategic options (IPO, trade sale to global OEM, dividend recapitalization)</li>
+                </ol>
+            </div>
+
+            <p style="font-size: 9pt; color: var(--light-gold); text-align: center; margin-top: 30px; font-style: italic; opacity: 0.8;">
+                Confidential: For Investment Committee Use Only | AHKStrategies – Industrial Projects Division | November 2025
+            </p>
+        </section>
+
+        <div class="page-counter">Page 16</div>
+        <section id="section-12" style="text-align: center; padding: 30px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), transparent); border-radius: 15px;">
+            <h3 style="color: var(--accent-gold); margin-bottom: 20px; font-family: &#39;Montserrat&#39;, sans-serif; font-size: 16pt;">Connect with AHKStrategies</h3>
+            <p style="color: var(--light-gold); font-size: 13pt; line-height: 2;">
+                📧 <a href="mailto:ashraf@ahkstrategies.net" style="color: var(--accent-gold); text-decoration: none;">ashraf@ahkstrategies.net</a><br>
+                📞 <a href="tel:+201040787571" style="color: var(--accent-gold); text-decoration: none;">+201040787571</a><br>
+                🌐 <a href="https://www.ahkstrategies.net/" style="color: var(--accent-gold); text-decoration: none;">www.ahkstrategies.net</a>
+            </p>
+        </section>
+
+        <div class="footer">
+            AHKStrategies - Q-VAN Project - www.ahkstrategies.net - +201040787571
+        </div>
+        
+    </div> 
+
+
+</body></html>

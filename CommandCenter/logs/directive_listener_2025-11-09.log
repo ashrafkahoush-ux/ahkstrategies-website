@@ -1,0 +1,187 @@
+[2025-11-09T14:10:30.156Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:10:30.165Z] [INFO] MEGA-ERIC Directive Listener - ONLINE
+[2025-11-09T14:10:30.168Z] [INFO] Autonomous Command Link System - Directive XIII
+[2025-11-09T14:10:30.170Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:10:30.171Z] [INFO] Agent: MEGA-ERIC
+[2025-11-09T14:10:30.173Z] [INFO] Authentication: DEVELOPMENT MODE
+[2025-11-09T14:10:30.175Z] [INFO] Directives Directory: C:\Users\ashra\ahkstrategies-website\CommandCenter\directives
+[2025-11-09T14:10:30.178Z] [INFO] 
+[2025-11-09T14:10:30.180Z] [INFO] Scanning CommandCenter/directives/ for new directives...
+[2025-11-09T14:10:30.183Z] [INFO] Found 1 directive(s)
+[2025-11-09T14:10:30.185Z] [INFO] Processing directive: Directive_XIV_Test.md
+[2025-11-09T14:10:30.188Z] [INFO] Directive ID: XIV
+[2025-11-09T14:10:30.189Z] [INFO] Issuer: ** MEGA-EMMA
+[2025-11-09T14:10:30.193Z] [INFO] Target: ** MEGA-ERIC
+[2025-11-09T14:10:30.197Z] [INFO] Classification: ** System Integration
+[2025-11-09T14:10:30.200Z] [INFO] Priority: ** High
+[2025-11-09T14:10:30.202Z] [WARN] Running in DEVELOPMENT_MODE - authentication bypassed
+[2025-11-09T14:10:30.204Z] [SUCCESS] Authentication successful
+[2025-11-09T14:10:30.210Z] [INFO] Executing Directive XIV...
+[2025-11-09T14:10:30.214Z] [INFO] No automated command specified - manual execution required
+[2025-11-09T14:10:30.218Z] [SUCCESS] Confirmation report generated: Directive_XIV_Confirmation.md
+[2025-11-09T14:10:30.220Z] [INFO] Directive archived: Directive_XIV_Test.md
+[2025-11-09T14:10:30.222Z] [SUCCESS] Directive XIV processing complete
+[2025-11-09T14:10:30.224Z] [INFO] 
+[2025-11-09T14:10:30.227Z] [INFO] Directive listener scan complete
+[2025-11-09T14:10:30.229Z] [INFO] Standing by for next directive...
+[2025-11-09T14:15:29.919Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:15:29.922Z] [INFO] MEGA-ERIC Directive Listener - ONLINE
+[2025-11-09T14:15:29.924Z] [INFO] Autonomous Command Link System - Directive XIII
+[2025-11-09T14:15:29.925Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:15:29.926Z] [INFO] Agent: MEGA-ERIC
+[2025-11-09T14:15:29.928Z] [INFO] Authentication: ❌ NOT CONFIGURED
+[2025-11-09T14:15:29.929Z] [INFO] Directives Directory: C:\Users\ashra\ahkstrategies-website\CommandCenter\directives
+[2025-11-09T14:15:29.930Z] [INFO] Mode: ⚪ SCAN (One-time execution)
+[2025-11-09T14:15:29.935Z] [INFO] 
+[2025-11-09T14:15:29.938Z] [ERROR] 
+[2025-11-09T14:15:29.940Z] [ERROR] ⚠️  SECURITY WARNING: EMMA_COMMAND_TOKEN not configured!
+[2025-11-09T14:15:29.941Z] [ERROR] ⚠️  Add to .env.local: EMMA_COMMAND_TOKEN=ba6164ecad50876b55c1d3bb4be1ca027be56de686cbfb4fa44412542ec81b53
+[2025-11-09T14:15:29.945Z] [ERROR] 
+[2025-11-09T14:16:23.573Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:16:23.580Z] [INFO] MEGA-ERIC Directive Listener - ONLINE
+[2025-11-09T14:16:23.584Z] [INFO] Autonomous Command Link System - Directive XIII
+[2025-11-09T14:16:23.585Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:16:23.588Z] [INFO] Agent: MEGA-ERIC
+[2025-11-09T14:16:23.589Z] [INFO] Authentication: SECURED (ba6164ecad50876b...)
+[2025-11-09T14:16:23.590Z] [INFO] Directives Directory: C:\Users\ashra\ahkstrategies-website\CommandCenter\directives
+[2025-11-09T14:16:23.595Z] [INFO] Mode: ⚪ SCAN (One-time execution)
+[2025-11-09T14:16:23.600Z] [INFO] 
+[2025-11-09T14:16:23.603Z] [INFO] Scanning CommandCenter/directives/ for new directives...
+[2025-11-09T14:16:23.606Z] [INFO] Found 1 directive(s)
+[2025-11-09T14:16:23.615Z] [INFO] Processing directive: Directive_XV_Auth_Test.md
+[2025-11-09T14:16:23.622Z] [INFO] Directive ID: XV
+[2025-11-09T14:16:23.623Z] [INFO] Issuer: ** MEGA-EMMA
+[2025-11-09T14:16:23.629Z] [INFO] Target: ** MEGA-ERIC
+[2025-11-09T14:16:23.632Z] [INFO] Classification: ** System Verification
+[2025-11-09T14:16:23.635Z] [INFO] Priority: ** High
+[2025-11-09T14:16:23.637Z] [SUCCESS] Authenticated with token: ba6164ecad50876b...
+[2025-11-09T14:16:23.638Z] [SUCCESS] Authentication successful
+[2025-11-09T14:16:23.640Z] [INFO] Executing Directive XV...
+[2025-11-09T14:16:23.652Z] [INFO] No automated command specified - manual execution required
+[2025-11-09T14:16:23.655Z] [SUCCESS] Confirmation report generated: Directive_XV_Confirmation.md
+[2025-11-09T14:16:23.657Z] [INFO] Directive archived: Directive_XV_Auth_Test.md
+[2025-11-09T14:16:23.663Z] [SUCCESS] Directive XV processing complete
+[2025-11-09T14:16:23.679Z] [INFO] 
+[2025-11-09T14:16:23.681Z] [INFO] Directive listener scan complete
+[2025-11-09T14:16:23.686Z] [INFO] Standing by for next directive...
+[2025-11-09T14:16:23.689Z] [INFO] 
+[2025-11-09T14:16:23.692Z] [INFO] Tip: Run with --watch flag for real-time monitoring
+[2025-11-09T14:25:02.433Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:25:02.437Z] [INFO] MEGA-ERIC Directive Listener - ONLINE
+[2025-11-09T14:25:02.439Z] [INFO] Autonomous Command Link System - Directive XIII
+[2025-11-09T14:25:02.440Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:25:02.441Z] [INFO] Agent: MEGA-ERIC
+[2025-11-09T14:25:02.443Z] [INFO] Authentication: SECURED (ba6164ecad50876b...)
+[2025-11-09T14:25:02.444Z] [INFO] Directives Directory: C:\Users\ashra\ahkstrategies-website\CommandCenter\directives
+[2025-11-09T14:25:02.445Z] [INFO] Mode: ⚪ SCAN (One-time execution)
+[2025-11-09T14:25:02.447Z] [INFO] Webhook: DISABLED
+[2025-11-09T14:25:02.448Z] [INFO] 
+[2025-11-09T14:25:02.453Z] [INFO] Heartbeat active (30s interval)
+[2025-11-09T14:25:02.455Z] [INFO] Scanning CommandCenter/directives/ for new directives...
+[2025-11-09T14:25:02.457Z] [INFO] Found 2 directive(s)
+[2025-11-09T14:25:02.460Z] [INFO] Processing 1 top-tier priority directive(s)...
+[2025-11-09T14:25:02.461Z] [INFO] Processing directive: Directive_XVI_Priority_Test.md
+[2025-11-09T14:25:02.463Z] [INFO] Directive ID: XVI
+[2025-11-09T14:25:02.464Z] [INFO] Issuer: ** MEGA-EMMA
+[2025-11-09T14:25:02.465Z] [INFO] Target: ** MEGA-ERIC
+[2025-11-09T14:25:02.468Z] [INFO] Classification: ** System Enhancement
+[2025-11-09T14:25:02.473Z] [INFO] Priority: top-tier
+[2025-11-09T14:25:02.477Z] [SUCCESS] Authenticated with token: ba6164ecad50876b...
+[2025-11-09T14:25:02.480Z] [SUCCESS] Authentication successful
+[2025-11-09T14:25:02.483Z] [INFO] Executing Directive XVI...
+[2025-11-09T14:25:02.486Z] [INFO] No automated command specified - manual execution required
+[2025-11-09T14:25:02.515Z] [SUCCESS] Confirmation report generated: Directive_XVI_Confirmation.md
+[2025-11-09T14:25:02.525Z] [INFO] Directive archived: Directive_XVI_Priority_Test.md
+[2025-11-09T14:25:02.531Z] [SUCCESS] Directive XVI processing complete
+[2025-11-09T14:25:02.537Z] [INFO] Processing 1 low priority directive(s)...
+[2025-11-09T14:25:02.539Z] [INFO] Processing directive: Directive_XVII_Low_Priority.md
+[2025-11-09T14:25:02.541Z] [INFO] Directive ID: XVII
+[2025-11-09T14:25:02.544Z] [INFO] Issuer: ** MEGA-EMMA
+[2025-11-09T14:25:02.546Z] [INFO] Target: ** MEGA-ERIC
+[2025-11-09T14:25:02.548Z] [INFO] Classification: ** Documentation Update
+[2025-11-09T14:25:02.550Z] [INFO] Priority: low
+[2025-11-09T14:25:02.552Z] [SUCCESS] Authenticated with token: ba6164ecad50876b...
+[2025-11-09T14:25:02.554Z] [SUCCESS] Authentication successful
+[2025-11-09T14:25:02.558Z] [INFO] Executing Directive XVII...
+[2025-11-09T14:25:02.563Z] [INFO] No automated command specified - manual execution required
+[2025-11-09T14:25:02.566Z] [SUCCESS] Confirmation report generated: Directive_XVII_Confirmation.md
+[2025-11-09T14:25:02.571Z] [INFO] Directive archived: Directive_XVII_Low_Priority.md
+[2025-11-09T14:25:02.579Z] [SUCCESS] Directive XVII processing complete
+[2025-11-09T14:25:02.583Z] [INFO] 
+[2025-11-09T14:25:02.588Z] [INFO] Directive listener scan complete
+[2025-11-09T14:25:02.593Z] [INFO] Standing by for next directive...
+[2025-11-09T14:25:02.595Z] [INFO] 
+[2025-11-09T14:25:02.598Z] [INFO] Tip: Run with --watch flag for real-time monitoring
+[2025-11-09T14:27:56.065Z] [INFO] 
+[2025-11-09T14:27:56.067Z] [INFO] Shutting down gracefully...
+[2025-11-09T14:31:44.993Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:31:44.999Z] [INFO] MEGA-ERIC Directive Listener - ONLINE
+[2025-11-09T14:31:45.001Z] [INFO] Autonomous Command Link System - Directive XIII
+[2025-11-09T14:31:45.004Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:31:45.006Z] [INFO] Agent: MEGA-ERIC
+[2025-11-09T14:31:45.008Z] [INFO] Authentication: SECURED (ba6164ecad50876b...)
+[2025-11-09T14:31:45.015Z] [INFO] Directives Directory: C:\Users\ashra\ahkstrategies-website\CommandCenter\directives
+[2025-11-09T14:31:45.020Z] [INFO] Mode: ⚪ SCAN (One-time execution)
+[2025-11-09T14:31:45.023Z] [INFO] Webhook: DISABLED
+[2025-11-09T14:31:45.029Z] [INFO] 
+[2025-11-09T14:31:45.036Z] [INFO] Heartbeat active (30s interval)
+[2025-11-09T14:31:45.040Z] [INFO] Scanning CommandCenter/directives/ for new directives...
+[2025-11-09T14:31:45.047Z] [INFO] Found 1 directive(s)
+[2025-11-09T14:31:45.059Z] [INFO] Processing 1 high priority directive(s)...
+[2025-11-09T14:31:45.066Z] [INFO] Processing directive: Directive_XIV_Heartbeat.json
+[2025-11-09T14:31:45.070Z] [INFO] Directive ID: XIV
+[2025-11-09T14:31:45.083Z] [INFO] Issuer: MEGA-EMMA
+[2025-11-09T14:31:45.089Z] [INFO] Target: MEGA-ERIC
+[2025-11-09T14:31:45.094Z] [INFO] Classification: System Calibration
+[2025-11-09T14:31:45.098Z] [INFO] Priority: High
+[2025-11-09T14:31:45.100Z] [SUCCESS] Authenticated with token: ba6164ecad50876b...
+[2025-11-09T14:31:45.105Z] [SUCCESS] Authentication successful
+[2025-11-09T14:31:45.115Z] [INFO] Executing Directive XIV...
+[2025-11-09T14:31:45.271Z] [INFO] Pre-execution state saved for rollback
+[2025-11-09T14:31:45.273Z] [INFO] Command: heartbeat
+[2025-11-09T14:31:45.277Z] [SUCCESS] MEGA-EMMA signal pulse received
+[2025-11-09T14:31:45.281Z] [SUCCESS] Response: alive
+[2025-11-09T14:31:45.283Z] [SUCCESS] System operational - heartbeat acknowledged
+[2025-11-09T14:31:45.286Z] [SUCCESS] Execution completed in 169ms
+[2025-11-09T14:31:45.298Z] [SUCCESS] Confirmation report generated: Directive_XIV_Confirmation.md
+[2025-11-09T14:31:45.303Z] [INFO] Directive archived: Directive_XIV_Heartbeat.json
+[2025-11-09T14:31:45.310Z] [SUCCESS] Directive XIV processing complete
+[2025-11-09T14:31:45.317Z] [INFO] 
+[2025-11-09T14:31:45.323Z] [INFO] Directive listener scan complete
+[2025-11-09T14:31:45.324Z] [INFO] Standing by for next directive...
+[2025-11-09T14:31:45.328Z] [INFO] 
+[2025-11-09T14:31:45.330Z] [INFO] Tip: Run with --watch flag for real-time monitoring
+[2025-11-09T14:36:18.768Z] [INFO] 
+[2025-11-09T14:36:18.775Z] [INFO] Shutting down gracefully...
+[2025-11-09T14:57:07.085Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:57:07.100Z] [INFO] MEGA-ERIC Directive Listener - ONLINE
+[2025-11-09T14:57:07.101Z] [INFO] Autonomous Command Link System - Directive XIII
+[2025-11-09T14:57:07.102Z] [INFO] ═══════════════════════════════════════════════════
+[2025-11-09T14:57:07.103Z] [INFO] Agent: MEGA-ERIC
+[2025-11-09T14:57:07.104Z] [INFO] Authentication: SECURED (ba6164ecad50876b...)
+[2025-11-09T14:57:07.105Z] [INFO] Directives Directory: C:\Users\ashra\ahkstrategies-website\CommandCenter\directives
+[2025-11-09T14:57:07.106Z] [INFO] Mode: 🔴 WATCH (Real-time monitoring)
+[2025-11-09T14:57:07.107Z] [INFO] Webhook: DISABLED
+[2025-11-09T14:57:07.109Z] [INFO] 
+[2025-11-09T14:57:07.112Z] [INFO] Heartbeat active (30s interval)
+[2025-11-09T14:57:07.113Z] [INFO] 👂 Activating real-time watch mode...
+[2025-11-09T14:57:07.114Z] [INFO] Monitoring: C:\Users\ashra\ahkstrategies-website\CommandCenter\directives
+[2025-11-09T14:57:07.115Z] [INFO] Press Ctrl+C to stop
+[2025-11-09T14:57:07.116Z] [INFO] 
+[2025-11-09T14:57:07.117Z] [INFO] Scanning CommandCenter/directives/ for new directives...
+[2025-11-09T14:57:07.118Z] [INFO] Found 1 directive(s)
+[2025-11-09T14:57:07.122Z] [INFO] Processing 1 high priority directive(s)...
+[2025-11-09T14:57:07.123Z] [INFO] Processing directive: Directive_XV_Pillar_Pages_Polish.md
+[2025-11-09T14:57:07.124Z] [INFO] Directive ID: XV
+[2025-11-09T14:57:07.125Z] [INFO] Issuer: MEGA-EMMA — Executive Meta-Mind Advisor
+[2025-11-09T14:57:07.126Z] [INFO] Target: MEGA-ERIC
+[2025-11-09T14:57:07.127Z] [INFO] Classification: Creative Implementation / UX-UI Enhancement
+[2025-11-09T14:57:07.128Z] [INFO] Priority: high
+[2025-11-09T14:57:07.129Z] [SUCCESS] Authenticated with token: ba6164ecad50876b...
+[2025-11-09T14:57:07.129Z] [SUCCESS] Authentication successful
+[2025-11-09T14:57:07.130Z] [INFO] Executing Directive XV...
+[2025-11-09T14:57:07.131Z] [INFO] No automated command specified - manual execution required
+[2025-11-09T14:57:07.147Z] [SUCCESS] Confirmation report generated: Directive_XV_Confirmation.md
+[2025-11-09T14:57:07.151Z] [INFO] Directive archived: Directive_XV_Pillar_Pages_Polish.md
+[2025-11-09T14:57:07.153Z] [SUCCESS] Directive XV processing complete
+[2025-11-09T14:57:07.157Z] [INFO] 🟢 Watch mode active - standing by for directives...

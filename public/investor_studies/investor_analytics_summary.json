@@ -1,0 +1,113 @@
+{
+  "lastUpdated": "2025-11-09T17:30:00Z",
+  "totalViews": 847,
+  "totalDownloads": 234,
+  "uniqueVisitors": 412,
+  "averageTimeOnPage": "4m 32s",
+  "conversionRate": "27.6%",
+  "topProjects": [
+    {
+      "id": "q-van",
+      "name": "Q-VAN Electric Logistics",
+      "views": 342,
+      "downloads": 98,
+      "conversionRate": "28.7%"
+    },
+    {
+      "id": "wow",
+      "name": "WOW Scooters MENA",
+      "views": 289,
+      "downloads": 81,
+      "conversionRate": "28.0%"
+    },
+    {
+      "id": "dvm",
+      "name": "DVM Launchpad",
+      "views": 216,
+      "downloads": 55,
+      "conversionRate": "25.5%"
+    }
+  ],
+  "topDomains": [
+    {
+      "domain": "investment-firm.ae",
+      "visits": 47,
+      "downloads": 15,
+      "lastSeen": "2025-11-09T15:22:00Z"
+    },
+    {
+      "domain": "venture-capital.com",
+      "visits": 38,
+      "downloads": 12,
+      "lastSeen": "2025-11-09T14:18:00Z"
+    },
+    {
+      "domain": "pe-group.sa",
+      "visits": 32,
+      "downloads": 10,
+      "lastSeen": "2025-11-09T16:45:00Z"
+    },
+    {
+      "domain": "angel-network.org",
+      "visits": 28,
+      "downloads": 8,
+      "lastSeen": "2025-11-09T13:30:00Z"
+    },
+    {
+      "domain": "family-office.qa",
+      "visits": 24,
+      "downloads": 7,
+      "lastSeen": "2025-11-09T17:10:00Z"
+    }
+  ],
+  "hourlyEngagement": [
+    { "hour": "00:00", "views": 12, "downloads": 3 },
+    { "hour": "01:00", "views": 8, "downloads": 2 },
+    { "hour": "02:00", "views": 5, "downloads": 1 },
+    { "hour": "03:00", "views": 3, "downloads": 0 },
+    { "hour": "04:00", "views": 4, "downloads": 1 },
+    { "hour": "05:00", "views": 7, "downloads": 2 },
+    { "hour": "06:00", "views": 15, "downloads": 4 },
+    { "hour": "07:00", "views": 28, "downloads": 8 },
+    { "hour": "08:00", "views": 45, "downloads": 14 },
+    { "hour": "09:00", "views": 67, "downloads": 22 },
+    { "hour": "10:00", "views": 82, "downloads": 28 },
+    { "hour": "11:00", "views": 74, "downloads": 25 },
+    { "hour": "12:00", "views": 58, "downloads": 18 },
+    { "hour": "13:00", "views": 69, "downloads": 21 },
+    { "hour": "14:00", "views": 78, "downloads": 24 },
+    { "hour": "15:00", "views": 71, "downloads": 19 },
+    { "hour": "16:00", "views": 64, "downloads": 17 },
+    { "hour": "17:00", "views": 52, "downloads": 13 },
+    { "hour": "18:00", "views": 38, "downloads": 9 },
+    { "hour": "19:00", "views": 27, "downloads": 6 },
+    { "hour": "20:00", "views": 19, "downloads": 4 },
+    { "hour": "21:00", "views": 14, "downloads": 3 },
+    { "hour": "22:00", "views": 10, "downloads": 2 },
+    { "hour": "23:00", "views": 13, "downloads": 3 }
+  ],
+  "conversionFunnel": [
+    { "stage": "Portal Entry", "count": 847, "percentage": 100 },
+    { "stage": "Project Selected", "count": 612, "percentage": 72.3 },
+    { "stage": "Study Viewed", "count": 456, "percentage": 53.8 },
+    { "stage": "Document Downloaded", "count": 234, "percentage": 27.6 }
+  ],
+  "emmaSummary": [
+    {
+      "timestamp": "2025-11-09T17:30:00Z",
+      "insight": "Engagement spike detected: 34% increase in Q-VAN study downloads in past 6 hours"
+    },
+    {
+      "timestamp": "2025-11-09T16:45:00Z",
+      "insight": "High-value domain detected: family-office.qa accessed WOW Scooters data room"
+    },
+    {
+      "timestamp": "2025-11-09T15:22:00Z",
+      "insight": "Conversion rate trending above target: 27.6% vs. 25% benchmark"
+    },
+    {
+      "timestamp": "2025-11-09T14:10:00Z",
+      "insight": "Peak engagement window: 9 AM - 3 PM accounts for 68% of total activity"
+    }
+  ]
+}

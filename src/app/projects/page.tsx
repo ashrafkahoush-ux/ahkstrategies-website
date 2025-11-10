@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import Watermark from '@/components/Watermark';
 import IconAutomotive from '@/../public/assets/images/divisions/automotive.jpg';
 import IconDigital from '@/../public/assets/images/divisions/digital.jpg';
 import IconMenaExport from '@/../public/assets/images/divisions/MENA region export business.png';
@@ -58,7 +60,11 @@ export default function ProjectsPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white relative">
+    <div className="min-h-screen bg-[#020617] text-white relative overflow-hidden">
+      {/* Letterhead Background Effects */}
+      <AnimatedBackground intensity="medium" colorSet="gold-blue" />
+      <Watermark />
+      
       {/* Back Button - Fixed at bottom left of page */}
       <button
         onClick={() => router.back()}
@@ -78,7 +84,7 @@ export default function ProjectsPage() {
 
       {/* Hero Section */}
       <section 
-        className="relative py-20 px-6 text-center"
+        className="relative py-20 px-6 text-center fade-in-down z-10"
         style={{
           padding: '5rem 1.5rem',
           textAlign: 'center',
@@ -131,7 +137,7 @@ export default function ProjectsPage() {
 
       {/* Divisions Grid */}
       <section 
-        className="w-full max-w-6xl mx-auto px-6 py-12 relative z-10"
+        className="w-full max-w-6xl mx-auto px-6 py-12 relative z-10 fade-in-up"
         style={{
           width: '100%',
           maxWidth: '72rem',
@@ -243,6 +249,38 @@ export default function ProjectsPage() {
           }
           a[href*="/projects/divisions/"]:hover h3 {
             color: #facc15;
+          }
+
+          @keyframes fadeInDown {
+            from {
+              opacity: 0;
+              transform: translateY(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .fade-in-down {
+            animation: fadeInDown 0.8s ease-out forwards;
+          }
+
+          .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
           }
         `}</style>
       </section>

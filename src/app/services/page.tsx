@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
+import AnimatedBackground from '@/components/AnimatedBackground'
+import Watermark from '@/components/Watermark'
 
 const services = [
   {
@@ -54,15 +55,21 @@ export default function ServicesPage() {
   const router = useRouter()
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#020617' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#020617', position: 'relative', overflow: 'hidden' }}>
+      {/* Letterhead Background Effects */}
+      <AnimatedBackground intensity="low" colorSet="gold-blue" />
+      <Watermark />
+      
       {/* Header Section */}
       <section
+        className="fade-in-down"
         style={{
           background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(58,78,122,0.15) 100%)',
           paddingTop: '5rem',
           paddingBottom: '3rem',
           position: 'relative',
           overflow: 'hidden',
+          zIndex: 2,
         }}
       >
         {/* Faint Logo Background */}
@@ -129,10 +136,13 @@ export default function ServicesPage() {
 
       {/* Services Grid Section */}
       <section
+        className="fade-in-up"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
           padding: '4rem 2rem',
+          position: 'relative',
+          zIndex: 2,
         }}
       >
         <div
@@ -233,11 +243,14 @@ export default function ServicesPage() {
 
       {/* Call to Action Section */}
       <section
+        className="fade-in-up"
         style={{
           maxWidth: '900px',
           margin: '3rem auto 5rem',
           padding: '0 2rem',
           textAlign: 'center',
+          position: 'relative',
+          zIndex: 2,
         }}
       >
         <div
@@ -246,6 +259,7 @@ export default function ServicesPage() {
             border: '1px solid rgba(212, 175, 55, 0.3)',
             borderRadius: '1rem',
             padding: '3rem 2rem',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
           }}
         >
           <h2
@@ -293,6 +307,41 @@ export default function ServicesPage() {
           </button>
         </div>
       </section>
+
+      {/* Letterhead CSS Animations */}
+      <style jsx>{`
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .fade-in-down {
+          animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+          animation-delay: 0.2s;
+          opacity: 0;
+        }
+      `}</style>
     </div>
   )
 }

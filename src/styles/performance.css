@@ -1,0 +1,76 @@
+/* Performance and Accessibility Enhancements */
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-pulse,
+  .animate-pulse-soft {
+    animation: none !important;
+  }
+}
+
+/* Optimize video loading */
+video {
+  content-visibility: auto;
+}
+
+/* Force GPU acceleration for smooth animations */
+.animate-pulse-soft,
+.group:hover {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .shadow-glow,
+  .shadow-glow-electric {
+    box-shadow: none;
+  }
+  
+  .border-ahk-gold,
+  .border-ahk-electric {
+    border-width: 3px;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+video:focus-visible {
+  outline: 3px solid #D4AF37;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

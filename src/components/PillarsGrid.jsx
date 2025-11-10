@@ -28,46 +28,47 @@ export default function PillarsGrid() {
       </div>
 
       {/* Pillars Grid - 3x2 Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {pillars.map((pillar, index) => (
           <Link
             key={pillar.name}
             href={pillar.href}
-            className="group relative block overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.02]"
+            className="group relative block overflow-hidden rounded-xl shadow-glow hover:shadow-glow-electric transition-all duration-500 hover:scale-105"
             style={{
               animation: `fadeInUp 0.6s ease-out forwards ${index * 0.1}s`,
               opacity: 0
             }}
           >
-            {/* Aspect Ratio Container */}
-            <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
+            {/* Aspect Ratio Container - Using Tailwind aspect-square */}
+            <div className="relative w-full aspect-square">
               {/* Video Background */}
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
+                aria-label={`${pillar.name} pillar showcase video`}
                 className="absolute inset-0 w-full h-full object-cover"
               >
                 <source src={pillar.video} type="video/mp4" />
               </video>
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ahk-navy via-ahk-navy/60 to-transparent"></div>
 
               {/* Cyan Glowing Border */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-[#00D9FF]/50 shadow-[0_0_20px_rgba(0,217,255,0.3)] group-hover:border-[#00D9FF] group-hover:shadow-[0_0_40px_rgba(0,217,255,0.6)] transition-all duration-500"></div>
+              <div className="absolute inset-0 rounded-xl border-2 border-ahk-electric/50 shadow-glow-electric group-hover:border-ahk-electric group-hover:shadow-[0_0_40px_rgba(0,217,255,0.6)] transition-all duration-500"></div>
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
                 <h3 className="text-3xl md:text-4xl font-bold text-center transition-transform duration-300 group-hover:-translate-y-2">
                   <span className="text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">AHK </span>
-                  <span className="text-[#D4AF37] drop-shadow-[0_4px_20px_rgba(212,175,55,0.8)]">{pillar.name}</span>
+                  <span className="text-ahk-gold drop-shadow-[0_4px_20px_rgba(212,175,55,0.8)]">{pillar.name}</span>
                 </h3>
               </div>
 
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00D9FF]/0 via-[#D4AF37]/0 to-[#00D9FF]/0 group-hover:from-[#00D9FF]/10 group-hover:via-[#D4AF37]/5 group-hover:to-[#00D9FF]/10 transition-all duration-500"></div>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-ahk-electric/0 via-ahk-gold/0 to-ahk-electric/0 group-hover:from-ahk-electric/10 group-hover:via-ahk-gold/5 group-hover:to-ahk-electric/10 transition-all duration-500"></div>
             </div>
           </Link>
         ))}

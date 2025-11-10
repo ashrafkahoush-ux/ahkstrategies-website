@@ -1,5 +1,6 @@
 import "./globals.css";
 import "../styles/letterhead-theme.css";
+import "../styles/performance.css";
 import type { Metadata } from "next";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -8,7 +9,6 @@ import { GoogleAnalytics } from "../components/GoogleAnalytics";
 import EmmaChatWidget from "../components/EmmaChatWidget";
 import AnimatedBackground from "../components/AnimatedBackground";
 import Watermark from "../components/Watermark";
-import FloatingLogo from "../components/FloatingLogo";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ahkstrategies.net'),

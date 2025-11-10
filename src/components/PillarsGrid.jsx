@@ -2,42 +2,73 @@
 import Link from 'next/link';
 
 // Cache bust timestamp for emergency deployment
-const CACHE_VERSION = '?v=20251110-1320';
+const CACHE_VERSION = '?v=20251110-1450';
 
 const pillars = [
-  { name: 'Projects', href: '/projects', video: `/assets/ai_images/pillars/ahk_projects_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#D4AF37]/20 via-[#00D9FF]/20 to-[#D4AF37]/20', borderGlow: 'shadow-[0_0_30px_rgba(212,175,55,0.4)]' },
-  { name: 'Hub', href: '/services/consulting-hub', video: `/assets/ai_images/pillars/ahk_hub_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#00D9FF]/20 via-[#D4AF37]/20 to-[#00D9FF]/20', borderGlow: 'shadow-[0_0_30px_rgba(0,217,255,0.4)]' },
-  { name: 'LaunchPad', href: '/services/launchpad', video: `/assets/ai_images/pillars/ahk_launchpad_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#D4AF37]/20 via-[#A78BFA]/20 to-[#D4AF37]/20', borderGlow: 'shadow-[0_0_30px_rgba(167,139,250,0.4)]' },
-  { name: 'Studios', href: '/services/studios', video: `/assets/ai_images/pillars/ahk_studio_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#A78BFA]/20 via-[#4ADE80]/20 to-[#A78BFA]/20', borderGlow: 'shadow-[0_0_30px_rgba(74,222,128,0.4)]' },
-  { name: 'Academy', href: '/services/academy', video: `/assets/ai_images/pillars/ahk_academy_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#4ADE80]/20 via-[#00D9FF]/20 to-[#4ADE80]/20', borderGlow: 'shadow-[0_0_30px_rgba(0,217,255,0.4)]' },
-  { name: 'Boutique', href: '/services/boutique', video: `/assets/ai_images/pillars/ahk_boutique_pillar.mp4${CACHE_VERSION}`, gradient: 'from-[#00D9FF]/20 via-[#D4AF37]/20 to-[#00D9FF]/20', borderGlow: 'shadow-[0_0_30px_rgba(212,175,55,0.4)]' },
+  { name: 'Academy', href: '/services/academy', video: `/assets/ai_images/pillars/ahk_academy_pillar.mp4${CACHE_VERSION}` },
+  { name: 'Boutique', href: '/services/boutique', video: `/assets/ai_images/pillars/ahk_boutique_pillar.mp4${CACHE_VERSION}` },
+  { name: 'Hub', href: '/services/consulting-hub', video: `/assets/ai_images/pillars/ahk_hub_pillar.mp4${CACHE_VERSION}` },
+  { name: 'LaunchPad', href: '/services/launchpad', video: `/assets/ai_images/pillars/ahk_launchpad_pillar.mp4${CACHE_VERSION}` },
+  { name: 'Projects', href: '/projects', video: `/assets/ai_images/pillars/ahk_projects_pillar.mp4${CACHE_VERSION}` },
+  { name: 'Studios', href: '/services/studios', video: `/assets/ai_images/pillars/ahk_studio_pillar.mp4${CACHE_VERSION}` },
 ];
 
 export default function PillarsGrid() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 relative z-10 py-20">
-      <div className="text-center mb-16 animate-fade-in-up">
-        <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text-gold-blue mb-6">The AHK Empire</h2>
-        <div className="w-32 h-1 mx-auto bg-gradient-to-r from-transparent via-[var(--gold)] to-[var(--blue)] animate-gradient-shift mb-4"></div>
-        <p className="text-lg text-slate-300 max-w-2xl mx-auto">Six pillars of strategic excellence, each powered by cutting-edge AI and decades of cross-border expertise</p>
+    <section className="w-full max-w-7xl mx-auto px-6 relative z-10 py-24">
+      {/* Section Header */}
+      <div className="text-center mb-20">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          The <span className="bg-gradient-to-r from-[#D4AF37] via-[#F4E5B1] to-[#00D9FF] bg-clip-text text-transparent">AHK</span> Empire
+        </h2>
+        <div className="w-32 h-1 mx-auto bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent mb-6"></div>
+        <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Six pillars of strategic excellence, each powered by cutting-edge AI and decades of cross-border expertise
+        </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {/* Pillars Grid - 3x2 Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {pillars.map((pillar, index) => (
-          <Link key={pillar.name} href={pillar.href} className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s`, background: 'linear-gradient(145deg, rgba(17,34,64,0.9), rgba(10,25,47,0.95))' }}>
-            <div className="relative aspect-square overflow-hidden rounded-2xl">
-              <div className={`absolute inset-0 bg-gradient-to-br ${pillar.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
-              <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" style={{ objectFit: 'cover', objectPosition: 'center center' }}>
+          <Link
+            key={pillar.name}
+            href={pillar.href}
+            className="group relative block overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.02]"
+            style={{
+              animation: `fadeInUp 0.6s ease-out forwards ${index * 0.1}s`,
+              opacity: 0
+            }}
+          >
+            {/* Aspect Ratio Container */}
+            <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
+              {/* Video Background */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
                 <source src={pillar.video} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/80 to-transparent"></div>
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/60 to-transparent"></div>
+
+              {/* Cyan Glowing Border */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-[#00D9FF]/50 shadow-[0_0_20px_rgba(0,217,255,0.3)] group-hover:border-[#00D9FF] group-hover:shadow-[0_0_40px_rgba(0,217,255,0.6)] transition-all duration-500"></div>
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+                <h3 className="text-3xl md:text-4xl font-bold text-center transition-transform duration-300 group-hover:-translate-y-2">
+                  <span className="text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">AHK </span>
+                  <span className="text-[#D4AF37] drop-shadow-[0_4px_20px_rgba(212,175,55,0.8)]">{pillar.name}</span>
+                </h3>
+              </div>
+
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00D9FF]/0 via-[#D4AF37]/0 to-[#00D9FF]/0 group-hover:from-[#00D9FF]/10 group-hover:via-[#D4AF37]/5 group-hover:to-[#00D9FF]/10 transition-all duration-500"></div>
             </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-end p-6 pb-8">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-center transition-all duration-300 group-hover:transform group-hover:-translate-y-2">
-                <span className="text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">AHK </span>
-                <span className="text-[var(--gold)] drop-shadow-[0_4px_16px_rgba(212,175,55,0.7)]">{pillar.name}</span>
-              </h3>
-            </div>
-            <div className={`absolute -inset-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl ${pillar.borderGlow} blur-sm`}></div>
           </Link>
         ))}
       </div>

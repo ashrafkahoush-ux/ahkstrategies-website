@@ -8,6 +8,7 @@ import { GoogleAnalytics } from "../components/GoogleAnalytics";
 import EmmaChatWidget from "../components/EmmaChatWidget";
 import AnimatedBackground from "../components/AnimatedBackground";
 import Watermark from "../components/Watermark";
+import FloatingLogo from "../components/FloatingLogo";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ahkstrategies.net'),
@@ -91,6 +92,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         {/* AHK Watermark */}
         <Watermark />
+        
+        {/* Floating Animated Logo - TEMP REMOVED */}
+        {/* <FloatingLogo /> */}
         
         <GoogleAnalytics />
         <LanguageProvider>

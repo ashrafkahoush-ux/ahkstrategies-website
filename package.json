@@ -11,10 +11,12 @@
     "snapshot:now": "node scripts/snapshot.js",
     "snapshot:diff": "node scripts/diff.js",
     "start:cron": "node scripts/cron.js",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "eric:init": "node ./CommandCenter/AI_Agents/ERIC/init.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "framer-motion": "^12.23.24",
     "googleapis": "^165.0.0",
     "lucide-react": "^0.546.0",

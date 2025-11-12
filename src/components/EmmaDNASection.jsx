@@ -6,20 +6,21 @@ import Image from 'next/image';
 export default function EmmaDNASection() {
   return (
     <section className="relative w-full py-32 overflow-hidden">
-      {/* Background: emma_dna_command_symphony.png */}
+      {/* Background: emma_dna_dual_core.mp4 (animated rotating dual-brain) */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/assets/emma_dna/images/emma_dna_command_symphony.png"
-          alt="EMMA Command Symphony"
-          fill
-          className="object-cover opacity-30"
-          priority
+        <video
+          src="/assets/emma_dna/videos/emma_dna_dual_core.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         {/* Navy overlay for depth */}
         <div className="absolute inset-0 bg-[#0A192F]/80"></div>
       </div>
 
-      {/* DNA Strand Overlay with rotation animation */}
+      {/* DNA Strand Video Overlay with rotation animation */}
       <motion.div
         className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none"
         animate={{
@@ -32,11 +33,13 @@ export default function EmmaDNASection() {
         }}
       >
         <div className="relative w-full max-w-4xl h-[600px]">
-          <Image
-            src="/assets/emma_dna/images/emma_dna_strand.png"
-            alt="EMMA DNA Strand"
-            fill
-            className="object-contain"
+          <video
+            src="/assets/emma_dna/videos/emma_dna_strand.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-contain"
           />
         </div>
       </motion.div>

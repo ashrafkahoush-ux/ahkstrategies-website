@@ -15,6 +15,7 @@ const Header = () => {
     { label: 'Vision', href: '/pillars/vision' },
     { label: 'Human Intelligence', href: '/pillars/human-intelligence' },
     { label: 'Projects', href: '/pillars/projects' },
+    { label: 'EMMA', href: '/emma' },
   ];
 
   return (

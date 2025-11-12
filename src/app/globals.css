@@ -88,3 +88,19 @@ body {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
+
+/* === EMMA Symbiont Styles === */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0A192F;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

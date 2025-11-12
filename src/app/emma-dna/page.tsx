@@ -16,6 +16,14 @@ export default function EmmaDNAGalleryPage() {
       description: 'Witness the moment where human vision and artificial intelligence merge into EMMA—a living command center that breathes with your empire.',
     },
     {
+      id: 'command-symphony',
+      src: '/assets/emma_dna/videos/emma_dna_command_symphony.mp4',
+      poster: '/assets/emma_dna/images/emma_dna_command_symphony.png',
+      title: 'Command Symphony',
+      subtitle: 'Orchestrating Enterprise Intelligence',
+      description: 'EMMA conducts the symphony of your operations—synchronizing data, strategy, and execution into one seamless flow of power.',
+    },
+    {
       id: 'beyond-vision',
       src: '/assets/emma_dna/videos/emma_dna_beyond_vision.mp4',
       poster: '/assets/emma_dna/images/emma_dna_strand.png',

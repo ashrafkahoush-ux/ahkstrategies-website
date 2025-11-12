@@ -22,7 +22,11 @@ const LINKS = [
       { href: '/services/consulting-hub', label: 'AHK Consulting Hub', labelAr: 'مركز الاستشارات AHK' },
     ]
   },
-  { href: '/projects', label: 'Projects', labelAr: 'المشاريع' },
+  { href: '/projects', label: 'Projects', labelAr: 'المشاريع',
+    dropdown: [
+      { href: '/projects/divisions/automotive', label: 'Automotive Division', labelAr: 'قسم السيارات' },
+    ]
+  },
   { href: '/opportunities', label: 'Opportunities', labelAr: 'الفرص' },
   { href: '/about-us', label: 'About Us', labelAr: 'من نحن' },
 ]

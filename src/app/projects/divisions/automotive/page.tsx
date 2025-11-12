@@ -98,69 +98,359 @@ export default function AutomotiveDivision() {
             sustainable practices, and innovative solutions that drive the future of mobility.
           </p>
           
-          <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1rem', color: '#fde047' }}>
-            Key Focus Areas
-          </h3>
-          <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', color: '#cbd5e1', lineHeight: '1.75' }}>
-            <li>
-              <a 
-                href="/opportunities#ev-infrastructure" 
-                onClick={(e) => { e.preventDefault(); router.push('/opportunities#ev-infrastructure'); }}
-                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
-                style={{ color: '#cbd5e1' }}
-              >
-                Electric Vehicle Technology & Infrastructure
-              </a>
-            </li>
-            <li>
-              <a 
-                href="/opportunities#autonomous-systems" 
-                onClick={(e) => { e.preventDefault(); router.push('/opportunities#autonomous-systems'); }}
-                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
-                style={{ color: '#cbd5e1' }}
-              >
-                Autonomous Driving Systems
-              </a>
-            </li>
-            <li>
-              <a 
-                href="/opportunities#smart-manufacturing" 
-                onClick={(e) => { e.preventDefault(); router.push('/opportunities#smart-manufacturing'); }}
-                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
-                style={{ color: '#cbd5e1' }}
-              >
-                Smart Manufacturing Solutions
-              </a>
-            </li>
-            <li>
-              <a 
-                href="/opportunities#supply-chain" 
-                onClick={(e) => { e.preventDefault(); router.push('/opportunities#supply-chain'); }}
-                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
-                style={{ color: '#cbd5e1' }}
-              >
-                Sustainable Supply Chain Management
-              </a>
-            </li>
-            <li>
-              <a 
-                href="/opportunities#connected-vehicles" 
-                onClick={(e) => { e.preventDefault(); router.push('/opportunities#connected-vehicles'); }}
-                className="hover:text-amber-400 hover:underline cursor-pointer transition-colors duration-200"
-                style={{ color: '#cbd5e1' }}
-              >
-                Connected Vehicle Technologies
-              </a>
-            </li>
-          </ul>
-
-          <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginTop: '2rem', marginBottom: '1rem', color: '#fde047' }}>
-            Our Commitment
-          </h3>
-          <p style={{ fontSize: '1.125rem', lineHeight: '1.75', color: '#cbd5e1' }}>
+          <p style={{ fontSize: '1.125rem', lineHeight: '1.75', color: '#cbd5e1', marginBottom: '2rem' }}>
             We are dedicated to creating sustainable, efficient, and innovative automotive solutions that meet the evolving 
             needs of modern transportation while prioritizing environmental responsibility and technological excellence.
           </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="mt-16">
+          <h2 
+            className="text-3xl font-bold mb-10 text-center"
+            style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2.5rem', textAlign: 'center', color: '#facc15' }}
+          >
+            Our Flagship Projects
+          </h2>
+          
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '2rem',
+            }}
+          >
+            {/* Q-VAN Card */}
+            <div 
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0A192F]/90 to-[#1a2744]/90 backdrop-blur-sm border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#D4AF37]/20"
+              style={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: '0.75rem',
+                background: 'linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(26, 39, 68, 0.9))',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(212, 175, 55, 0.2)',
+                transition: 'all 0.5s ease',
+                cursor: 'pointer',
+              }}
+              onClick={() => router.push('/projects/divisions/automotive/qvan')}
+            >
+              {/* Card Content */}
+              <div className="p-6 relative z-10">
+                {/* Project Logo/Icon Area */}
+                <div 
+                  className="w-16 h-16 mb-4 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#F4E5B1] flex items-center justify-center"
+                  style={{
+                    width: '4rem',
+                    height: '4rem',
+                    marginBottom: '1rem',
+                    borderRadius: '0.5rem',
+                    background: 'linear-gradient(135deg, #D4AF37, #F4E5B1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <span style={{ fontSize: '2rem', fontWeight: 'bold', color: '#0A192F' }}>Q</span>
+                </div>
+
+                <h3 
+                  className="text-2xl font-bold mb-2 text-white group-hover:text-[#D4AF37] transition-colors duration-300"
+                  style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    marginBottom: '0.5rem',
+                    color: 'white',
+                    transition: 'color 0.3s ease',
+                  }}
+                >
+                  Q-VAN
+                </h3>
+                
+                <p 
+                  className="text-sm text-[#94a3b8] mb-4 font-medium"
+                  style={{
+                    fontSize: '0.875rem',
+                    color: '#94a3b8',
+                    marginBottom: '1rem',
+                    fontWeight: 500,
+                  }}
+                >
+                  Smart Commercial EVs
+                </p>
+
+                <p 
+                  className="text-base text-[#cbd5e1] leading-relaxed mb-6 italic"
+                  style={{
+                    fontSize: '1rem',
+                    color: '#cbd5e1',
+                    lineHeight: '1.6',
+                    marginBottom: '1.5rem',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  &quot;Powering the next frontier of green logistics.&quot;
+                </p>
+
+                <button
+                  className="w-full px-6 py-3 bg-gradient-to-r from-[#D4AF37] to-[#F4E5B1] rounded-lg text-[#0A192F] font-bold hover:shadow-lg hover:shadow-[#D4AF37]/40 transition-all duration-300"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1.5rem',
+                    background: 'linear-gradient(90deg, #D4AF37, #F4E5B1)',
+                    borderRadius: '0.5rem',
+                    color: '#0A192F',
+                    fontWeight: 'bold',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                  }}
+                >
+                  Learn More
+                </button>
+              </div>
+
+              {/* Animated background accent */}
+              <div 
+                className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#D4AF37]/10 rounded-full blur-3xl group-hover:bg-[#D4AF37]/20 transition-all duration-500"
+                style={{
+                  position: 'absolute',
+                  bottom: '-2.5rem',
+                  right: '-2.5rem',
+                  width: '8rem',
+                  height: '8rem',
+                  background: 'rgba(212, 175, 55, 0.1)',
+                  borderRadius: '9999px',
+                  filter: 'blur(60px)',
+                  transition: 'all 0.5s ease',
+                }}
+              />
+            </div>
+
+            {/* WOW Card */}
+            <div 
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0A192F]/90 to-[#1a2744]/90 backdrop-blur-sm border border-[#00D9FF]/20 hover:border-[#00D9FF] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#00D9FF]/20"
+              style={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: '0.75rem',
+                background: 'linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(26, 39, 68, 0.9))',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(0, 217, 255, 0.2)',
+                transition: 'all 0.5s ease',
+                cursor: 'pointer',
+              }}
+              onClick={() => router.push('/projects/divisions/automotive/wow')}
+            >
+              {/* Card Content */}
+              <div className="p-6 relative z-10">
+                {/* Project Logo/Icon Area */}
+                <div 
+                  className="w-16 h-16 mb-4 rounded-lg bg-gradient-to-br from-[#00D9FF] to-[#0099CC] flex items-center justify-center"
+                  style={{
+                    width: '4rem',
+                    height: '4rem',
+                    marginBottom: '1rem',
+                    borderRadius: '0.5rem',
+                    background: 'linear-gradient(135deg, #00D9FF, #0099CC)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>WOW</span>
+                </div>
+
+                <h3 
+                  className="text-2xl font-bold mb-2 text-white group-hover:text-[#00D9FF] transition-colors duration-300"
+                  style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    marginBottom: '0.5rem',
+                    color: 'white',
+                    transition: 'color 0.3s ease',
+                  }}
+                >
+                  WOW
+                </h3>
+                
+                <p 
+                  className="text-sm text-[#94a3b8] mb-4 font-medium"
+                  style={{
+                    fontSize: '0.875rem',
+                    color: '#94a3b8',
+                    marginBottom: '1rem',
+                    fontWeight: 500,
+                  }}
+                >
+                  Urban E-Mobility
+                </p>
+
+                <p 
+                  className="text-base text-[#cbd5e1] leading-relaxed mb-6 italic"
+                  style={{
+                    fontSize: '1rem',
+                    color: '#cbd5e1',
+                    lineHeight: '1.6',
+                    marginBottom: '1.5rem',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  &quot;Italian design meets Cairo streets.&quot;
+                </p>
+
+                <button
+                  className="w-full px-6 py-3 bg-gradient-to-r from-[#00D9FF] to-[#0099CC] rounded-lg text-white font-bold hover:shadow-lg hover:shadow-[#00D9FF]/40 transition-all duration-300"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1.5rem',
+                    background: 'linear-gradient(90deg, #00D9FF, #0099CC)',
+                    borderRadius: '0.5rem',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                  }}
+                >
+                  Learn More
+                </button>
+              </div>
+
+              {/* Animated background accent */}
+              <div 
+                className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#00D9FF]/10 rounded-full blur-3xl group-hover:bg-[#00D9FF]/20 transition-all duration-500"
+                style={{
+                  position: 'absolute',
+                  bottom: '-2.5rem',
+                  right: '-2.5rem',
+                  width: '8rem',
+                  height: '8rem',
+                  background: 'rgba(0, 217, 255, 0.1)',
+                  borderRadius: '9999px',
+                  filter: 'blur(60px)',
+                  transition: 'all 0.5s ease',
+                }}
+              />
+            </div>
+
+            {/* DVM Card */}
+            <div 
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0A192F]/90 to-[#1a2744]/90 backdrop-blur-sm border border-purple-400/20 hover:border-purple-400 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-400/20"
+              style={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: '0.75rem',
+                background: 'linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(26, 39, 68, 0.9))',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(192, 132, 252, 0.2)',
+                transition: 'all 0.5s ease',
+                cursor: 'pointer',
+              }}
+              onClick={() => router.push('/projects/divisions/automotive/dvm')}
+            >
+              {/* Card Content */}
+              <div className="p-6 relative z-10">
+                {/* Project Logo/Icon Area */}
+                <div 
+                  className="w-16 h-16 mb-4 rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center"
+                  style={{
+                    width: '4rem',
+                    height: '4rem',
+                    marginBottom: '1rem',
+                    borderRadius: '0.5rem',
+                    background: 'linear-gradient(135deg, #c084fc, #9333ea)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'white' }}>DVM</span>
+                </div>
+
+                <h3 
+                  className="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors duration-300"
+                  style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    marginBottom: '0.5rem',
+                    color: 'white',
+                    transition: 'color 0.3s ease',
+                  }}
+                >
+                  DVM
+                </h3>
+                
+                <p 
+                  className="text-sm text-[#94a3b8] mb-4 font-medium"
+                  style={{
+                    fontSize: '0.875rem',
+                    color: '#94a3b8',
+                    marginBottom: '1rem',
+                    fontWeight: 500,
+                  }}
+                >
+                  Strategic Mobility Framework
+                </p>
+
+                <p 
+                  className="text-base text-[#cbd5e1] leading-relaxed mb-6 italic"
+                  style={{
+                    fontSize: '1rem',
+                    color: '#cbd5e1',
+                    lineHeight: '1.6',
+                    marginBottom: '1.5rem',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  &quot;The blueprint of MENA&apos;s clean-transport future.&quot;
+                </p>
+
+                <button
+                  className="w-full px-6 py-3 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg text-white font-bold hover:shadow-lg hover:shadow-purple-400/40 transition-all duration-300"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1.5rem',
+                    background: 'linear-gradient(90deg, #c084fc, #9333ea)',
+                    borderRadius: '0.5rem',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                  }}
+                >
+                  Learn More
+                </button>
+              </div>
+
+              {/* Animated background accent */}
+              <div 
+                className="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-400/10 rounded-full blur-3xl group-hover:bg-purple-400/20 transition-all duration-500"
+                style={{
+                  position: 'absolute',
+                  bottom: '-2.5rem',
+                  right: '-2.5rem',
+                  width: '8rem',
+                  height: '8rem',
+                  background: 'rgba(192, 132, 252, 0.1)',
+                  borderRadius: '9999px',
+                  filter: 'blur(60px)',
+                  transition: 'all 0.5s ease',
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Responsive CSS */}
+          <style jsx>{`
+            @media (max-width: 768px) {
+              div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}</style>
         </div>
       </section>
     </div>

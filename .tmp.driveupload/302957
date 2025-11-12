@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/services/layout,_N_T_/services/consulting-hub/layout,_N_T_/services/consulting-hub/page,_N_T_/services/consulting-hub"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/services/consulting-hub/__PAGE__",
+    "/services/consulting-hub",
+    "/services",
+    "/_index"
+  ]
+}

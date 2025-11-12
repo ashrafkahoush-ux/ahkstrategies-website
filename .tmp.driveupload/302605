@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/projects/layout,_N_T_/projects/divisions/layout,_N_T_/projects/divisions/renewable/layout,_N_T_/projects/divisions/renewable/page,_N_T_/projects/divisions/renewable"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/projects/divisions/renewable/__PAGE__",
+    "/projects/divisions/renewable",
+    "/projects/divisions",
+    "/projects",
+    "/_index"
+  ]
+}

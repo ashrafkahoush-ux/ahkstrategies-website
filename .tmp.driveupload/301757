@@ -1,3 +1,0 @@
-module.exports=[87132,a=>{"use strict";var b=a.i(93562);function c({children:a}){return(0,b.jsx)("section",{className:"relative min-h-screen bg-[#020617] text-slate-100 antialiased overflow-hidden selection:bg-white/10 selection:text-white",children:a})}a.s(["default",()=>c,"metadata",0,{title:"AHKStrategies | Pillars",description:"Cinematic framework where vision meets human intelligence"}])}];
-
-//# sourceMappingURL=ahkstrategies-website_src_app_pillars_layout_tsx_5e771a57._.js.map

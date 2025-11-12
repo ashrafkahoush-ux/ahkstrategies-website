@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 export default function HeroSection() {
   return (
     <section className="relative flex flex-col items-center justify-center h-[90vh] w-full overflow-hidden bg-[#0A192F]">
-      {/* EMMA DNA Genesis Background Video */}
+      {/* Homepage Background Video */}
       <video
-        src="/assets/emma_dna/videos/emma_dna_genesis.mp4"
+        src="/assets/backgrounds/home2.mp4"
         autoPlay
         loop
         muted

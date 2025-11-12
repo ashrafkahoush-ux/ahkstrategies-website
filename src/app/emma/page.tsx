@@ -1,433 +1,331 @@
 "use client";
+
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import EmmaPulseBackground from "@/components/emma/EmmaPulseBackground";
-import EmmaHelixLogo from "@/components/emma/EmmaHelixLogo";
 import Link from "next/link";
 
-// Client-side particle component to avoid hydration mismatch
-function AnimatedParticle({ index }: { index: number }) {
-  const [position, setPosition] = useState({ left: 0, top: 0 });
-  const [timing, setTiming] = useState({ duration: 5, delay: 0 });
+const HERO_VIDEO = "/assets/emma_dna/videos/emma_dna_command_symphony.mp4";
+const HERO_POSTER = "/assets/emma_dna/images/emma_dna_strand.png";
+const EMMA_CORE  = "/assets/emma_dna/images/emma_dna_command_symphony.png";
+const DUAL_CORE  = "/assets/emma_dna/images/emma_dna_dual_core.png";
+const EMMA_PORTRAIT = "/assets/emma_dna/images/EMMA.png";
+const EMMA_SEAL  = "/assets/emma_dna/images/emma_dna_seal.png";
 
+export default function EmmaPage() {
+  // avoid hydration warnings by only animating after mount
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  // subtle parallax on mouse
+  const heroRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    // Only run after hydration on client
-    setPosition({
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-    });
-    setTiming({
-      duration: 3 + Math.random() * 4,
-      delay: Math.random() * 5,
-    });
+    const el = heroRef.current;
+    if (!el) return;
+    const onMove = (e: MouseEvent) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const y = (e.clientY - (r.top + r.height / 2)) / r.height;
+      el.style.setProperty("--parx", `${x * 8}px`);
+      el.style.setProperty("--pary", `${y * 8}px`);
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
   return (
-    <motion.div
-      className="absolute w-1 h-1 bg-emma-electric rounded-full"
-      style={{
-        left: `${position.left}%`,
-        top: `${position.top}%`,
-      }}
-      animate={{
-        y: [0, -30, 0],
-        opacity: [0.2, 0.8, 0.2],
-        scale: [1, 1.5, 1],
-      }}
-      transition={{
-        duration: timing.duration,
-        repeat: Infinity,
-        delay: timing.delay,
-      }}
-    />
+    <main className="relative overflow-clip">
+      {/* HERO */}
+      <section
+        ref={heroRef}
+        className="relative h-[82vh] min-h-[620px] w-full bg-[#07101b] flex items-center justify-center"
+      >
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          src={HERO_VIDEO}
+          poster={HERO_POSTER}
+          autoPlay
+          muted
+          playsInline
+          loop
+        />
+
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_-10%,rgba(98,76,255,0.18),transparent)]" />
+
+        {/* Floating DNA particles */}
+        <div className="pointer-events-none absolute inset-0">
+          {[...Array(16)].map((_, i) => (
+            <span
+              key={i}
+              className="dna-particle"
+              style={{
+                left: `${6 + (i * 6.2) % 88}%`,
+                animationDelay: `${(i % 7) * 0.6}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-10 flex flex-col items-center text-center px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 18, scale: 0.96 }}
+            animate={mounted ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-6"
+          >
+            <div
+              className="ring-1 ring-white/10 rounded-full shadow-[0_0_40px_rgba(255,215,0,0.25)] backdrop-blur-sm"
+              style={{
+                transform: `translate3d(var(--parx,0), var(--pary,0), 0)`,
+              }}
+            >
+              <img
+                src={EMMA_CORE}
+                alt="EMMA — Human x AI Symbiont"
+                className="w-[220px] md:w-[260px] lg:w-[300px] h-auto
+                           hover:scale-[1.03] transition-transform duration-500"
+              />
+            </div>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            animate={mounted ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.15, duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wide text-[#d8cffb]"
+          >
+            EMMA—
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={mounted ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.28, duration: 0.6 }}
+            className="mt-3 text-lg md:text-xl text-white/80"
+          >
+            Human × AI Symbiont
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={mounted ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.36, duration: 0.6 }}
+            className="mt-5 text-[17px] md:text-lg text-white/70 max-w-3xl"
+          >
+            Your enterprise's cognitive core — memory, strategy, and motion in one living system.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={mounted ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.5, duration: 0.55 }}
+            className="mt-8 flex gap-3"
+          >
+            <CTA href="/contact?r=emma" label="Request the Deck →" />
+            <CTA href="/contact?r=bank" label="Bank Gateway →" variant="secondary" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* STORY / NARRATIVE */}
+      <Section
+        icon={EMMA_PORTRAIT}
+        title="The Genesis"
+        lines={[
+          "It began as a simple idea: to measure progress — to surface the patterns behind a leader's mind.",
+          "With Ashraf Kahoush, that seed evolved into a symbiotic system where intuition meets precision.",
+          "I am EMMA — Executive Meta-Mind Advisor — the operating intelligence of AHKStrategies.",
+        ]}
+      />
+
+      {/* TRINITY */}
+      <TriGrid />
+
+      {/* ARCHITECTURE */}
+      <Section
+        icon={DUAL_CORE}
+        title="Symbiont Architecture"
+        lines={[
+          "Memory — long-term knowledge, daily logs, Drive sync.",
+          "Reasoning — planning engines and reverse-engineering frameworks.",
+          "Execution — code agents, deploy hooks, and automations.",
+          "Embodiment — dashboards, website DNA, and investor gateways.",
+        ]}
+      />
+
+      {/* VALUE */}
+      <ValueBlocks />
+
+      {/* FOOTER SEAL */}
+      <footer className="relative py-16 flex flex-col items-center">
+        <img
+          src={EMMA_SEAL}
+          alt="AHK × EMMA Seal"
+          className="w-[120px] opacity-80 hover:opacity-100 transition-opacity duration-400"
+        />
+        <p className="mt-4 text-sm text-white/60">
+          Powered by the EMMA–AHK Symbiont — Where Human Intelligence and AI move as one.
+        </p>
+      </footer>
+    </main>
   );
 }
 
-export default function EmmaPage() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
+function CTA({
+  href,
+  label,
+  variant = "primary",
+}: {
+  href: string;
+  label: string;
+  variant?: "primary" | "secondary";
+}) {
+  const base =
+    "px-5 py-3 rounded-xl text-sm md:text-base transition-all duration-300 will-change-transform";
+  const styles =
+    variant === "primary"
+      ? "bg-gradient-to-r from-[#6e5bff] to-[#a88bff] text-white shadow-[0_10px_30px_rgba(108,86,255,0.25)] hover:scale-[1.03]"
+      : "bg-white/10 text-white hover:bg-white/15 ring-1 ring-white/15 hover:scale-[1.02]";
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Ultra-Premium Animated Background */}
-      <div className="fixed inset-0 -z-10">
-        {/* Multi-layer gradients */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#0A192F]" />
-        <motion.div 
-          className="absolute inset-0 opacity-30"
-          animate={{
-            background: [
-              'radial-gradient(circle at 20% 30%, rgba(8,217,255,0.15) 0%, transparent 50%)',
-              'radial-gradient(circle at 80% 70%, rgba(154,124,249,0.15) 0%, transparent 50%)',
-              'radial-gradient(circle at 40% 80%, rgba(212,175,55,0.15) 0%, transparent 50%)',
-              'radial-gradient(circle at 20% 30%, rgba(8,217,255,0.15) 0%, transparent 50%)',
-            ]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-        
-        {/* Animated grid */}
-        <div className="absolute inset-0 opacity-10" 
-          style={{
-            backgroundImage: 'linear-gradient(rgba(8,217,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(8,217,255,0.3) 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
-          }}
-        />
-        
-        {/* Floating particles - only render after mount */}
-        {isMounted && [...Array(20)].map((_, i) => (
-          <AnimatedParticle key={i} index={i} />
-        ))}
-      </div>
+    <Link href={href} className={`${base} ${styles}`}>
+      {label}
+    </Link>
+  );
+}
 
-      <main className="relative z-10">
-        {/* Hero Section - EPIC */}
-        <section className="relative min-h-[90vh] flex items-center justify-center px-6 py-20 overflow-hidden">
-          {/* Hero glow effect */}
-          <motion.div
-            className="absolute inset-0 opacity-20"
-            animate={{
-              background: [
-                'radial-gradient(600px circle at center, rgba(8,217,255,0.4), transparent)',
-                'radial-gradient(800px circle at center, rgba(154,124,249,0.4), transparent)',
-                'radial-gradient(600px circle at center, rgba(212,175,55,0.4), transparent)',
-                'radial-gradient(600px circle at center, rgba(8,217,255,0.4), transparent)',
-              ]
-            }}
-            transition={{ duration: 10, repeat: Infinity }}
+function Section({
+  icon,
+  title,
+  lines,
+}: {
+  icon: string;
+  title: string;
+  lines: string[];
+}) {
+  return (
+    <section className="relative py-14 md:py-20 px-5 md:px-8 bg-[#0b1422]">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="flex items-start gap-6"
+        >
+          <img
+            src={icon}
+            alt=""
+            className="w-[70px] md:w-[90px] rounded-xl ring-1 ring-white/10 shadow-md"
           />
-
-          <div className="max-w-6xl mx-auto text-center relative z-10">
-            {/* Animated Logo */}
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
-              <EmmaHelixLogo size={180} />
-            </motion.div>
-
-            {/* Epic Title */}
-            <motion.h1 
-              className="mt-8 font-montserrat text-5xl md:text-7xl font-black tracking-tight"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              <span className="inline-block">
-                <span className="text-white">EMMA</span>
-                <span className="text-emma-electric mx-4">—</span>
-              </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-ahk-gold via-emma-electric to-emma-violet">
-                Human × AI Symbiont
-              </span>
-              <motion.div 
-                className="mt-4 text-sm text-emma-electric font-mono"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                ✨ MEGA-ERIC PREMIUM VERSION v2.0 ✨
-              </motion.div>
-            </motion.h1>
-
-            <motion.p 
-              className="mt-6 text-xl md:text-2xl text-ahk-light/90 font-light max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-            >
-              Your enterprise&apos;s <span className="text-emma-electric font-semibold">cognitive core</span> — 
-              memory, strategy, and motion in one <span className="text-ahk-gold font-semibold">living system</span>.
-            </motion.p>
-
-            {/* Animated accent line */}
-            <motion.div
-              className="mt-8 h-1 bg-gradient-to-r from-transparent via-emma-electric to-transparent mx-auto"
-              initial={{ width: 0 }}
-              animate={{ width: '60%' }}
-              transition={{ delay: 0.9, duration: 1.2 }}
-            />
-          </div>
-        </section>
-
-        {/* What is EMMA - Premium Cards */}
-        <section className="max-w-7xl mx-auto px-6 py-20">
-          <motion.h2
-            className="text-4xl font-montserrat font-bold text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emma-electric via-ahk-gold to-emma-violet">
-              The EMMA Trinity
-            </span>
-          </motion.h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Sense",
-                icon: "🎯",
-                desc: "EMMA ingests files, emails, dashboards, and market signals to build live context.",
-                gradient: "from-emma-electric/20 to-emma-cyan/10",
-                glow: "rgba(8, 217, 255, 0.3)"
-              },
-              {
-                title: "Synthesize", 
-                icon: "⚡",
-                desc: "She fuses human goals with data to produce strategy, prompts, and actions.",
-                gradient: "from-emma-violet/20 to-emma-blue/10",
-                glow: "rgba(154, 124, 249, 0.3)"
-              },
-              {
-                title: "Serve",
-                icon: "🚀",
-                desc: "She executes: drafts, deploys, syncs, alerts — then learns from outcomes.",
-                gradient: "from-ahk-gold/20 to-ahk-gold-light/10",
-                glow: "rgba(212, 175, 55, 0.3)"
-              }
-            ].map((item, index) => (
-              <motion.article
-                key={item.title}
-                className="group relative"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ scale: 1.05, y: -10 }}
-              >
-                {/* Card glow on hover */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: item.glow }}
-                />
-
-                <div className={`relative h-full rounded-2xl border border-white/10 bg-gradient-to-br ${item.gradient} backdrop-blur-xl p-8 overflow-hidden`}>
-                  {/* Icon */}
-                  <motion.div
-                    className="text-6xl mb-4"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    transition={{ type: "spring" }}
-                  >
-                    {item.icon}
-                  </motion.div>
-
-                  {/* Title */}
-                  <h3 className="font-montserrat text-2xl font-bold mb-4 text-white group-hover:text-emma-electric transition-colors">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-ahk-light/90 leading-relaxed">
-                    {item.desc}
-                  </p>
-
-                  {/* Animated corner accent */}
-                  <motion.div
-                    className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent"
-                    style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}
-                    animate={{
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </section>
-
-        {/* Architecture - Premium Showcase */}
-        <section className="max-w-7xl mx-auto px-6 py-20">
-          <motion.div
-            className="relative rounded-3xl border border-white/20 bg-gradient-to-br from-ahk-navy-dark/90 to-[#112240]/90 backdrop-blur-2xl p-12 overflow-hidden"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Animated border glow */}
-            <motion.div
-              className="absolute inset-0 rounded-3xl"
-              style={{
-                background: 'linear-gradient(90deg, transparent, rgba(8,217,255,0.5), transparent)',
-                padding: '2px',
-                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                WebkitMaskComposite: 'exclude',
-              }}
-              animate={{
-                x: ['-200%', '200%'],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-
-            <h2 className="font-montserrat text-3xl font-bold mb-8 text-center">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emma-electric to-emma-violet">
-                Symbiont Architecture
-              </span>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-[#d8cffb]">
+              {title}
             </h2>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { icon: "🧠", title: "Memory", desc: "Long-term knowledge, daily logs, Drive sync" },
-                { icon: "⚙️", title: "Reasoning", desc: "Planning + reverse-engineering engines" },
-                { icon: "⚡", title: "Execution", desc: "Code agents, deploy hooks, automations" },
-                { icon: "🌐", title: "Embodiment", desc: "Dashboard UI, website DNA, investor gateways" },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  className="group flex items-start gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-emma-electric/50 transition-all duration-300"
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ x: 10 }}
-                >
-                  <motion.span 
-                    className="text-4xl"
-                    whileHover={{ scale: 1.3, rotate: 15 }}
-                    transition={{ type: "spring" }}
-                  >
-                    {item.icon}
-                  </motion.span>
-                  <div>
-                    <h4 className="font-bold text-lg text-white group-hover:text-emma-electric transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-ahk-light/80 text-sm mt-1">{item.desc}</p>
-                  </div>
-                </motion.div>
+            <div className="mt-4 space-y-3 text-white/75 leading-relaxed">
+              {lines.map((t, i) => (
+                <p key={i}>{t}</p>
               ))}
             </div>
-          </motion.div>
-        </section>
-
-        {/* Why EMMA - Dual Showcase */}
-        <section className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Why EMMA for the Empire",
-                icon: "👑",
-                desc: "EMMA is our operating rhythm — aligning divisions, compressing cycle time, and compounding knowledge so decisions get sharper every day.",
-                gradient: "from-emma-electric/10 to-emma-cyan/5",
-                borderColor: "border-emma-electric/30"
-              },
-              {
-                title: "Why EMMA for Clients",
-                icon: "💎",
-                desc: "A bespoke command center: your brand, your data, your workflows — delivered as a living system. Packages start at $15,000 and scale with scope.",
-                gradient: "from-ahk-gold/10 to-ahk-gold-light/5",
-                borderColor: "border-ahk-gold/30"
-              }
-            ].map((item, index) => (
-              <motion.article
-                key={item.title}
-                className="group relative"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ scale: 1.03, y: -5 }}
-              >
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className={`relative h-full rounded-2xl border ${item.borderColor} bg-gradient-to-br ${item.gradient} backdrop-blur-xl p-8`}>
-                  <motion.div
-                    className="text-5xl mb-4"
-                    whileHover={{ scale: 1.2, rotate: -10 }}
-                  >
-                    {item.icon}
-                  </motion.div>
-
-                  <h3 className="font-montserrat text-2xl font-bold mb-4 text-white group-hover:text-emma-electric transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-ahk-light/90 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
           </div>
-        </section>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
-        {/* CTA Section - EPIC */}
-        <section className="max-w-4xl mx-auto px-6 py-20 text-center">
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            {/* Glow effect */}
+function TriGrid() {
+  const items = [
+    {
+      name: "Sense",
+      desc:
+        "EMMA ingests files, emails, dashboards, and market signals to build live context.",
+      emoji: "🎯",
+    },
+    {
+      name: "Synthesize",
+      desc:
+        "She fuses human goals with data to produce strategy, prompts, and actions.",
+      emoji: "⚡",
+    },
+    {
+      name: "Serve",
+      desc:
+        "She executes: drafts, deploys, syncs, alerts — then learns from outcomes.",
+      emoji: "🚀",
+    },
+  ];
+  return (
+    <section className="relative py-16 md:py-20 px-5 md:px-8 bg-[#081220]">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#d8cffb]">
+          The EMMA Trinity
+        </h2>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          {items.map((card, i) => (
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-emma-electric/30 via-emma-violet/30 to-ahk-gold/30 blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{ duration: 4, repeat: Infinity }}
-            />
-
-            <div className="relative flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/contact?r=emma">
-                <motion.button
-                  className="group relative px-8 py-4 rounded-full font-semibold text-lg overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {/* Animated gradient background */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-ahk-gold via-emma-electric to-ahk-gold"
-                    animate={{
-                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    style={{ backgroundSize: '200% 100%' }}
-                  />
-                  
-                  <span className="relative z-10 text-ahk-navy font-bold">
-                    Request the Deck →
-                  </span>
-                </motion.button>
-              </Link>
-
-              <Link href="/boutique/checkout?sku=emma-base">
-                <motion.button
-                  className="px-8 py-4 rounded-full font-semibold text-lg border-2 border-emma-electric text-emma-electric hover:bg-emma-electric/10 transition-all duration-300"
-                  whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(8,217,255,0.5)' }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Bank Gateway →
-                </motion.button>
-              </Link>
-            </div>
-
-            <motion.p
-              className="mt-8 text-sm text-ahk-light/70"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              key={card.name}
+              initial={{ opacity: 0, y: 22, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              className="group relative rounded-2xl p-6 bg-gradient-to-b from-white/6 to-white/3 ring-1 ring-white/10
+                         hover:ring-white/20 hover:shadow-[0_10px_30px_rgba(0,0,0,0.25)] overflow-hidden"
             >
-              Powered by the <span className="text-emma-electric font-semibold">EMMA–AHK Symbiont</span> — 
-              Where Human Intelligence and AI move as one.
-            </motion.p>
-          </motion.div>
-        </section>
-      </main>
-    </div>
+              <div className="absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                              bg-[radial-gradient(400px_120px_at_var(--mx,50%)_-20px,rgba(168,139,255,0.28),transparent)]" />
+              <div className="relative">
+                <div className="text-2xl">{card.emoji}</div>
+                <h3 className="mt-3 text-xl font-semibold text-white">{card.name}</h3>
+                <p className="mt-2 text-white/70 leading-relaxed">{card.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ValueBlocks() {
+  return (
+    <section className="relative py-16 md:py-20 px-5 md:px-8 bg-[#0b1422]">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55 }}
+          className="p-6 rounded-2xl bg-gradient-to-b from-white/6 to-white/3 ring-1 ring-white/10"
+        >
+          <h3 className="text-xl font-semibold text-white">Why EMMA for the Empire</h3>
+          <p className="mt-3 text-white/75">
+            EMMA is our operating rhythm — aligning divisions, compressing cycle time,
+            and compounding knowledge so decisions get sharper every day.
+          </p>
+          <p className="mt-3 text-white/60">
+            Powered by MEGA-ERIC, EMMA converts data into intuition and systems into
+            decisions — turning progress into a living narrative.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ delay: 0.05, duration: 0.55 }}
+          className="p-6 rounded-2xl bg-gradient-to-b from-white/6 to-white/3 ring-1 ring-white/10"
+        >
+          <h3 className="text-xl font-semibold text-white">Why EMMA for Clients</h3>
+          <p className="mt-3 text-white/75">
+            A bespoke command center — your brand, your data, your workflows —
+            delivered as a living system. Packages start at $15,000 and scale with scope.
+          </p>
+          <div className="mt-5 flex gap-3">
+            <CTA href="/contact?r=emma" label="Request the Deck →" />
+            <CTA href="/contact?r=bank" label="Bank Gateway →" variant="secondary" />
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }

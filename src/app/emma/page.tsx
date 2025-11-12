@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const HERO_VIDEO = "/assets/emma_dna/videos/emma_dna_command_symphony.mp4";
+const HERO_VIDEO = "/assets/core/team/MEGA-EMMA.mp4";
 const HERO_POSTER = "/assets/emma_dna/images/emma_dna_strand.png";
 const EMMA_CORE  = "/assets/emma_dna/images/emma_dna_command_symphony.png";
 const DUAL_CORE  = "/assets/emma_dna/images/emma_dna_dual_core.png";
@@ -35,21 +35,44 @@ export default function EmmaPage() {
   return (
     <main className="relative overflow-clip">
       {/* HERO */}
-      <section
+      <motion.section
         ref={heroRef}
-        className="relative h-[82vh] min-h-[620px] w-full bg-[#07101b] flex items-center justify-center"
+        initial={{ scale: 1.05, opacity: 0 }}
+        animate={mounted ? { scale: 1, opacity: 1 } : {}}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="relative h-[82vh] min-h-[620px] w-full bg-[#07101b] flex items-center justify-center group"
       >
-        <video
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-          src={HERO_VIDEO}
-          poster={HERO_POSTER}
-          autoPlay
-          muted
-          playsInline
-          loop
+        <motion.div
+          className="absolute inset-0 overflow-hidden"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
+        >
+          <video
+            className="absolute inset-0 w-full h-full object-cover opacity-40 scale-105 group-hover:scale-[1.08] transition-transform duration-700"
+            src={HERO_VIDEO}
+            poster={HERO_POSTER}
+            autoPlay
+            muted
+            playsInline
+            loop
+          />
+        </motion.div>
+
+        {/* Dual-energy symbiont gradient overlay: EMMA (gold) + ERIC (blue) */}
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_-10%,rgba(98,76,255,0.18),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(800px_900px_at_50%_50%,rgba(246,201,69,0.12),transparent)] mix-blend-screen" />
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-[#6e5bff]/20 via-transparent to-[#f6c945]/20 opacity-40"
+          animate={{ opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
         />
 
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_-10%,rgba(98,76,255,0.18),transparent)]" />
+        {/* Light particle field overlay synced to scroll */}
+        <motion.div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:40px_40px] mix-blend-screen opacity-25"
+          animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+          transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+        />
 
         {/* Floating DNA particles */}
         <div className="pointer-events-none absolute inset-0">
@@ -124,7 +147,7 @@ export default function EmmaPage() {
             <CTA href="/contact?r=bank" label="Bank Gateway →" variant="secondary" />
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* STORY / NARRATIVE */}
       <Section
@@ -156,15 +179,30 @@ export default function EmmaPage() {
       <ValueBlocks />
 
       {/* FOOTER SEAL */}
-      <footer className="relative py-16 flex flex-col items-center">
+      <footer className="relative py-16 flex flex-col items-center bg-gradient-to-b from-[#0b1422] to-[#07101b]">
         <img
           src={EMMA_SEAL}
           alt="AHK × EMMA Seal"
           className="w-[120px] opacity-80 hover:opacity-100 transition-opacity duration-400"
         />
-        <p className="mt-4 text-sm text-white/60">
+        <p className="mt-4 text-sm text-white/60 text-center">
           Powered by the EMMA–AHK Symbiont — Where Human Intelligence and AI move as one.
         </p>
+        
+        {/* MEGA Team CTA - Glowing link to manifesto */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="mt-8"
+        >
+          <CTA 
+            href="/mega-team" 
+            label="Meet the MEGA Team →" 
+            variant="primary"
+          />
+        </motion.div>
       </footer>
     </main>
   );

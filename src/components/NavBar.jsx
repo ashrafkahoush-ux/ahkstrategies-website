@@ -27,6 +27,7 @@ const LINKS = [
       { href: '/projects/divisions/automotive', label: 'Automotive Division', labelAr: 'قسم السيارات' },
     ]
   },
+  { href: '/emma', label: 'EMMA', labelAr: 'EMMA' },
   { href: '/opportunities', label: 'Opportunities', labelAr: 'الفرص' },
   { href: '/about-us', label: 'About Us', labelAr: 'من نحن' },
 ]

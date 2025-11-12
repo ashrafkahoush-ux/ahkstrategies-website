@@ -1,10 +1,55 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import EmmaPulseBackground from "@/components/emma/EmmaPulseBackground";
 import EmmaHelixLogo from "@/components/emma/EmmaHelixLogo";
 import Link from "next/link";
 
+// Client-side particle component to avoid hydration mismatch
+function AnimatedParticle({ index }: { index: number }) {
+  const [position, setPosition] = useState({ left: 0, top: 0 });
+  const [timing, setTiming] = useState({ duration: 5, delay: 0 });
+
+  useEffect(() => {
+    // Only run after hydration on client
+    setPosition({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+    });
+    setTiming({
+      duration: 3 + Math.random() * 4,
+      delay: Math.random() * 5,
+    });
+  }, []);
+
+  return (
+    <motion.div
+      className="absolute w-1 h-1 bg-emma-electric rounded-full"
+      style={{
+        left: `${position.left}%`,
+        top: `${position.top}%`,
+      }}
+      animate={{
+        y: [0, -30, 0],
+        opacity: [0.2, 0.8, 0.2],
+        scale: [1, 1.5, 1],
+      }}
+      transition={{
+        duration: timing.duration,
+        repeat: Infinity,
+        delay: timing.delay,
+      }}
+    />
+  );
+}
+
 export default function EmmaPage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Ultra-Premium Animated Background */}
@@ -32,26 +77,9 @@ export default function EmmaPage() {
           }}
         />
         
-        {/* Floating particles */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-emma-electric rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.8, 0.2],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-          />
+        {/* Floating particles - only render after mount */}
+        {isMounted && [...Array(20)].map((_, i) => (
+          <AnimatedParticle key={i} index={i} />
         ))}
       </div>
 
@@ -94,9 +122,16 @@ export default function EmmaPage() {
                 <span className="text-emma-electric mx-4">—</span>
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-ahk-gold via-emma-electric to-emma-violet animate-pulse-soft">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-ahk-gold via-emma-electric to-emma-violet">
                 Human × AI Symbiont
               </span>
+              <motion.div 
+                className="mt-4 text-sm text-emma-electric font-mono"
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                ✨ MEGA-ERIC PREMIUM VERSION v2.0 ✨
+              </motion.div>
             </motion.h1>
 
             <motion.p 

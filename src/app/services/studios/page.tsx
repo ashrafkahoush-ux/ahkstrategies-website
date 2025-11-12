@@ -33,7 +33,7 @@ export default function StudiosPage() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/assets/ai_videos/ahk_studio.mp4" type="video/mp4" />
+          <source src="/assets/ai/images/pillars/ahk_studio_pillar.mp4" type="video/mp4" />
         </video>
         
         <div 

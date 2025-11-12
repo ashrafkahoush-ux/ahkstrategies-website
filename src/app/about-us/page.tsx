@@ -111,7 +111,7 @@ export default function AboutUsPage() {
               }}
             >
               <Image
-                src="/assets/images/founder/ashraf kahoush photo.png"
+                src="/assets/core/founder/ashraf kahoush photo.png"
                 alt="Ashraf Kahoush"
                 width={220}
                 height={220}

@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Innovation & Design Thinking - AHKStrategies',
     description: 'Designing solutions that challenge norms and redefine what\'s possible',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Innovation & Design Thinking - AHKStrategies',
     description: 'Designing solutions that challenge norms and redefine what\'s possible',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
   },
 };
 

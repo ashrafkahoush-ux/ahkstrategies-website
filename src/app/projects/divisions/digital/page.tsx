@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import IconDigital from '@/../public/assets/images/divisions/digital.jpg';
+import IconDigital from '@/../public/assets/core/divisions/digital.jpg';
 
 export default function DigitalDivision() {
   const router = useRouter();

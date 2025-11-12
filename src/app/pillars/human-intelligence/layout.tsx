@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Human Intelligence - AHKStrategies',
     description: 'Amplifying human creativity, intuition, and wisdom to solve complex challenges',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Human Intelligence - AHKStrategies',
     description: 'Amplifying human creativity, intuition, and wisdom',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
   },
 };
 

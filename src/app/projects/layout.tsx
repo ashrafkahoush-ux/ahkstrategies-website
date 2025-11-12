@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Projects & Partnerships - AHKStrategies',
     description: 'Strategic divisions driving innovation across industries',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Projects & Partnerships - AHKStrategies',
     description: 'Strategic divisions driving innovation across industries',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
   },
 };
 

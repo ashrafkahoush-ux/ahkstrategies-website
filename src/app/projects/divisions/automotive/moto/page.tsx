@@ -415,7 +415,7 @@ export default function MotoPage() {
             Moto MENA 5-Year Infographic Summary
           </h2>
           <Image
-            src="/assets/moto/infographic.png"
+            src="/assets/wow/infographic.png"
             alt="Moto MENA 5-Year Infographic Summary"
             width={1920}
             height={1080}

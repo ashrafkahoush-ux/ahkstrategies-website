@@ -33,7 +33,7 @@ export default function AcademyPage() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/assets/ai_videos/ahk_academy.mp4" type="video/mp4" />
+          <source src="/assets/ai/images/pillars/ahk_academy_pillar.mp4" type="video/mp4" />
         </video>
         
         <div 

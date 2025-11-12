@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import IconTrade from '@/../public/assets/images/divisions/trade.jpg';
+import IconTrade from '@/../public/assets/core/divisions/trade.jpg';
 
 export default function TradeDivision() {
   const router = useRouter();

@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Us | AHKStrategies',
     description: 'Reach out to AHKStrategies for strategic partnerships, innovative projects, and collaboration opportunities across MENA and Europe.',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Us | AHKStrategies',
     description: 'Reach out to AHKStrategies for strategic partnerships, innovative projects, and collaboration opportunities across MENA and Europe.',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
   },
 };
 

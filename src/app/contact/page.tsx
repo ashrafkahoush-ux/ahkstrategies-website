@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import founderPhoto from '../../../public/assets/images/founder/ashraf kahoush photo.png';
+import founderPhoto from '../../../public/assets/core/founder/ashraf kahoush photo.png';
 
 const Contact = () => {
   const router = useRouter();

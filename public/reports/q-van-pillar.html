@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidential | Q‑VAN – AHKStrategies</title>
+    <meta name="description" content="Q-VAN: Next-generation electric micro-logistics platform for MENA/EU urban markets. AI-powered routing, modular design, last-50-meters delivery solution.">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --navy: #001F3F;
+            --ink: #cbd5e1;
+            --bg: #020617;
+            --glow: #3A4E7A;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif; 
+            background: var(--bg); 
+            color: white; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+        .wrap { 
+            max-width: 1120px; 
+            margin: 0 auto; 
+            padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem); 
+        }
+        h1 { 
+            font-size: clamp(2.2rem, 5vw, 4.2rem); 
+            line-height: 1.1; 
+            margin-bottom: 1rem; 
+            background: linear-gradient(135deg, white 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        h2 { 
+            color: var(--gold); 
+            font-size: clamp(1.3rem, 3vw, 1.6rem); 
+            margin: 2rem 0 0.5rem; 
+        }
+        h3 {
+            color: var(--gold);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 1rem;
+        }
+        p { 
+            color: var(--ink); 
+            max-width: 640px; 
+            margin-bottom: 1rem; 
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+        }
+        .btn { 
+            display: inline-flex; 
+            gap: 0.5rem; 
+            align-items: center; 
+            background: var(--gold); 
+            color: var(--navy); 
+            border-radius: 0.5rem; 
+            padding: clamp(0.65rem, 2vw, 0.75rem) clamp(1.2rem, 3vw, 1.5rem); 
+            text-decoration: none; 
+            border: 1px solid rgba(212,175,55,0.3); 
+            transition: all 0.3s; 
+            font-weight: 500; 
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            cursor: pointer;
+        }
+        .btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(212,175,55,0.5); 
+        }
+        .btn-secondary { 
+            background: transparent; 
+            color: white; 
+            border-color: rgba(255,255,255,0.18); 
+        }
+        .btn-secondary:hover { 
+            border-color: rgba(255,255,255,0.3); 
+            box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+        }
+        .card { 
+            border: 1px solid rgba(255,255,255,0.12); 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 1.2rem; 
+            padding: clamp(1rem, 2.5vw, 1.5rem); 
+            margin-bottom: 1rem; 
+            transition: all 0.3s;
+        }
+        .card:hover {
+            border-color: rgba(212,175,55,0.3);
+            background: rgba(255,255,255,0.08);
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 1rem; 
+        }
+        @media (max-width: 640px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+        .van-render { 
+            height: clamp(10rem, 30vw, 12rem); 
+            width: 100%; 
+            max-width: 24rem; 
+            border-radius: 1rem; 
+            margin: 1.5rem auto; 
+            display: block; 
+            box-shadow: 0 8px 32px rgba(212,175,55,0.3); 
+            border: 2px solid rgba(212,175,55,0.2);
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(58,78,122,0.2));
+            object-fit: contain;
+            padding: 1rem;
+        }
+        #badge { 
+            text-align: center; 
+            font-size: clamp(0.75rem, 1.8vw, 0.85rem); 
+            color: var(--gold); 
+            font-style: italic; 
+            margin: 1.5rem auto 0; 
+            opacity: 0.7; 
+            letter-spacing: 0.5px;
+        }
+        #qr { 
+            width: clamp(90px, 15vw, 100px); 
+            height: clamp(90px, 15vw, 100px); 
+            background: white; 
+            padding: 3px; 
+            border-radius: 0.5rem; 
+            margin: 0.5rem auto 0; 
+            display: block; 
+        }
+        /* Modal */
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.85); 
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .modal-content { 
+            background: var(--navy); 
+            margin: clamp(5%, 10vw, 15%) auto; 
+            padding: clamp(1.5rem, 4vw, 2rem); 
+            border: 2px solid var(--gold); 
+            border-radius: 1rem; 
+            width: 90%; 
+            max-width: 500px; 
+            box-shadow: 0 20px 60px rgba(212,175,55,0.3);
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .close { 
+            color: var(--gold); 
+            float: right; 
+            font-size: 2rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            line-height: 1;
+            transition: all 0.2s;
+        }
+        .close:hover { 
+            color: white; 
+            transform: scale(1.1);
+        }
+        .form-group { 
+            margin-bottom: 1rem; 
+        }
+        .form-group label { 
+            display: block; 
+            color: var(--ink); 
+            margin-bottom: 0.5rem; 
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+        .form-group input { 
+            width: 100%; 
+            padding: clamp(0.65rem, 2vw, 0.75rem); 
+            background: rgba(255,255,255,0.1); 
+            border: 1px solid rgba(255,255,255,0.2); 
+            border-radius: 0.5rem; 
+            color: white; 
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            transition: all 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255,255,255,0.15);
+        }
+        .form-group input::placeholder { 
+            color: var(--ink); 
+            opacity: 0.6;
+        }
+        .submit-btn { 
+            width: 100%; 
+            background: var(--gold); 
+            color: var(--navy); 
+            border: none; 
+            padding: clamp(0.85rem, 2.5vw, 1rem); 
+            border-radius: 0.5rem; 
+            font-weight: 600; 
+            cursor: pointer; 
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            transition: all 0.3s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.5);
+        }
+        .toast { 
+            position: fixed; 
+            top: 20px; 
+            right: 20px; 
+            background: var(--gold); 
+            color: var(--navy); 
+            padding: 1rem 1.5rem; 
+            border-radius: 0.5rem; 
+            z-index: 1001; 
+            display: none; 
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(212,175,55,0.4);
+            animation: slideInRight 0.3s ease;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 860px) { 
+            .two-column { grid-template-columns: 1fr; }
+        }
+        ul {
+            color: var(--ink);
+            max-width: 640px;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            background: #070d1a;
+            padding: clamp(1.5rem, 3vw, 2rem) 1rem;
+            text-align: center;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1120px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        @media (max-width: 640px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        .coming-soon {
+            display: inline-block;
+            background: rgba(212,175,55,0.15);
+            color: var(--gold);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            border: 1px solid rgba(212,175,55,0.3);
+        }
+        
+        /* Alignment improvements */
+        .page { 
+            margin: 0 auto; 
+            max-width: 210mm; 
+        }
+        
+        .cover-page { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <h1>Q‑VAN: <span style="color: var(--gold);">Urban Micro‑Logistics</span> Platform</h1>
+        <p>A next‑gen, electric micro‑van concept for dense MENA/EU cities. Designed for curb‑side efficiency, low TCO, and modular payloads—powered by AI routing and a data layer for guaranteed SLAs.</p>
+        <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 1rem;">
+            <a class="btn" href="#modal" onclick="document.getElementById('modal').style.display='block'">Request the deck →</a>
+            <a class="btn btn-secondary" href="#specs">View Specs</a>
+        </div>
+        
+        <!-- Van Render with Placeholder -->
+        <img src="your-qvan-render.png" alt="Q-VAN Electric Micro-Logistics Platform - Futuristic Urban Delivery Vehicle" class="van-render" onerror="this.style.background='linear-gradient(135deg, rgba(212,175,55,0.2), rgba(58,78,122,0.3))'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.innerHTML='<div style=\'text-align:center; color:var(--gold); font-size:1.2rem; font-weight:600;\'>Q-VAN Render<br><span style=\'font-size:0.8rem; opacity:0.7;\'>Image Coming Soon</span></div>';">
+        
+        <p id="badge">🔒 Confidential – AHK x Grok Concept 2025</p>
+        
+        <!-- QR Code Section -->
+        <div class="card" style="max-width: 400px; margin: 2rem auto;">
+            <p style="text-align: center; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem;">Scan to request the pilot deck</p>
+            <img id="qr" alt="QR Code - Request Q-VAN Pilot Deck" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iMTAiIHk9IjUwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjgiIGZpbGw9ImJsYWNrIj5TY2FuOiAvY29udGFjdD9yPXF2YW48L3RleHQ+PC9zdmc+">
+            <p style="text-align: center; font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">Direct link: <code style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 0.25rem;">/contact?r=qvan</code></p>
+        </div>
+    </section>
+    
+    <section id="specs" class="wrap" style="margin: 3rem auto;">
+        <div class="two-column">
+            <div>
+                <h2>Executive Thesis</h2>
+                <p>Q‑VAN targets the <span style="color: white; font-weight: 600;">last‑50‑meters</span> gap—where vans fail and bikes can't scale. Our concept combines compact EV chassis, swappable battery modules, and route intelligence to deliver predictable SLAs with a meaningfully lower total cost of operations.</p>
+                <div class="grid">
+                    <div class="card">
+                        <p style="font-size: 0.8rem; color: var(--ink); text-transform: uppercase; letter-spacing: 0.5px;">Range</p>
+                        <p style="font-size: clamp(1.1rem, 3vw, 1.2rem); margin-top: 0.25rem; color: white; font-weight: 600;">140–180 km</p>
+                    </div>
+                    <div class="card">
+                        <p style="font-size: 0.8rem; color: var(--ink); text-transform: uppercase; letter-spacing: 0.5px;">Payload</p>
+                        <p style="font-size: clamp(1.1rem, 3vw, 1.2rem); margin-top: 0.25rem; color: white; font-weight: 600;">350 kg</p>
+                    </div>
+                    <div class="card">
+                        <p style="font-size: 0.8rem; color: var(--ink); text-transform: uppercase; letter-spacing: 0.5px;">Charging</p>
+                        <p style="font-size: clamp(1.1rem, 3vw, 1.2rem); margin-top: 0.25rem; color: white; font-weight: 600;">Swap / 3.3kW</p>
+                    </div>
+                    <div class="card">
+                        <p style="font-size: 0.8rem; color: var(--ink); text-transform: uppercase; letter-spacing: 0.5px;">Footprint</p>
+                        <p style="font-size: clamp(1.1rem, 3vw, 1.2rem); margin-top: 0.25rem; color: white; font-weight: 600;">1.25×2.8 m</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2 style="margin-top: 0;">Pilot Program</h2>
+                <p>We're short‑listing partners in Cairo and Milan for an inner‑city pilot. Submit your interest and receive the technical deck.</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a class="btn" href="#modal" onclick="document.getElementById('modal').style.display='block'">Request the deck →</a>
+                    <a class="btn btn-secondary" href="#" onclick="alert('Coming Soon – Bank Gateway Live Q1 2026'); return false;">Bank Gateway <span class="coming-soon">Q1 2026</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem;">
+            <h2>Modular Architecture</h2>
+            <ul>
+                <li>🔧 Rear module quick‑swap: cargo / cold‑chain / tools / micro‑ads</li>
+                <li>🔋 Battery swap aisle access; side‑curtain roll‑ups for curb loading</li>
+                <li>📡 CAN‑bus telemetry; OTA diagnostics; fleet safety geofencing</li>
+                <li>⚡ Regenerative braking with energy recovery optimization</li>
+            </ul>
+            
+            <h2 style="margin-top: 2rem;">AI Operations Layer</h2>
+            <ul>
+                <li>🧠 Dynamic routing under curb‑time & window penalties</li>
+                <li>🔮 Predictive maintenance + energy optimization models</li>
+                <li>🛡️ Driver assist: narrow‑lane awareness, curb collision warning</li>
+                <li>📊 Real-time fleet analytics dashboard with SLA tracking</li>
+            </ul>
+            
+            <h2 style="margin-top: 2rem;">Sustainability Impact</h2>
+            <ul>
+                <li>🌱 Zero emissions operation in urban centers</li>
+                <li>♻️ 70% reduction in TCO vs diesel micro-vans over 5 years</li>
+                <li>🌍 Solar-powered charging infrastructure compatible</li>
+                <li>📉 60% lower noise pollution for nighttime delivery windows</li>
+            </ul>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 AHKStrategies — Q‑VAN Concept</p>
+            <p style="color: var(--gold); font-style: italic;">Human + AI Intelligence</p>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.6;">Confidential concept document. Distribution restricted to authorized partners.</p>
+    </footer>
+    
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+            <h3>Request the Q-VAN Pilot Deck</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--ink);">Submit your details to receive the technical specifications and pilot program information.</p>
+            <form id="deck-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company / Organization</label>
+                    <input type="text" id="company" name="company" placeholder="Optional">
+                </div>
+                <button type="submit" class="submit-btn">Send Request →</button>
+            </form>
+            <p style="font-size: 0.75rem; margin-top: 1rem; opacity: 0.6; text-align: center; color: var(--ink);">We'll respond within 24 hours with the deck and NDA.</p>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">✓ Deck Request Sent! Check your email.</div>
+    
+    <script>
+        // Enhanced QR Code Generator (Fallback SVG with better styling)
+        function generateQRFallback() {
+            const qrElement = document.getElementById('qr');
+            const qrSvg = `
+                <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" fill="white"/>
+                    <g transform="translate(10, 10)">
+                        <!-- Simple QR-like pattern -->
+                        <rect x="0" y="0" width="25" height="25" fill="black"/>
+                        <rect x="55" y="0" width="25" height="25" fill="black"/>
+                        <rect x="0" y="55" width="25" height="25" fill="black"/>
+                        <rect x="5" y="5" width="15" height="15" fill="white"/>
+                        <rect x="60" y="5" width="15" height="15" fill="white"/>
+                        <rect x="5" y="60" width="15" height="15" fill="white"/>
+                        <!-- Data dots -->
+                        <rect x="30" y="10" width="4" height="4" fill="black"/>
+                        <rect x="38" y="10" width="4" height="4" fill="black"/>
+                        <rect x="46" y="10" width="4" height="4" fill="black"/>
+                        <rect x="30" y="20" width="4" height="4" fill="black"/>
+                        <rect x="46" y="20" width="4" height="4" fill="black"/>
+                        <rect x="30" y="30" width="4" height="4" fill="black"/>
+                        <rect x="38" y="30" width="4" height="4" fill="black"/>
+                        <rect x="46" y="30" width="4" height="4" fill="black"/>
+                        <rect x="55" y="30" width="4" height="4" fill="black"/>
+                        <rect x="65" y="30" width="4" height="4" fill="black"/>
+                        <rect x="30" y="40" width="4" height="4" fill="black"/>
+                        <rect x="46" y="40" width="4" height="4" fill="black"/>
+                        <rect x="55" y="40" width="4" height="4" fill="black"/>
+                        <rect x="10" y="30" width="4" height="4" fill="black"/>
+                        <rect x="10" y="38" width="4" height="4" fill="black"/>
+                        <rect x="10" y="46" width="4" height="4" fill="black"/>
+                    </g>
+                    <text x="50" y="92" text-anchor="middle" font-family="monospace" font-size="6" fill="black" opacity="0.7">ahkstrategies.net</text>
+                </svg>
+            `;
+            qrElement.src = 'data:image/svg+xml;base64,' + btoa(qrSvg);
+        }
+        
+        // Initialize QR on load
+        generateQRFallback();
+        
+        // Modal Form Submission Handler
+        document.getElementById('deck-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            
+            // Log to console (replace with actual fetch to /contact?r=qvan)
+            console.log('Q-VAN Deck Request:', { name, email, company, source: 'qvan-pillar' });
+            
+            // Simulate API call
+            // fetch('/contact?r=qvan', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ name, email, company, source: 'qvan-pillar' })
+            // }).then(response => response.json())
+            //   .then(data => { console.log('Success:', data); });
+            
+            // Show success toast
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => toast.style.display = 'none', 4000);
+            
+            // Close modal
+            document.getElementById('modal').style.display = 'none';
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('modal').style.display = 'none';
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#modal' && href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

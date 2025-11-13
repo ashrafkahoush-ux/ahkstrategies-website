@@ -1,13 +1,14 @@
 'use client';
 import Link from 'next/link';
+import { ASSETS } from '@/lib/assetMap';
 
 const pillars = [
-  { name: 'AHK Academy', href: '/services/academy', video: '/assets/ai_images/pillars/ahk_academy_pillar.mp4' },
-  { name: 'AHK Boutique', href: '/services/boutique', video: '/assets/ai_images/pillars/ahk_boutique_pillar.mp4' },
-  { name: 'AHK Hub', href: '/services/consulting-hub', video: '/assets/ai_images/pillars/ahk_hub_pillar.mp4' },
-  { name: 'AHK LaunchPad', href: '/services/launchpad', video: '/assets/ai_images/pillars/ahk_launchpad_pillar.mp4' },
-  { name: 'AHK Projects', href: '/projects', video: '/assets/ai_images/pillars/ahk_projects_pillar.mp4' },
-  { name: 'AHK Studios', href: '/services/studios', video: '/assets/ai_images/pillars/ahk_studio_pillar.mp4' },
+  { name: 'AHK Projects', href: '/projects', video: ASSETS.pillars.projects },
+  { name: 'AHK Boutique', href: '/services/boutique', video: ASSETS.pillars.boutique },
+  { name: 'AHK Studios', href: '/services/studios', video: ASSETS.pillars.studio },
+  { name: 'AHK LaunchPad', href: '/services/launchpad', video: ASSETS.pillars.launchpad },
+  { name: 'AHK Hub', href: '/services/consulting-hub', video: ASSETS.pillars.hub },
+  { name: 'AHK Academy', href: '/services/academy', video: ASSETS.pillars.academy },
 ];
 
 export default function PillarsGrid() {

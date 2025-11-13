@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Research & Development Division - AHKStrategies',
     description: 'Pioneering breakthrough innovations through cutting-edge research',
-    images: ['/assets/images/divisions/research.jpg'],
+    images: ['/assets/core/divisions/research.jpg'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Research & Development Division - AHKStrategies',
     description: 'Pioneering breakthrough innovations through cutting-edge research',
-    images: ['/assets/images/divisions/research.jpg'],
+    images: ['/assets/core/divisions/research.jpg'],
   },
 };
 

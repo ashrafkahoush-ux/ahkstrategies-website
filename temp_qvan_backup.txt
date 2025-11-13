@@ -1,0 +1,320 @@
+'use client';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+
+export default function QVanPage() {
+  const router = useRouter();
+
+  return (
+    <div className="min-h-screen bg-[#020617] text-white relative">
+      {/* Back Button */}
+      <button
+        onClick={() => router.push('/projects/divisions/automotive')}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
+        style={{
+          position: 'fixed',
+          bottom: '1.5rem',
+          right: '1.5rem',
+          zIndex: 50,
+          background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
+          boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
+        }}
+      >
+        <span style={{ fontSize: '1.25rem', color: 'white' }}>ΓåÉ</span>
+        <span className="text-sm font-bold text-white">Back to Automotive</span>
+      </button>
+
+      {/* Hero Section */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/20 via-[#0A192F] to-[#020617]"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(212, 175, 55, 0.2), #0A192F, #020617)',
+          }}
+        />
+
+        <div className="relative z-10 text-center px-6 max-w-4xl">
+          {/* Logo Icon */}
+          <div 
+            className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#F4E5B1] flex items-center justify-center shadow-2xl"
+            style={{
+              width: '6rem',
+              height: '6rem',
+              margin: '0 auto 1.5rem',
+              borderRadius: '1rem',
+              background: 'linear-gradient(135deg, #D4AF37, #F4E5B1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 25px 50px -12px rgba(212, 175, 55, 0.5)',
+            }}
+          >
+            <span style={{ fontSize: '3rem', fontWeight: 'bold', color: '#0A192F' }}>Q</span>
+          </div>
+
+          <h1 
+            className="text-5xl md:text-6xl font-bold mb-4"
+            style={{
+              fontSize: 'clamp(3rem, 6vw, 4rem)',
+              fontWeight: 'bold',
+              marginBottom: '1rem',
+              background: 'linear-gradient(135deg, #D4AF37, #F4E5B1)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            Q-VAN
+          </h1>
+          <p 
+            className="text-xl md:text-2xl text-[#94a3b8] font-medium"
+            style={{
+              fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)',
+              color: '#94a3b8',
+              fontWeight: 500,
+            }}
+          >
+            Smart Commercial EVs
+          </p>
+        </div>
+      </section>
+
+      {/* Content Sections */}
+      <section className="max-w-5xl mx-auto px-6 py-16 space-y-16">
+        {/* Section 1: The Vision */}
+        <div 
+          className="bg-gradient-to-br from-[#0A192F]/60 to-[#1a2744]/40 rounded-2xl p-8 md:p-12 border border-[#D4AF37]/20 backdrop-blur-sm"
+          style={{
+            background: 'linear-gradient(135deg, rgba(10, 25, 47, 0.6), rgba(26, 39, 68, 0.4))',
+            borderRadius: '1rem',
+            padding: 'clamp(2rem, 4vw, 3rem)',
+            border: '1px solid rgba(212, 175, 55, 0.2)',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-6"
+            style={{
+              fontSize: 'clamp(1.875rem, 4vw, 2.25rem)',
+              fontWeight: 'bold',
+              marginBottom: '1.5rem',
+              color: '#D4AF37',
+            }}
+          >
+            The Vision
+          </h2>
+          
+          <div className="space-y-4 text-[#cbd5e1] leading-relaxed" style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
+            <p>
+              Q-VAN represents a paradigm shift in commercial transportation ΓÇö a purpose-built electric vehicle designed 
+              specifically for the MENA region&apos;s unique logistical challenges. In an era where sustainability meets 
+              efficiency, Q-VAN emerges as the cornerstone of green logistics infrastructure.
+            </p>
+            
+            <p>
+              The project addresses the critical gap in electrified last-mile delivery, urban freight distribution, and 
+              commercial fleet operations. By combining cutting-edge battery technology, intelligent route optimization, 
+              and climate-adapted engineering, Q-VAN delivers not just a vehicle, but a complete ecosystem for clean 
+              commercial transport.
+            </p>
+            
+            <p>
+              Our vision extends beyond vehicle manufacturing ΓÇö we&apos;re building the foundation for a zero-emission 
+              commercial transport network that integrates seamlessly with smart city infrastructure, renewable energy 
+              grids, and digital fleet management platforms. Q-VAN is where environmental responsibility meets 
+              operational excellence.
+            </p>
+          </div>
+        </div>
+
+        {/* Section 2: The Opportunity */}
+        <div 
+          className="bg-gradient-to-br from-[#0A192F]/60 to-[#1a2744]/40 rounded-2xl p-8 md:p-12 border border-[#D4AF37]/20 backdrop-blur-sm"
+          style={{
+            background: 'linear-gradient(135deg, rgba(10, 25, 47, 0.6), rgba(26, 39, 68, 0.4))',
+            borderRadius: '1rem',
+            padding: 'clamp(2rem, 4vw, 3rem)',
+            border: '1px solid rgba(212, 175, 55, 0.2)',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-6"
+            style={{
+              fontSize: 'clamp(1.875rem, 4vw, 2.25rem)',
+              fontWeight: 'bold',
+              marginBottom: '1.5rem',
+              color: '#D4AF37',
+            }}
+          >
+            The Opportunity
+          </h2>
+          
+          <div className="space-y-6">
+            <p className="text-[#cbd5e1] leading-relaxed" style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
+              The MENA region stands at the threshold of a commercial vehicle revolution. With rapid urbanization, 
+              e-commerce growth, and increasing environmental regulations, the demand for electric commercial vehicles 
+              is accelerating exponentially.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div 
+                className="p-6 rounded-xl bg-[#0A192F]/80 border border-[#D4AF37]/10"
+                style={{
+                  padding: '1.5rem',
+                  borderRadius: '0.75rem',
+                  background: 'rgba(10, 25, 47, 0.8)',
+                  border: '1px solid rgba(212, 175, 55, 0.1)',
+                }}
+              >
+                <h3 className="text-xl font-bold text-[#F4E5B1] mb-3">Market Readiness</h3>
+                <p className="text-[#cbd5e1]">
+                  Government incentives, carbon reduction mandates, and fleet electrification targets create an 
+                  unprecedented market opportunity for first-movers in the commercial EV space.
+                </p>
+              </div>
+
+              <div 
+                className="p-6 rounded-xl bg-[#0A192F]/80 border border-[#D4AF37]/10"
+                style={{
+                  padding: '1.5rem',
+                  borderRadius: '0.75rem',
+                  background: 'rgba(10, 25, 47, 0.8)',
+                  border: '1px solid rgba(212, 175, 55, 0.1)',
+                }}
+              >
+                <h3 className="text-xl font-bold text-[#F4E5B1] mb-3">Infrastructure Growth</h3>
+                <p className="text-[#cbd5e1]">
+                  Rapid expansion of charging networks, renewable energy integration, and smart grid systems position 
+                  the region for large-scale EV adoption in commercial sectors.
+                </p>
+              </div>
+
+              <div 
+                className="p-6 rounded-xl bg-[#0A192F]/80 border border-[#D4AF37]/10"
+                style={{
+                  padding: '1.5rem',
+                  borderRadius: '0.75rem',
+                  background: 'rgba(10, 25, 47, 0.8)',
+                  border: '1px solid rgba(212, 175, 55, 0.1)',
+                }}
+              >
+                <h3 className="text-xl font-bold text-[#F4E5B1] mb-3">Cost Advantages</h3>
+                <p className="text-[#cbd5e1]">
+                  Lower total cost of ownership through reduced fuel expenses, minimal maintenance requirements, and 
+                  extended vehicle lifespan deliver compelling ROI for fleet operators.
+                </p>
+              </div>
+
+              <div 
+                className="p-6 rounded-xl bg-[#0A192F]/80 border border-[#D4AF37]/10"
+                style={{
+                  padding: '1.5rem',
+                  borderRadius: '0.75rem',
+                  background: 'rgba(10, 25, 47, 0.8)',
+                  border: '1px solid rgba(212, 175, 55, 0.1)',
+                }}
+              >
+                <h3 className="text-xl font-bold text-[#F4E5B1] mb-3">Regional Localization</h3>
+                <p className="text-[#cbd5e1]">
+                  Climate-adapted design, local manufacturing capabilities, and regional service networks ensure 
+                  Q-VAN meets the specific needs of MENA markets.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 3: Our Role */}
+        <div 
+          className="bg-gradient-to-br from-[#0A192F]/60 to-[#1a2744]/40 rounded-2xl p-8 md:p-12 border border-[#D4AF37]/20 backdrop-blur-sm"
+          style={{
+            background: 'linear-gradient(135deg, rgba(10, 25, 47, 0.6), rgba(26, 39, 68, 0.4))',
+            borderRadius: '1rem',
+            padding: 'clamp(2rem, 4vw, 3rem)',
+            border: '1px solid rgba(212, 175, 55, 0.2)',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-6"
+            style={{
+              fontSize: 'clamp(1.875rem, 4vw, 2.25rem)',
+              fontWeight: 'bold',
+              marginBottom: '1.5rem',
+              color: '#D4AF37',
+            }}
+          >
+            Our Role
+          </h2>
+          
+          <div className="space-y-4 text-[#cbd5e1] leading-relaxed" style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
+            <p>
+              <strong className="text-[#F4E5B1]">AHKStrategies</strong> serves as the strategic orchestrator of the 
+              Q-VAN ecosystem, bringing together automotive engineering excellence, regional market intelligence, and 
+              investment structuring expertise.
+            </p>
+            
+            <div className="my-6 pl-6 border-l-4 border-[#D4AF37]">
+              <ul className="space-y-3 text-[#cbd5e1]">
+                <li><strong className="text-[#F4E5B1]">Vehicle Design & Localization:</strong> Adapting EV architecture for extreme climate conditions, local usage patterns, and regional regulatory requirements</li>
+                <li><strong className="text-[#F4E5B1]">Joint Venture Formation:</strong> Structuring partnerships between international OEMs, local manufacturers, and technology providers</li>
+                <li><strong className="text-[#F4E5B1]">Market Entry Strategy:</strong> Developing go-to-market frameworks, fleet adoption programs, and government engagement strategies</li>
+                <li><strong className="text-[#F4E5B1]">Financial Structuring:</strong> Coordinating investment syndication, project financing, and revenue model optimization</li>
+              </ul>
+            </div>
+            
+            <p>
+              Through AHK LaunchPad, we facilitate the full commercialization journey ΓÇö from feasibility studies and 
+              prototype development to manufacturing partnerships and fleet deployment programs.
+            </p>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div 
+          className="bg-gradient-to-r from-[#D4AF37] to-[#F4E5B1] rounded-2xl p-8 md:p-12 text-center"
+          style={{
+            background: 'linear-gradient(90deg, #D4AF37, #F4E5B1)',
+            borderRadius: '1rem',
+            padding: 'clamp(2rem, 4vw, 3rem)',
+            textAlign: 'center',
+          }}
+        >
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-4 text-[#0A192F]"
+            style={{
+              fontSize: 'clamp(1.875rem, 4vw, 2.25rem)',
+              fontWeight: 'bold',
+              marginBottom: '1rem',
+              color: '#0A192F',
+            }}
+          >
+            Request Full Feasibility Study
+          </h2>
+          <p className="text-lg text-[#0A192F]/80 mb-8 max-w-2xl mx-auto">
+            Access comprehensive market analysis, technical specifications, financial projections, and implementation 
+            roadmaps for the Q-VAN project.
+          </p>
+          
+          <Link
+            href="/services/boutique"
+            className="inline-block px-8 py-4 bg-[#0A192F] text-white font-bold rounded-xl hover:bg-[#0A192F]/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+            style={{
+              display: 'inline-block',
+              padding: '1rem 2rem',
+              background: '#0A192F',
+              color: 'white',
+              fontWeight: 'bold',
+              borderRadius: '0.75rem',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
+            }}
+          >
+            Contact AHK Boutique
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}

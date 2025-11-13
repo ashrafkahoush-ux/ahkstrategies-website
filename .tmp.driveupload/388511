@@ -1,0 +1,11 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_global-error/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1507e04b._.js")
+R.c("server/chunks/ssr/ahkstrategies-website_22cb51be._.js")
+R.c("server/chunks/ssr/81c2f_next_dist_46ed5eda._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__44fd3f75._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__a1b26596._.js")
+R.c("server/chunks/ssr/81c2f_next_dist_6059bd8b._.js")
+R.c("server/chunks/ssr/ahkstrategies-website_src_app_ee62dc7c._.js")
+R.c("server/chunks/ssr/4c962__next-internal_server_app__global-error_page_actions_d2eb8cb5.js")
+R.m(96507)
+module.exports=R.m(96507).exports

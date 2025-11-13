@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/projects/layout,_N_T_/projects/divisions/layout,_N_T_/projects/divisions/digital/layout,_N_T_/projects/divisions/digital/page,_N_T_/projects/divisions/digital"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/projects/divisions/digital/__PAGE__",
+    "/projects/divisions/digital",
+    "/projects/divisions",
+    "/projects",
+    "/_index"
+  ]
+}

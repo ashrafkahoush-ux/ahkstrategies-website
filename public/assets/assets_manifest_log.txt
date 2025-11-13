@@ -1,0 +1,7 @@
+C:\Users\ashra\ahkstrategies-website\public\assets\ai_images\pillars\ahk_academy_pillar.mp4  --->  C:\Users\ashra\ahkstrategies-website\public\assets\ai\images\pillars\
+C:\Users\ashra\ahkstrategies-website\public\assets\ai_images\pillars\ahk_boutique_pillar.mp4  --->  C:\Users\ashra\ahkstrategies-website\public\assets\ai\images\pillars\
+C:\Users\ashra\ahkstrategies-website\public\assets\ai_images\pillars\ahk_hub_pillar.mp4  --->  C:\Users\ashra\ahkstrategies-website\public\assets\ai\images\pillars\
+C:\Users\ashra\ahkstrategies-website\public\assets\ai_images\pillars\ahk_launchpad_pillar.mp4  --->  C:\Users\ashra\ahkstrategies-website\public\assets\ai\images\pillars\
+C:\Users\ashra\ahkstrategies-website\public\assets\ai_images\pillars\ahk_projects_pillar.mp4  --->  C:\Users\ashra\ahkstrategies-website\public\assets\ai\images\pillars\
+C:\Users\ashra\ahkstrategies-website\public\assets\ai_images\pillars\ahk_studio_pillar.mp4  --->  C:\Users\ashra\ahkstrategies-website\public\assets\ai\images\pillars\
+C:\Users\ashra\ahkstrategies-website\public\assets\images\logo\ahk_hex_logo.png  --->  C:\Users\ashra\ahkstrategies-website\public\assets\core\logo\

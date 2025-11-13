@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vision & Foresight - AHKStrategies',
     description: 'Anticipating futures and building pathways to tomorrow',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Vision & Foresight - AHKStrategies',
     description: 'Anticipating futures and building pathways to tomorrow',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
   },
 };
 

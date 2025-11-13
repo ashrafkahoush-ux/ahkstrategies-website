@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/projects/layout,_N_T_/projects/divisions/layout,_N_T_/projects/divisions/automotive/layout,_N_T_/projects/divisions/automotive/qvan/layout,_N_T_/projects/divisions/automotive/qvan/page,_N_T_/projects/divisions/automotive/qvan"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/projects/divisions/automotive/qvan/__PAGE__",
+    "/projects/divisions/automotive/qvan",
+    "/projects/divisions/automotive",
+    "/projects/divisions",
+    "/projects",
+    "/_index"
+  ]
+}

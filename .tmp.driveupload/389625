@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/mega-team/layout,_N_T_/mega-team/page,_N_T_/mega-team"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/mega-team/__PAGE__",
+    "/mega-team",
+    "/_index"
+  ]
+}

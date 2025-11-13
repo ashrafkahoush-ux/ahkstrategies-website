@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Legacy & Continuity - AHKStrategies',
     description: 'Building enduring systems that thrive across generations',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Legacy & Continuity - AHKStrategies',
     description: 'Building enduring systems that thrive across generations',
-    images: ['/assets/images/share-default.png'],
+    images: ['/assets/core/share-default.png'],
   },
 };
 

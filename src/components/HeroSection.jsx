@@ -1,21 +1,31 @@
 'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center h-[55vh] w-full overflow-hidden bg-[#0A0F1E]">
-      {/* Background video */}
+    <section className="relative flex flex-col items-center justify-center h-[90vh] w-full overflow-hidden bg-[#0A192F]">
+      {/* Homepage Background Video */}
       <video
-        src="/assets/ai_videos/home2.mp4"
+        src="/assets/backgrounds/home2.mp4"
         autoPlay
         loop
         muted
         playsInline
-        className="absolute top-1/2 left-1/2 w-full max-w-[1920px] -translate-x-1/2 -translate-y-1/2 object-cover rounded-2xl shadow-[0_0_40px_rgba(0,255,255,0.1)]"
+        poster="/assets/emma_dna/images/emma_dna_dual_core.png"
+        className="absolute inset-0 w-full h-full object-cover"
       ></video>
 
-      {/* Overlay gradient for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/40 via-transparent to-[#0A0F1E]/80 pointer-events-none"></div>
+      {/* Motion fade-in overlay (navy → transparent) for text legibility */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/60 to-transparent pointer-events-none"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+      />
+
+      {/* Bottom gradient for content transition */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A192F] to-transparent pointer-events-none"></div>
     </section>
   );
 }

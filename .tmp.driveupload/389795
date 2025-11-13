@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/pillars/layout,_N_T_/pillars/innovation/layout,_N_T_/pillars/innovation/page,_N_T_/pillars/innovation"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/pillars/innovation/__PAGE__",
+    "/pillars/innovation",
+    "/pillars",
+    "/_index"
+  ]
+}

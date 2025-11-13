@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/projects/layout,_N_T_/projects/divisions/layout,_N_T_/projects/divisions/automotive/layout,_N_T_/projects/divisions/automotive/moto/layout,_N_T_/projects/divisions/automotive/moto/page,_N_T_/projects/divisions/automotive/moto"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/projects/divisions/automotive/moto/__PAGE__",
+    "/projects/divisions/automotive/moto",
+    "/projects/divisions/automotive",
+    "/projects/divisions",
+    "/projects",
+    "/_index"
+  ]
+}

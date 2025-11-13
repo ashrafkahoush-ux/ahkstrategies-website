@@ -1,0 +1,3 @@
+module.exports=[18060,a=>{"use strict";var b=a.i(16692),c=a.i(21173);function d({children:a}){return(0,b.jsx)(c.Suspense,{fallback:(0,b.jsx)("div",{className:"min-h-screen flex items-center justify-center text-ahk-gold",children:"Loading MEGA-TEAM experience…"}),children:a})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=ahkstrategies-website_src_app_mega-team_layout_tsx_cc4eb680._.js.map

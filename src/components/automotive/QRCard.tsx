@@ -1,7 +1,7 @@
 export default function QRCard({
   href,
   label,
-  img = "/assets/qr/placeholder.png",
+  img = "/assets/core/share-default.png",
 }: {
   href: string;
   label?: string;

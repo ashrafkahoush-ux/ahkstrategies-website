@@ -150,10 +150,18 @@ export default function AutomotiveDivision() {
               }}
             />
             
-            <div className="p-8 relative z-10">
+            <div className="p-8 relative z-10 text-center">
               {/* Logo Icon */}
               <motion.div 
-                className="mb-6 flex items-center justify-center"
+                className="mb-6 flex items-center justify-center mx-auto"
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
                 whileHover={{ 
                   rotate: [0, -8, 8, 0],
                   scale: 1.1,
@@ -279,10 +287,19 @@ export default function AutomotiveDivision() {
               }}
             />
             
-            <div className="p-8 relative z-10">
+            <div className="p-8 relative z-10 text-center">
               {/* Logo Icon */}
               <motion.div 
-                className="mb-6 flex items-center justify-center"
+                className="mb-6 flex items-center justify-center mx-auto"
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.3
+                }}
                 whileHover={{ 
                   rotate: [0, -8, 8, 0],
                   scale: 1.1,
@@ -408,10 +425,19 @@ export default function AutomotiveDivision() {
               }}
             />
             
-            <div className="p-8 relative z-10">
+            <div className="p-8 relative z-10 text-center">
               {/* Logo Icon */}
               <motion.div 
-                className="mb-6 flex items-center justify-center"
+                className="mb-6 flex items-center justify-center mx-auto"
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.6
+                }}
                 whileHover={{ 
                   rotate: [0, -8, 8, 0],
                   scale: 1.1,

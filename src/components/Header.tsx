@@ -21,8 +21,12 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-black/40 border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 text-white">
-        <Link href="/" className="text-2xl font-bold tracking-wide text-cyan-300 hover:text-white transition-all">
-          AHK<span className="text-white">Strategies</span>
+        <Link href="/" className="flex items-center gap-3 text-2xl font-bold tracking-wide hover:scale-105 transition-transform">
+          <span className="text-4xl logo-pulse">🧠</span>
+          <div className="flex items-center gap-1">
+            <span className="gradient-text-animated font-black">AHK</span>
+            <span className="gradient-text-animated font-black ml-1">Strategies</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

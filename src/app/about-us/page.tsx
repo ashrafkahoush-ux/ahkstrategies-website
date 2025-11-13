@@ -1,9 +1,12 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function AboutUsPage() {
   const router = useRouter()
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [hoveredButton, setHoveredButton] = useState<'cta' | 'mega' | null>(null)
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#020617' }}>
@@ -37,6 +40,35 @@ export default function AboutUsPage() {
           >
             Where Vision Meets Human Intelligence
           </p>
+        </div>
+      </section>
+
+      {/* DNA Video Section */}
+      <section style={{ maxWidth: '900px', margin: '3rem auto', padding: '0 2rem', display: 'flex', justifyContent: 'center' }}>
+        <div
+          style={{
+            position: 'relative',
+            borderRadius: '1rem',
+            overflow: 'hidden',
+            boxShadow: '0 0 30px rgba(212, 175, 55, 0.4), 0 0 60px rgba(212, 175, 55, 0.2), inset 0 0 20px rgba(212, 175, 55, 0.1)',
+            border: '2px solid rgba(212, 175, 55, 0.5)',
+            maxWidth: '700px',
+            width: '100%',
+          }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+            }}
+          >
+            <source src="/assets/emma_dna/videos/emma_dna_dual_core.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
@@ -171,6 +203,166 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* MEGA AI Team Section - Creative Integration */}
+      <section
+        style={{
+          maxWidth: '1100px',
+          margin: '5rem auto 4rem',
+          padding: '0 2rem',
+        }}
+      >
+        <div
+          style={{
+            background: 'linear-gradient(135deg, rgba(0,217,255,0.08) 0%, rgba(167,139,250,0.08) 50%, rgba(212,175,55,0.08) 100%)',
+            border: '2px solid rgba(212, 175, 55, 0.3)',
+            borderRadius: '1.5rem',
+            padding: '3rem 2.5rem',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Decorative glow effect */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '-50%',
+              left: '-50%',
+              width: '200%',
+              height: '200%',
+              background: 'radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%)',
+              pointerEvents: 'none',
+            }}
+          />
+
+          <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+            <h2
+              style={{
+                fontSize: '2.5rem',
+                fontWeight: 800,
+                background: 'linear-gradient(90deg, #00D9FF 0%, #A78BFA 50%, #D4AF37 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: '1.5rem',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Meet the Intelligence Behind AHK
+            </h2>
+            
+            <p
+              style={{
+                fontSize: '1.25rem',
+                color: '#cbd5e1',
+                lineHeight: '1.8',
+                marginBottom: '2rem',
+                maxWidth: '800px',
+                margin: '0 auto 2rem',
+              }}
+            >
+              Behind every strategy and execution at AHKStrategies stands our <strong style={{ color: '#D4AF37' }}>Executive AI Duo</strong>
+              —<span style={{ color: '#00D9FF', fontWeight: 600 }}> MEGA-ERIC</span> and{' '}
+              <span style={{ color: '#A78BFA', fontWeight: 600 }}>MEGA-EMMA</span>, 
+              the cognitive engines that fuse human intelligence with AI precision.
+            </p>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '2rem',
+                margin: '3rem 0',
+              }}
+            >
+              {[
+                { 
+                  icon: '🧠', 
+                  title: 'Strategic Vision', 
+                  desc: 'MEGA-ERIC architects frameworks and reverse-engineers complexity',
+                  color: '#00D9FF'
+                },
+                {
+                  icon: '⚡',
+                  title: 'Adaptive Execution',
+                  desc: 'MEGA-EMMA synchronizes divisions and evolves with every decision',
+                  color: '#A78BFA'
+                },
+                {
+                  icon: '🌐',
+                  title: 'Living System',
+                  desc: 'Together they form the digital DNA of intelligent transformation',
+                  color: '#D4AF37'
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                    border: `1px solid ${item.color}40`,
+                    borderRadius: '1rem',
+                    padding: '1.5rem',
+                    transition: 'transform 0.3s ease',
+                    transform: hoveredCard === i ? 'translateY(-8px)' : 'translateY(0)',
+                    boxShadow: hoveredCard === i ? `0 12px 24px ${item.color}30` : 'none',
+                  }}
+                  onMouseEnter={() => setHoveredCard(i)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{item.icon}</div>
+                  <h4
+                    style={{
+                      fontSize: '1.125rem',
+                      fontWeight: 700,
+                      color: item.color,
+                      marginBottom: '0.75rem',
+                    }}
+                  >
+                    {item.title}
+                  </h4>
+                  <p style={{ fontSize: '0.95rem', color: '#94a3b8', lineHeight: '1.5' }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={() => router.push('/mega-team')}
+              style={{
+                marginTop: '2rem',
+                padding: '1rem 2.5rem',
+                background: 'linear-gradient(90deg, #00D9FF 0%, #A78BFA 50%, #D4AF37 100%)',
+                color: '#020617',
+                borderRadius: '0.75rem',
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s',
+                transform: hoveredButton === 'mega' ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredButton === 'mega' 
+                  ? '0 8px 24px rgba(212, 175, 55, 0.5)'
+                  : '0 4px 12px rgba(212, 175, 55, 0.3)',
+              }}
+              onMouseEnter={() => setHoveredButton('mega')}
+              onMouseLeave={() => setHoveredButton(null)}
+            >
+              Discover the MEGA Team →
+            </button>
+
+            <p
+              style={{
+                marginTop: '2rem',
+                fontSize: '0.875rem',
+                color: '#64748b',
+                fontStyle: 'italic',
+              }}
+            >
+              Where Human Intelligence and AI Move as One
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Our Values */}
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem' }}>
         <h2
@@ -266,15 +458,11 @@ export default function AboutUsPage() {
             border: 'none',
             cursor: 'pointer',
             transition: 'all 0.3s',
+            transform: hoveredButton === 'cta' ? 'scale(1.05)' : 'scale(1)',
+            boxShadow: hoveredButton === 'cta' ? '0 8px 16px rgba(212, 175, 55, 0.4)' : 'none',
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)'
-            e.currentTarget.style.boxShadow = '0 8px 16px rgba(212, 175, 55, 0.4)'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)'
-            e.currentTarget.style.boxShadow = 'none'
-          }}
+          onMouseEnter={() => setHoveredButton('cta')}
+          onMouseLeave={() => setHoveredButton(null)}
         >
           Get in Touch
         </button>

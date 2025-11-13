@@ -85,17 +85,18 @@ export default function EmmaDNASection() {
 
           {/* Tagline */}
           <motion.p
-            className="text-2xl md:text-3xl lg:text-4xl font-light text-white/90 max-w-4xl mx-auto leading-relaxed"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white/90 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             Where <span className="text-ahk-gold font-semibold">Human Intelligence</span>
-            <br className="hidden md:block" />
-            <span className="mx-3 text-emma-electric">and</span>
+            {' '}
+            <span className="text-emma-electric">and</span>
+            {' '}
             <span className="text-emma-violet font-semibold">Artificial Intelligence</span>
-            <br className="hidden md:block" />
+            {' '}
             <span className="text-ahk-gold-light italic">move as one</span>.
           </motion.p>
 

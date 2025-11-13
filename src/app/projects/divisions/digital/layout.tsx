@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Digital Division - AHKStrategies',
     description: 'Pioneering digital transformation through innovative technology solutions',
-    images: ['/assets/images/divisions/digital.jpg'],
+    images: ['/assets/core/divisions/digital.jpg'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Digital Division - AHKStrategies',
     description: 'Pioneering digital transformation through innovative technology',
-    images: ['/assets/images/divisions/digital.jpg'],
+    images: ['/assets/core/divisions/digital.jpg'],
   },
 };
 

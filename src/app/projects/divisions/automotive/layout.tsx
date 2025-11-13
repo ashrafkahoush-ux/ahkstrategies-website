@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Automotive Division - AHKStrategies',
     description: 'Leading innovation in automotive technology and sustainable transportation solutions',
-    images: ['/assets/images/divisions/automotive.jpg'],
+    images: ['/assets/core/divisions/automotive.jpg'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Automotive Division - AHKStrategies',
     description: 'Leading innovation in automotive technology and sustainable transportation',
-    images: ['/assets/images/divisions/automotive.jpg'],
+    images: ['/assets/core/divisions/automotive.jpg'],
   },
 };
 

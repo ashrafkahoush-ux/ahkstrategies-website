@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Renewable Energy Division - AHKStrategies',
     description: 'Driving sustainable energy through green technology',
-    images: ['/assets/images/divisions/renewable.jpg'],
+    images: ['/assets/core/divisions/renewable.jpg'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Renewable Energy Division - AHKStrategies',
     description: 'Driving sustainable energy through green technology',
-    images: ['/assets/images/divisions/renewable.jpg'],
+    images: ['/assets/core/divisions/renewable.jpg'],
   },
 };
 

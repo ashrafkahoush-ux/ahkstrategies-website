@@ -33,7 +33,7 @@ export default function ConsultingHubPage() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/assets/ai/images/pillars/ahk_hub_pillar.mp4" type="video/mp4" />
+          <source src="/assets/ai_videos/ahk_hub.mp4" type="video/mp4" />
         </video>
         
         <div 

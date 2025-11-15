@@ -2,12 +2,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import IconAutomotive from '@/../public/assets/core/divisions/automotive.jpg';
-import IconDigital from '@/../public/assets/core/divisions/digital.jpg';
-import IconMenaExport from '@/../public/assets/core/divisions/MENA region export business.png';
-import IconRenewable from '@/../public/assets/core/divisions/renewable.jpg';
-import IconResearch from '@/../public/assets/core/divisions/research.jpg';
-import IconTrade from '@/../public/assets/core/divisions/trade.jpg';
+import IconAutomotive from '@/../public/assets/images/divisions/automotive.jpg';
+import IconDigital from '@/../public/assets/images/divisions/digital.jpg';
+import IconMenaExport from '@/../public/assets/images/divisions/MENA region export business.png';
+import IconRenewable from '@/../public/assets/images/divisions/renewable.jpg';
+import IconResearch from '@/../public/assets/images/divisions/research.jpg';
+import IconTrade from '@/../public/assets/images/divisions/trade.jpg';
 
 const divisions = [
   {

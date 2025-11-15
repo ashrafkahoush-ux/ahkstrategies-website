@@ -17,7 +17,7 @@ const Innovation = () => {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/assets/backgrounds/innovation.mp4" type="video/mp4" />
+          <source src="/assets/ai_videos/innovation.mp4" type="video/mp4" />
         </video>
         
         <div 

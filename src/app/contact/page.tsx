@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Sparkles } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import BackButton from '@/components/BackButton';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function ContactPage() {
-  const router = useRouter();
   const { isArabic } = useLanguage();
   const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState({
@@ -38,6 +37,17 @@ export default function ContactPage() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-2000" />
+      </div>
+
+      {/* Back Button */}
+      <div 
+        className="fixed bottom-10 z-50" 
+        style={{
+          right: mounted && isArabic ? 'auto' : '2.5rem',
+          left: mounted && isArabic ? '2.5rem' : 'auto',
+        }}
+      >
+        <BackButton label={mounted && isArabic ? 'رجوع' : 'BACK'} />
       </div>
 
       {/* Floating Particles */}

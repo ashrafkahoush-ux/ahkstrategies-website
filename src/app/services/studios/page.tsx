@@ -1,27 +1,16 @@
 'use client'
 import { useRouter } from 'next/navigation'
+import BackButton from '@/components/BackButton'
 
 export default function StudiosPage() {
   const router = useRouter()
-
+  
   return (
     <div className="min-h-screen bg-[#0A0F1E] text-white relative">
       {/* Back Button */}
-      <button
-        onClick={() => router.back()}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
-        style={{
-          position: 'fixed',
-          bottom: '1.5rem',
-          right: '1.5rem',
-          zIndex: 50,
-          background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
-          boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
-        }}
-      >
-        <span style={{ fontSize: '1.25rem', color: 'white' }}>←</span>
-        <span className="text-sm font-bold text-white">Back</span>
-      </button>
+      <div className="fixed bottom-10 right-10 z-50">
+        <BackButton />
+      </div>
 
       {/* Hero Section with Video Background */}
       <section className="relative h-[70vh] flex items-end justify-center overflow-hidden pb-16">

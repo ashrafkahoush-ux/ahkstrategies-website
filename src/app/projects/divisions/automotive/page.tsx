@@ -1,10 +1,11 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import BackButton from '@/components/BackButton';
 import { motion } from 'framer-motion';
 
 export default function AutomotiveDivision() {
   const router = useRouter();
-
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,20 +29,9 @@ export default function AutomotiveDivision() {
   return (
     <div className="min-h-screen bg-[#020617] text-white relative overflow-x-hidden font-['Inter']">
       {/* Back Button - Fixed at bottom right */}
-      <motion.button
-        onClick={() => router.back()}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-6 py-3 rounded-lg shadow-lg transition-all duration-300"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(250, 204, 21, 0.5)' }}
-        style={{
-          background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
-          boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
-        }}
-      >
-        <span className="text-xl text-white">←</span>
-        <span className="text-sm font-bold text-white">Back</span>
-      </motion.button>
+      <div className="fixed bottom-10 right-10 z-50">
+        <BackButton />
+      </div>
 
       {/* Hero Section with Video Background */}
       <section className="relative flex items-center justify-center overflow-hidden h-[60vh]">

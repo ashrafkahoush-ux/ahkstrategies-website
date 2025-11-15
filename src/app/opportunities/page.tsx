@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import BackButton from '@/components/BackButton';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function OpportunitiesPage() {
@@ -15,22 +16,15 @@ export default function OpportunitiesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020617] via-[#0a0f2e] to-[#020617] text-white relative">
       {/* Back Button */}
-      <button
-        onClick={() => router.back()}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg shadow-lg hover:shadow-xl hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
+      <div 
+        className="fixed bottom-10 z-50" 
         style={{
-          position: 'fixed',
-          bottom: '1.5rem',
-          right: mounted && isArabic ? 'auto' : '1.5rem',
-          left: mounted && isArabic ? '1.5rem' : 'auto',
-          zIndex: 50,
-          background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
-          boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.4)',
+          right: mounted && isArabic ? 'auto' : '2.5rem',
+          left: mounted && isArabic ? '2.5rem' : 'auto',
         }}
       >
-        <span style={{ fontSize: '1.25rem', color: 'white' }}>{mounted && isArabic ? '→' : '←'}</span>
-        <span className="text-sm font-bold text-white">{mounted && isArabic ? 'رجوع' : 'Back'}</span>
-      </button>
+        <BackButton label={mounted && isArabic ? 'رجوع' : 'BACK'} />
+      </div>
 
       {/* Hero Section */}
       <section className="relative py-20 px-6">

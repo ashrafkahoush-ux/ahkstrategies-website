@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import IconRenewable from '@/../public/assets/core/divisions/renewable.jpg';
+import IconRenewable from '@/../public/assets/images/divisions/renewable.jpg';
 
 export default function RenewableDivision() {
   const router = useRouter();

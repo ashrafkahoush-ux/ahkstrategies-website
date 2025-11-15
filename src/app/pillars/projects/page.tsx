@@ -13,7 +13,7 @@ const Projects = () => {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectFit: 'cover' }}
       >
-        <source src="/assets/backgrounds/projects.mp4" type="video/mp4" />
+        <source src="/assets/ai_videos/projects.mp4" type="video/mp4" />
       </video>
 
       {/* Gradient Overlay for depth */}

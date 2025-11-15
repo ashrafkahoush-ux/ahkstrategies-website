@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import IconMenaExport from '@/../public/assets/core/divisions/MENA region export business.png';
+import IconMenaExport from '@/../public/assets/images/divisions/MENA region export business.png';
 
 export default function MENAExportDivision() {
   const router = useRouter();
